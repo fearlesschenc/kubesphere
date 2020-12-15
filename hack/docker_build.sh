@@ -17,8 +17,9 @@ tag_for_branch() {
 }
 
 # push to kubespheredev with default latest tag
-REPO=${REPO:-kubespheredev}
 TAG=$(tag_for_branch $1)
+# REPO=${REPO:-kubespheredev}
+REPO=${REPO:-registry.cn-hangzhou.aliyuncs.com/fearlesschenc/containers/phoenix}
 
 docker build -f build/ks-apiserver/Dockerfile -t $REPO/ks-apiserver:$TAG .
 docker build -f build/ks-controller-manager/Dockerfile -t $REPO/ks-controller-manager:$TAG .
