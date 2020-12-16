@@ -18,12 +18,12 @@ package nsnetworkpolicy
 
 import (
 	"context"
+	networkv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1"
 	corev1 "k8s.io/api/core/v1"
 	k8snet "k8s.io/api/networking/v1"
 	"k8s.io/apimachinery/pkg/util/intstr"
 	"k8s.io/apimachinery/pkg/util/validation"
 	"k8s.io/apimachinery/pkg/util/validation/field"
-	networkv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1"
 	"net"
 	"net/http"
 	"sigs.k8s.io/controller-runtime/pkg/client"

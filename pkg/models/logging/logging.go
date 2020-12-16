@@ -17,9 +17,9 @@ limitations under the License.
 package logging
 
 import (
-	"io"
 	"github.com/fearlesschenc/kubesphere/pkg/api/logging/v1alpha2"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/logging"
+	"io"
 )
 
 type LoggingOperator interface {

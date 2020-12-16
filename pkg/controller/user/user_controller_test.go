@@ -18,6 +18,11 @@ package user
 
 import (
 	"fmt"
+	iamv1alpha2 "github.com/fearlesschenc/kubesphere/pkg/apis/iam/v1alpha2"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/options"
+	"github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/fake"
+	ksinformers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions"
+	ldapclient "github.com/fearlesschenc/kubesphere/pkg/simple/client/ldap"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/apimachinery/pkg/util/diff"
@@ -26,11 +31,6 @@ import (
 	core "k8s.io/client-go/testing"
 	"k8s.io/client-go/tools/cache"
 	"k8s.io/client-go/tools/record"
-	iamv1alpha2 "github.com/fearlesschenc/kubesphere/pkg/apis/iam/v1alpha2"
-	"github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/options"
-	"github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/fake"
-	ksinformers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions"
-	ldapclient "github.com/fearlesschenc/kubesphere/pkg/simple/client/ldap"
 	"reflect"
 	"testing"
 	"time"

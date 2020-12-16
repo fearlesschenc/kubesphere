@@ -20,6 +20,8 @@ import (
 	"fmt"
 	"reflect"
 
+	servicemeshv1alpha2 "github.com/fearlesschenc/kubesphere/pkg/apis/servicemesh/v1alpha2"
+	"github.com/fearlesschenc/kubesphere/pkg/controller/virtualservice/util"
 	apinetworkingv1alpha3 "istio.io/api/networking/v1alpha3"
 	clientgonetworkingv1alpha3 "istio.io/client-go/pkg/apis/networking/v1alpha3"
 	appsv1 "k8s.io/api/apps/v1"
@@ -34,8 +36,6 @@ import (
 	"k8s.io/client-go/kubernetes/scheme"
 	v1core "k8s.io/client-go/kubernetes/typed/core/v1"
 	log "k8s.io/klog"
-	servicemeshv1alpha2 "github.com/fearlesschenc/kubesphere/pkg/apis/servicemesh/v1alpha2"
-	"github.com/fearlesschenc/kubesphere/pkg/controller/virtualservice/util"
 
 	"time"
 

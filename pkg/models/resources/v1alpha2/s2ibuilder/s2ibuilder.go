@@ -17,10 +17,10 @@ limitations under the License.
 package s2ibuilder
 
 import (
-	"k8s.io/apimachinery/pkg/labels"
 	"github.com/fearlesschenc/kubesphere/pkg/apis/devops/v1alpha1"
 	"github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions"
 	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha2"
+	"k8s.io/apimachinery/pkg/labels"
 
 	"github.com/fearlesschenc/kubesphere/pkg/server/params"
 	"sort"

@@ -20,6 +20,9 @@ package user
 
 import (
 	"fmt"
+	kubesphere "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned"
+	iamv1alpha2informers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions/iam/v1alpha2"
+	iamv1alpha2listers "github.com/fearlesschenc/kubesphere/pkg/client/listers/iam/v1alpha2"
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -33,9 +36,6 @@ import (
 	"k8s.io/client-go/tools/record"
 	"k8s.io/client-go/util/workqueue"
 	"k8s.io/klog"
-	kubesphere "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned"
-	iamv1alpha2informers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions/iam/v1alpha2"
-	iamv1alpha2listers "github.com/fearlesschenc/kubesphere/pkg/client/listers/iam/v1alpha2"
 	"time"
 )
 

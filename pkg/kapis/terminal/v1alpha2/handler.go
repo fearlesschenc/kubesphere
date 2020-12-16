@@ -18,11 +18,11 @@ package v1alpha2
 
 import (
 	"github.com/emicklei/go-restful"
+	"github.com/fearlesschenc/kubesphere/pkg/models/terminal"
 	"github.com/gorilla/websocket"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/rest"
 	"k8s.io/klog"
-	"github.com/fearlesschenc/kubesphere/pkg/models/terminal"
 	"net/http"
 )
 

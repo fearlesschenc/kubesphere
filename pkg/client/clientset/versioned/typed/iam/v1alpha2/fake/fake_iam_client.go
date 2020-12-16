@@ -19,9 +19,9 @@ limitations under the License.
 package fake
 
 import (
+	v1alpha2 "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/typed/iam/v1alpha2"
 	rest "k8s.io/client-go/rest"
 	testing "k8s.io/client-go/testing"
-	v1alpha2 "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/typed/iam/v1alpha2"
 )
 
 type FakeIamV1alpha2 struct {

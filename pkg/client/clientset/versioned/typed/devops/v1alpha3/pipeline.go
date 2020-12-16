@@ -21,12 +21,12 @@ package v1alpha3
 import (
 	"time"
 
+	v1alpha3 "github.com/fearlesschenc/kubesphere/pkg/apis/devops/v1alpha3"
+	scheme "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/scheme"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
 	rest "k8s.io/client-go/rest"
-	v1alpha3 "github.com/fearlesschenc/kubesphere/pkg/apis/devops/v1alpha3"
-	scheme "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/scheme"
 )
 
 // PipelinesGetter has a method to return a PipelineInterface.

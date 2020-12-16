@@ -17,12 +17,12 @@ limitations under the License.
 package devops
 
 import (
-	"k8s.io/apimachinery/pkg/runtime"
 	"github.com/fearlesschenc/kubesphere/pkg/api"
 	devopsv1alpha3 "github.com/fearlesschenc/kubesphere/pkg/apis/devops/v1alpha3"
 	"github.com/fearlesschenc/kubesphere/pkg/apiserver/query"
 	ksinformers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions"
 	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha3"
+	"k8s.io/apimachinery/pkg/runtime"
 )
 
 type devopsGetter struct {

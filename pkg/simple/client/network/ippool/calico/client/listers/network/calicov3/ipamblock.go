@@ -19,10 +19,10 @@ limitations under the License.
 package calicov3
 
 import (
+	calicov3 "github.com/fearlesschenc/kubesphere/pkg/apis/network/calicov3"
 	"k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/labels"
 	"k8s.io/client-go/tools/cache"
-	calicov3 "github.com/fearlesschenc/kubesphere/pkg/apis/network/calicov3"
 )
 
 // IPAMBlockLister helps list IPAMBlocks.

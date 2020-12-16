@@ -21,9 +21,6 @@ package versioned
 import (
 	"fmt"
 
-	discovery "k8s.io/client-go/discovery"
-	rest "k8s.io/client-go/rest"
-	flowcontrol "k8s.io/client-go/util/flowcontrol"
 	auditingv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/typed/auditing/v1alpha1"
 	clusterv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/typed/cluster/v1alpha1"
 	devopsv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/typed/devops/v1alpha1"
@@ -35,6 +32,9 @@ import (
 	tenantv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/typed/tenant/v1alpha1"
 	tenantv1alpha2 "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/typed/tenant/v1alpha2"
 	typesv1beta1 "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/typed/types/v1beta1"
+	discovery "k8s.io/client-go/discovery"
+	rest "k8s.io/client-go/rest"
+	flowcontrol "k8s.io/client-go/util/flowcontrol"
 )
 
 type Interface interface {

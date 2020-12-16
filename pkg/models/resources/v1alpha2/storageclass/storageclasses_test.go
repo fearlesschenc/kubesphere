@@ -1,6 +1,8 @@
 package storageclass
 
 import (
+	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha2"
+	"github.com/fearlesschenc/kubesphere/pkg/server/params"
 	"github.com/google/go-cmp/cmp"
 	corev1 "k8s.io/api/core/v1"
 	v1 "k8s.io/api/storage/v1"
@@ -8,8 +10,6 @@ import (
 	"k8s.io/client-go/informers"
 	"k8s.io/client-go/kubernetes/fake"
 	"k8s.io/utils/pointer"
-	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha2"
-	"github.com/fearlesschenc/kubesphere/pkg/server/params"
 	"testing"
 )
 

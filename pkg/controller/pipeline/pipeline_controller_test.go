@@ -17,14 +17,17 @@ limitations under the License.
 package pipeline
 
 import (
-	v1 "k8s.io/api/core/v1"
 	"github.com/fearlesschenc/kubesphere/pkg/constants"
 	modelsdevops "github.com/fearlesschenc/kubesphere/pkg/models/devops"
 	fakeDevOps "github.com/fearlesschenc/kubesphere/pkg/simple/client/devops/fake"
+	v1 "k8s.io/api/core/v1"
 	"reflect"
 	"testing"
 	"time"
 
+	devops "github.com/fearlesschenc/kubesphere/pkg/apis/devops/v1alpha3"
+	"github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/fake"
+	informers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
@@ -34,9 +37,6 @@ import (
 	core "k8s.io/client-go/testing"
 	"k8s.io/client-go/tools/cache"
 	"k8s.io/client-go/tools/record"
-	devops "github.com/fearlesschenc/kubesphere/pkg/apis/devops/v1alpha3"
-	"github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/fake"
-	informers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions"
 )
 
 var (

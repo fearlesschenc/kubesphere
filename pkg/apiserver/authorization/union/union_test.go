@@ -19,8 +19,8 @@ package union
 import (
 	"errors"
 	"fmt"
-	"k8s.io/apiserver/pkg/authentication/user"
 	"github.com/fearlesschenc/kubesphere/pkg/apiserver/authorization/authorizer"
+	"k8s.io/apiserver/pkg/authentication/user"
 	"reflect"
 	"testing"
 )

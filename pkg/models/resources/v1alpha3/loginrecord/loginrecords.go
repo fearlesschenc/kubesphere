@@ -17,12 +17,12 @@ limitations under the License.
 package loginrecord
 
 import (
-	"k8s.io/apimachinery/pkg/runtime"
 	"github.com/fearlesschenc/kubesphere/pkg/api"
 	iamv1alpha2 "github.com/fearlesschenc/kubesphere/pkg/apis/iam/v1alpha2"
 	"github.com/fearlesschenc/kubesphere/pkg/apiserver/query"
 	ksinformers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions"
 	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha3"
+	"k8s.io/apimachinery/pkg/runtime"
 )
 
 const recordType = "type"

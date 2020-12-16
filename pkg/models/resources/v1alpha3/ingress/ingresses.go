@@ -17,12 +17,12 @@ limitations under the License.
 package ingress
 
 import (
-	"k8s.io/api/extensions/v1beta1"
-	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/client-go/informers"
 	"github.com/fearlesschenc/kubesphere/pkg/api"
 	"github.com/fearlesschenc/kubesphere/pkg/apiserver/query"
 	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha3"
+	"k8s.io/api/extensions/v1beta1"
+	"k8s.io/apimachinery/pkg/runtime"
+	"k8s.io/client-go/informers"
 )
 
 type ingressGetter struct {

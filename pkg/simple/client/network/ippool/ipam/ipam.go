@@ -25,6 +25,10 @@ import (
 	cnitypes "github.com/containernetworking/cni/pkg/types"
 	"github.com/containernetworking/cni/pkg/types/current"
 	"github.com/davecgh/go-spew/spew"
+	"github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1"
+	kubesphere "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned"
+	"github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/scheme"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/network/utils"
 	cnet "github.com/projectcalico/libcalico-go/lib/net"
 	"github.com/projectcalico/libcalico-go/lib/set"
 	k8serrors "k8s.io/apimachinery/pkg/api/errors"
@@ -32,10 +36,6 @@ import (
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/labels"
 	"k8s.io/klog"
-	"github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1"
-	kubesphere "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned"
-	"github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/scheme"
-	"github.com/fearlesschenc/kubesphere/pkg/simple/client/network/utils"
 	"sigs.k8s.io/controller-runtime/pkg/controller/controllerutil"
 )
 

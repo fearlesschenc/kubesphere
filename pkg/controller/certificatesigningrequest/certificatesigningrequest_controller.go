@@ -18,6 +18,8 @@ package certificatesigningrequest
 
 import (
 	"fmt"
+	"github.com/fearlesschenc/kubesphere/pkg/constants"
+	"github.com/fearlesschenc/kubesphere/pkg/models/kubeconfig"
 	certificatesv1beta1 "k8s.io/api/certificates/v1beta1"
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/api/errors"
@@ -35,8 +37,6 @@ import (
 	"k8s.io/client-go/tools/record"
 	"k8s.io/client-go/util/workqueue"
 	"k8s.io/klog"
-	"github.com/fearlesschenc/kubesphere/pkg/constants"
-	"github.com/fearlesschenc/kubesphere/pkg/models/kubeconfig"
 	"time"
 )
 

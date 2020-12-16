@@ -18,8 +18,8 @@ package v1
 
 import (
 	"github.com/emicklei/go-restful"
-	"k8s.io/apimachinery/pkg/runtime/schema"
 	"github.com/fearlesschenc/kubesphere/pkg/kapis/generic"
+	"k8s.io/apimachinery/pkg/runtime/schema"
 )
 
 // there are no versions specified cause we want to proxy all versions of requests to backend service

@@ -18,9 +18,9 @@ package elasticsearch
 
 import (
 	"fmt"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/logging"
 	"github.com/json-iterator/go"
 	"k8s.io/klog"
-	"github.com/fearlesschenc/kubesphere/pkg/simple/client/logging"
 )
 
 const (

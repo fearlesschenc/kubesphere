@@ -22,11 +22,6 @@ import (
 	"fmt"
 	"net/mail"
 
-	"github.com/go-ldap/ldap"
-	"k8s.io/apimachinery/pkg/api/errors"
-	"k8s.io/apimachinery/pkg/labels"
-	authuser "k8s.io/apiserver/pkg/authentication/user"
-	"k8s.io/klog"
 	iamv1alpha2 "github.com/fearlesschenc/kubesphere/pkg/apis/iam/v1alpha2"
 	"github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/identityprovider"
 	"github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/oauth"
@@ -34,6 +29,11 @@ import (
 	kubesphere "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned"
 	iamv1alpha2listers "github.com/fearlesschenc/kubesphere/pkg/client/listers/iam/v1alpha2"
 	"github.com/fearlesschenc/kubesphere/pkg/constants"
+	"github.com/go-ldap/ldap"
+	"k8s.io/apimachinery/pkg/api/errors"
+	"k8s.io/apimachinery/pkg/labels"
+	authuser "k8s.io/apiserver/pkg/authentication/user"
+	"k8s.io/klog"
 )
 
 var (

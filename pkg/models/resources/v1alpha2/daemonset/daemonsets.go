@@ -17,11 +17,11 @@ limitations under the License.
 package daemonset
 
 import (
+	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha2"
+	"github.com/fearlesschenc/kubesphere/pkg/server/params"
 	"k8s.io/api/apps/v1"
 	"k8s.io/apimachinery/pkg/labels"
 	"k8s.io/client-go/informers"
-	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha2"
-	"github.com/fearlesschenc/kubesphere/pkg/server/params"
 	"sort"
 )
 

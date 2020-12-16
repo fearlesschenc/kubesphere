@@ -18,11 +18,11 @@ package version
 
 import (
 	"github.com/emicklei/go-restful"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/runtime"
+	"github.com/fearlesschenc/kubesphere/pkg/version"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/client-go/discovery"
 	"k8s.io/klog"
-	"github.com/fearlesschenc/kubesphere/pkg/apiserver/runtime"
-	"github.com/fearlesschenc/kubesphere/pkg/version"
 )
 
 func AddToContainer(container *restful.Container, k8sDiscovery discovery.DiscoveryInterface) error {

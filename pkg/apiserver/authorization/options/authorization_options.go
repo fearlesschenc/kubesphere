@@ -18,9 +18,9 @@ package options
 
 import (
 	"fmt"
+	"github.com/fearlesschenc/kubesphere/pkg/utils/sliceutil"
 	"github.com/spf13/pflag"
 	"k8s.io/klog"
-	"github.com/fearlesschenc/kubesphere/pkg/utils/sliceutil"
 )
 
 type AuthorizationOptions struct {

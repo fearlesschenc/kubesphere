@@ -18,21 +18,16 @@ package main
 
 import (
 	"flag"
-	"io/ioutil"
-	"k8s.io/apimachinery/pkg/api/meta"
-	urlruntime "k8s.io/apimachinery/pkg/util/runtime"
 	clusterv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/apis/cluster/v1alpha1"
 	devopsv1alpha3 "github.com/fearlesschenc/kubesphere/pkg/apis/devops/v1alpha3"
 	"github.com/fearlesschenc/kubesphere/tools/lib"
+	"io/ioutil"
+	"k8s.io/apimachinery/pkg/api/meta"
+	urlruntime "k8s.io/apimachinery/pkg/util/runtime"
 	"log"
 	"os"
 	"path/filepath"
 
-	"github.com/go-openapi/spec"
-	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/apimachinery/pkg/runtime/schema"
-	"k8s.io/apimachinery/pkg/runtime/serializer"
-	"k8s.io/kube-openapi/pkg/common"
 	devopsinstall "github.com/fearlesschenc/kubesphere/pkg/apis/devops/crdinstall"
 	devopsv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/apis/devops/v1alpha1"
 	networkinstall "github.com/fearlesschenc/kubesphere/pkg/apis/network/crdinstall"
@@ -41,6 +36,11 @@ import (
 	servicemeshv1alpha2 "github.com/fearlesschenc/kubesphere/pkg/apis/servicemesh/v1alpha2"
 	tenantinstall "github.com/fearlesschenc/kubesphere/pkg/apis/tenant/crdinstall"
 	tenantv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/apis/tenant/v1alpha1"
+	"github.com/go-openapi/spec"
+	"k8s.io/apimachinery/pkg/runtime"
+	"k8s.io/apimachinery/pkg/runtime/schema"
+	"k8s.io/apimachinery/pkg/runtime/serializer"
+	"k8s.io/kube-openapi/pkg/common"
 )
 
 var output string

@@ -17,9 +17,6 @@ limitations under the License.
 package app
 
 import (
-	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/client-go/tools/cache"
-	"k8s.io/klog"
 	iamv1alpha2 "github.com/fearlesschenc/kubesphere/pkg/apis/iam/v1alpha2"
 	authoptions "github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/options"
 	"github.com/fearlesschenc/kubesphere/pkg/controller/application"
@@ -56,6 +53,9 @@ import (
 	calicoclient "github.com/fearlesschenc/kubesphere/pkg/simple/client/network/ippool/calico"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/openpitrix"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/s3"
+	"k8s.io/apimachinery/pkg/runtime"
+	"k8s.io/client-go/tools/cache"
+	"k8s.io/klog"
 	"sigs.k8s.io/controller-runtime/pkg/manager"
 	"sigs.k8s.io/kubefed/pkg/controller/util"
 )

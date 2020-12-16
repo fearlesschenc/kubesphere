@@ -17,8 +17,8 @@ limitations under the License.
 package s3
 
 import (
-	"github.com/spf13/pflag"
 	"github.com/fearlesschenc/kubesphere/pkg/utils/reflectutils"
+	"github.com/spf13/pflag"
 )
 
 // Options contains configuration to access a s3 service

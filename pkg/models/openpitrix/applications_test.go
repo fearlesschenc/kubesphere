@@ -14,6 +14,7 @@ limitations under the License.
 package openpitrix
 
 import (
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/openpitrix"
 	"github.com/golang/mock/gomock"
 	"github.com/golang/protobuf/ptypes/wrappers"
 	"k8s.io/api/core/v1"
@@ -23,7 +24,6 @@ import (
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/client-go/informers"
 	"k8s.io/client-go/kubernetes/fake"
-	"github.com/fearlesschenc/kubesphere/pkg/simple/client/openpitrix"
 	"openpitrix.io/openpitrix/pkg/pb"
 	"testing"
 )

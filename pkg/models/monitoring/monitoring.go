@@ -17,10 +17,6 @@ limitations under the License.
 package monitoring
 
 import (
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/apimachinery/pkg/labels"
-	"k8s.io/client-go/kubernetes"
-	"k8s.io/klog"
 	ksinformers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions"
 	"github.com/fearlesschenc/kubesphere/pkg/constants"
 	"github.com/fearlesschenc/kubesphere/pkg/informers"
@@ -29,6 +25,10 @@ import (
 	"github.com/fearlesschenc/kubesphere/pkg/server/params"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/monitoring"
 	opclient "github.com/fearlesschenc/kubesphere/pkg/simple/client/openpitrix"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	"k8s.io/apimachinery/pkg/labels"
+	"k8s.io/client-go/kubernetes"
+	"k8s.io/klog"
 	"time"
 )
 

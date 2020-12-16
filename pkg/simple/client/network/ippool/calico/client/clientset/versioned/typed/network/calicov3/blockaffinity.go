@@ -21,12 +21,12 @@ package calicov3
 import (
 	"time"
 
+	calicov3 "github.com/fearlesschenc/kubesphere/pkg/apis/network/calicov3"
+	scheme "github.com/fearlesschenc/kubesphere/pkg/simple/client/network/ippool/calico/client/clientset/versioned/scheme"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
 	rest "k8s.io/client-go/rest"
-	calicov3 "github.com/fearlesschenc/kubesphere/pkg/apis/network/calicov3"
-	scheme "github.com/fearlesschenc/kubesphere/pkg/simple/client/network/ippool/calico/client/clientset/versioned/scheme"
 )
 
 // BlockAffinitiesGetter has a method to return a BlockAffinityInterface.

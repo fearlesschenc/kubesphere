@@ -19,11 +19,6 @@ limitations under the License.
 package fake
 
 import (
-	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/apimachinery/pkg/watch"
-	"k8s.io/client-go/discovery"
-	fakediscovery "k8s.io/client-go/discovery/fake"
-	"k8s.io/client-go/testing"
 	clientset "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned"
 	auditingv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/typed/auditing/v1alpha1"
 	fakeauditingv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/typed/auditing/v1alpha1/fake"
@@ -47,6 +42,11 @@ import (
 	faketenantv1alpha2 "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/typed/tenant/v1alpha2/fake"
 	typesv1beta1 "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/typed/types/v1beta1"
 	faketypesv1beta1 "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/typed/types/v1beta1/fake"
+	"k8s.io/apimachinery/pkg/runtime"
+	"k8s.io/apimachinery/pkg/watch"
+	"k8s.io/client-go/discovery"
+	fakediscovery "k8s.io/client-go/discovery/fake"
+	"k8s.io/client-go/testing"
 )
 
 // NewSimpleClientset returns a clientset that will respond with the provided objects.

@@ -26,13 +26,6 @@ import (
 
 	"github.com/emicklei/go-restful"
 	restfulspec "github.com/emicklei/go-restful-openapi"
-	"github.com/go-openapi/loads"
-	"github.com/go-openapi/spec"
-	"github.com/go-openapi/strfmt"
-	"github.com/go-openapi/validate"
-	"github.com/pkg/errors"
-	urlruntime "k8s.io/apimachinery/pkg/util/runtime"
-	"k8s.io/klog"
 	authoptions "github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/options"
 	"github.com/fearlesschenc/kubesphere/pkg/apiserver/runtime"
 	"github.com/fearlesschenc/kubesphere/pkg/constants"
@@ -59,6 +52,13 @@ import (
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/openpitrix"
 	fakes3 "github.com/fearlesschenc/kubesphere/pkg/simple/client/s3/fake"
 	"github.com/fearlesschenc/kubesphere/pkg/version"
+	"github.com/go-openapi/loads"
+	"github.com/go-openapi/spec"
+	"github.com/go-openapi/strfmt"
+	"github.com/go-openapi/validate"
+	"github.com/pkg/errors"
+	urlruntime "k8s.io/apimachinery/pkg/util/runtime"
+	"k8s.io/klog"
 )
 
 var output string

@@ -17,10 +17,10 @@ limitations under the License.
 package ldap
 
 import (
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"github.com/fearlesschenc/kubesphere/pkg/api"
 	iamv1alpha2 "github.com/fearlesschenc/kubesphere/pkg/apis/iam/v1alpha2"
 	"github.com/fearlesschenc/kubesphere/pkg/apiserver/query"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
 const FAKE_HOST string = "FAKE"

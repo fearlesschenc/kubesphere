@@ -18,7 +18,6 @@ package resource
 
 import (
 	"fmt"
-	"k8s.io/klog"
 	"github.com/fearlesschenc/kubesphere/pkg/informers"
 	"github.com/fearlesschenc/kubesphere/pkg/models"
 	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha2"
@@ -46,6 +45,7 @@ import (
 	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha2/workspace"
 	"github.com/fearlesschenc/kubesphere/pkg/server/params"
 	"github.com/fearlesschenc/kubesphere/pkg/utils/sliceutil"
+	"k8s.io/klog"
 )
 
 type ResourceGetter struct {

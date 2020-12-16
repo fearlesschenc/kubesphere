@@ -15,6 +15,9 @@ package openpitrix
 
 import (
 	"encoding/json"
+	"github.com/fearlesschenc/kubesphere/pkg/models"
+	"github.com/fearlesschenc/kubesphere/pkg/server/params"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/openpitrix"
 	"github.com/golang/protobuf/ptypes/wrappers"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
@@ -25,9 +28,6 @@ import (
 	"k8s.io/apimachinery/pkg/labels"
 	"k8s.io/client-go/informers"
 	"k8s.io/klog"
-	"github.com/fearlesschenc/kubesphere/pkg/models"
-	"github.com/fearlesschenc/kubesphere/pkg/server/params"
-	"github.com/fearlesschenc/kubesphere/pkg/simple/client/openpitrix"
 	"openpitrix.io/openpitrix/pkg/pb"
 	"openpitrix.io/openpitrix/pkg/util/pbutil"
 	"strings"

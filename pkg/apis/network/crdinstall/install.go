@@ -17,9 +17,9 @@ limitations under the License.
 package crdinstall
 
 import (
+	networkv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1"
 	k8sruntime "k8s.io/apimachinery/pkg/runtime"
 	urlruntime "k8s.io/apimachinery/pkg/util/runtime"
-	networkv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1"
 )
 
 func Install(scheme *k8sruntime.Scheme) {

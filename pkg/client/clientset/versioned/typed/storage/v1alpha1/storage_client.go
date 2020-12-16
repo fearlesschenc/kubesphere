@@ -19,9 +19,9 @@ limitations under the License.
 package v1alpha1
 
 import (
-	rest "k8s.io/client-go/rest"
 	v1alpha1 "github.com/fearlesschenc/kubesphere/pkg/apis/storage/v1alpha1"
 	"github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/scheme"
+	rest "k8s.io/client-go/rest"
 )
 
 type StorageV1alpha1Interface interface {

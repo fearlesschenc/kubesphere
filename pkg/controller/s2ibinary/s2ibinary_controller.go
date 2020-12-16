@@ -18,6 +18,8 @@ package s2ibinary
 
 import (
 	"fmt"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/s3"
+	"github.com/fearlesschenc/kubesphere/pkg/utils/sliceutil"
 	v1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/api/errors"
 	utilruntime "k8s.io/apimachinery/pkg/util/runtime"
@@ -29,8 +31,6 @@ import (
 	"k8s.io/client-go/tools/record"
 	"k8s.io/client-go/util/workqueue"
 	"k8s.io/klog"
-	"github.com/fearlesschenc/kubesphere/pkg/simple/client/s3"
-	"github.com/fearlesschenc/kubesphere/pkg/utils/sliceutil"
 	"time"
 
 	devopsv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/apis/devops/v1alpha1"

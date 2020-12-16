@@ -18,8 +18,8 @@ package query
 
 import (
 	"github.com/emicklei/go-restful"
-	"k8s.io/apimachinery/pkg/labels"
 	"github.com/fearlesschenc/kubesphere/pkg/utils/sliceutil"
+	"k8s.io/apimachinery/pkg/labels"
 	"strconv"
 )
 

@@ -17,8 +17,8 @@ limitations under the License.
 package job
 
 import (
-	"k8s.io/client-go/informers"
 	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha2"
+	"k8s.io/client-go/informers"
 
 	"github.com/fearlesschenc/kubesphere/pkg/server/params"
 	"github.com/fearlesschenc/kubesphere/pkg/utils/k8sutil"

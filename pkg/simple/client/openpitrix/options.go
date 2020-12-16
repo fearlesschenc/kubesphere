@@ -18,8 +18,8 @@ package openpitrix
 
 import (
 	"fmt"
-	"github.com/spf13/pflag"
 	"github.com/fearlesschenc/kubesphere/pkg/utils/reflectutils"
+	"github.com/spf13/pflag"
 )
 
 type Options struct {

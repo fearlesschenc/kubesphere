@@ -21,9 +21,9 @@ import (
 
 	restful "github.com/emicklei/go-restful"
 	restfulspec "github.com/emicklei/go-restful-openapi"
-	"k8s.io/apimachinery/pkg/runtime/schema"
 	"github.com/fearlesschenc/kubesphere/pkg/apiserver/runtime"
 	"github.com/fearlesschenc/kubesphere/pkg/constants"
+	"k8s.io/apimachinery/pkg/runtime/schema"
 )
 
 const GroupName = "network.kubesphere.io"

@@ -18,9 +18,6 @@ package config
 
 import (
 	"fmt"
-	"github.com/google/go-cmp/cmp"
-	"gopkg.in/yaml.v2"
-	"io/ioutil"
 	"github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/oauth"
 	authoptions "github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/options"
 	authorizationoptions "github.com/fearlesschenc/kubesphere/pkg/apiserver/authorization/options"
@@ -40,6 +37,9 @@ import (
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/s3"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/servicemesh"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/sonarqube"
+	"github.com/google/go-cmp/cmp"
+	"gopkg.in/yaml.v2"
+	"io/ioutil"
 	"os"
 	"testing"
 	"time"

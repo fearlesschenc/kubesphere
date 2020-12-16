@@ -16,11 +16,11 @@ limitations under the License.
 package hpa
 
 import (
+	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha2"
+	"github.com/fearlesschenc/kubesphere/pkg/server/params"
 	autoscalingv2beta2 "k8s.io/api/autoscaling/v2beta2"
 	"k8s.io/apimachinery/pkg/labels"
 	"k8s.io/client-go/informers"
-	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha2"
-	"github.com/fearlesschenc/kubesphere/pkg/server/params"
 	"sort"
 )
 

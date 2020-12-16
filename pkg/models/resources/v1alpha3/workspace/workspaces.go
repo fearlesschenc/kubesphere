@@ -17,12 +17,12 @@ limitations under the License.
 package workspace
 
 import (
-	"k8s.io/apimachinery/pkg/runtime"
 	"github.com/fearlesschenc/kubesphere/pkg/api"
 	tenantv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/apis/tenant/v1alpha1"
 	"github.com/fearlesschenc/kubesphere/pkg/apiserver/query"
 	informers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions"
 	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha3"
+	"k8s.io/apimachinery/pkg/runtime"
 )
 
 type workspaceGetter struct {

@@ -19,10 +19,10 @@
 package identityprovider
 
 import (
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/oauth"
 	"github.com/google/go-cmp/cmp"
 	"gopkg.in/yaml.v3"
 	"io/ioutil"
-	"github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/oauth"
 	"os"
 	"testing"
 )

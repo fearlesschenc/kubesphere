@@ -19,11 +19,11 @@ package prometheus
 import (
 	"context"
 	"fmt"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/monitoring"
 	"github.com/prometheus/client_golang/api"
 	apiv1 "github.com/prometheus/client_golang/api/prometheus/v1"
 	"github.com/prometheus/common/model"
 	"k8s.io/klog"
-	"github.com/fearlesschenc/kubesphere/pkg/simple/client/monitoring"
 	"sync"
 	"time"
 )

@@ -17,13 +17,13 @@ limitations under the License.
 package clusterrole
 
 import (
-	rbac "k8s.io/api/rbac/v1"
-	"k8s.io/apimachinery/pkg/labels"
-	"k8s.io/client-go/informers"
 	"github.com/fearlesschenc/kubesphere/pkg/constants"
 	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha2"
 	"github.com/fearlesschenc/kubesphere/pkg/server/params"
 	"github.com/fearlesschenc/kubesphere/pkg/utils/k8sutil"
+	rbac "k8s.io/api/rbac/v1"
+	"k8s.io/apimachinery/pkg/labels"
+	"k8s.io/client-go/informers"
 	"sort"
 )
 

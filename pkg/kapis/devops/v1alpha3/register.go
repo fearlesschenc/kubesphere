@@ -21,10 +21,6 @@ package v1alpha3
 import (
 	"github.com/emicklei/go-restful"
 	restfulspec "github.com/emicklei/go-restful-openapi"
-	v1 "k8s.io/api/core/v1"
-	"k8s.io/apimachinery/pkg/runtime/schema"
-	"k8s.io/client-go/informers"
-	"k8s.io/client-go/kubernetes"
 	"github.com/fearlesschenc/kubesphere/pkg/api"
 	"github.com/fearlesschenc/kubesphere/pkg/apis/devops/v1alpha3"
 	"github.com/fearlesschenc/kubesphere/pkg/apiserver/query"
@@ -34,6 +30,10 @@ import (
 	"github.com/fearlesschenc/kubesphere/pkg/constants"
 	"github.com/fearlesschenc/kubesphere/pkg/server/params"
 	devopsClient "github.com/fearlesschenc/kubesphere/pkg/simple/client/devops"
+	v1 "k8s.io/api/core/v1"
+	"k8s.io/apimachinery/pkg/runtime/schema"
+	"k8s.io/client-go/informers"
+	"k8s.io/client-go/kubernetes"
 	"net/http"
 )
 

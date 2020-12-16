@@ -18,6 +18,11 @@ package destinationrule
 
 import (
 	"fmt"
+	"github.com/fearlesschenc/kubesphere/pkg/apis/servicemesh/v1alpha2"
+	"github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/fake"
+	informers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions"
+	"github.com/fearlesschenc/kubesphere/pkg/controller/virtualservice/util"
+	"github.com/fearlesschenc/kubesphere/pkg/utils/reflectutils"
 	apiv1alpha3 "istio.io/api/networking/v1alpha3"
 	"istio.io/client-go/pkg/apis/networking/v1alpha3"
 	istiofake "istio.io/client-go/pkg/clientset/versioned/fake"
@@ -30,11 +35,6 @@ import (
 	kubefake "k8s.io/client-go/kubernetes/fake"
 	"k8s.io/client-go/tools/cache"
 	"k8s.io/client-go/tools/record"
-	"github.com/fearlesschenc/kubesphere/pkg/apis/servicemesh/v1alpha2"
-	"github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/fake"
-	informers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions"
-	"github.com/fearlesschenc/kubesphere/pkg/controller/virtualservice/util"
-	"github.com/fearlesschenc/kubesphere/pkg/utils/reflectutils"
 	"testing"
 )
 

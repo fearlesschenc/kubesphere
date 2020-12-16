@@ -21,6 +21,7 @@ import (
 	"reflect"
 	"strings"
 
+	"github.com/fearlesschenc/kubesphere/pkg/controller/virtualservice/util"
 	apinetworkingv1alpha3 "istio.io/api/networking/v1alpha3"
 	clientgonetworkingv1alpha3 "istio.io/client-go/pkg/apis/networking/v1alpha3"
 	v1 "k8s.io/api/core/v1"
@@ -34,8 +35,11 @@ import (
 	"k8s.io/client-go/kubernetes/scheme"
 	v1core "k8s.io/client-go/kubernetes/typed/core/v1"
 	log "k8s.io/klog"
-	"github.com/fearlesschenc/kubesphere/pkg/controller/virtualservice/util"
 
+	servicemeshv1alpha2 "github.com/fearlesschenc/kubesphere/pkg/apis/servicemesh/v1alpha2"
+	servicemeshclient "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned"
+	servicemeshinformers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions/servicemesh/v1alpha2"
+	servicemeshlisters "github.com/fearlesschenc/kubesphere/pkg/client/listers/servicemesh/v1alpha2"
 	istioclient "istio.io/client-go/pkg/clientset/versioned"
 	istioinformers "istio.io/client-go/pkg/informers/externalversions/networking/v1alpha3"
 	istiolisters "istio.io/client-go/pkg/listers/networking/v1alpha3"
@@ -45,10 +49,6 @@ import (
 	"k8s.io/client-go/tools/cache"
 	"k8s.io/client-go/tools/record"
 	"k8s.io/client-go/util/workqueue"
-	servicemeshv1alpha2 "github.com/fearlesschenc/kubesphere/pkg/apis/servicemesh/v1alpha2"
-	servicemeshclient "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned"
-	servicemeshinformers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions/servicemesh/v1alpha2"
-	servicemeshlisters "github.com/fearlesschenc/kubesphere/pkg/client/listers/servicemesh/v1alpha2"
 
 	"time"
 )

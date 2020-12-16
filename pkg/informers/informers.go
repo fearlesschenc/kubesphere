@@ -17,6 +17,8 @@ limitations under the License.
 package informers
 
 import (
+	"github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned"
+	ksinformers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions"
 	snapshotclient "github.com/kubernetes-csi/external-snapshotter/v2/pkg/client/clientset/versioned"
 	snapshotinformer "github.com/kubernetes-csi/external-snapshotter/v2/pkg/client/informers/externalversions"
 	istioclient "istio.io/client-go/pkg/clientset/versioned"
@@ -25,8 +27,6 @@ import (
 	apiextensionsinformers "k8s.io/apiextensions-apiserver/pkg/client/informers/externalversions"
 	k8sinformers "k8s.io/client-go/informers"
 	"k8s.io/client-go/kubernetes"
-	"github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned"
-	ksinformers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions"
 	applicationclient "sigs.k8s.io/application/pkg/client/clientset/versioned"
 	applicationinformers "sigs.k8s.io/application/pkg/client/informers/externalversions"
 	"time"

@@ -19,8 +19,8 @@ package jenkins
 import (
 	"encoding/json"
 	"github.com/PuerkitoBio/goquery"
-	"k8s.io/klog"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/devops"
+	"k8s.io/klog"
 	"net/http"
 	"net/url"
 	"strings"

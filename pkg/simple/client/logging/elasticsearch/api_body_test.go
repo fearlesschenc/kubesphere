@@ -18,8 +18,8 @@ package elasticsearch
 
 import (
 	"fmt"
-	"github.com/google/go-cmp/cmp"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/logging"
+	"github.com/google/go-cmp/cmp"
 	"reflect"
 	"testing"
 	"time"

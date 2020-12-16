@@ -17,12 +17,12 @@ limitations under the License.
 package customresourcedefinition
 
 import (
-	"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1"
-	apiextensionsinformers "k8s.io/apiextensions-apiserver/pkg/client/informers/externalversions"
-	"k8s.io/apimachinery/pkg/runtime"
 	"github.com/fearlesschenc/kubesphere/pkg/api"
 	"github.com/fearlesschenc/kubesphere/pkg/apiserver/query"
 	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha3"
+	"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1"
+	apiextensionsinformers "k8s.io/apiextensions-apiserver/pkg/client/informers/externalversions"
+	"k8s.io/apimachinery/pkg/runtime"
 	"strings"
 )
 

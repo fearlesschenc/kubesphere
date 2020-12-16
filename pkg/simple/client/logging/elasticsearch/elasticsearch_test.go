@@ -18,13 +18,13 @@ package elasticsearch
 
 import (
 	"fmt"
-	"github.com/google/go-cmp/cmp"
-	"github.com/json-iterator/go"
-	"io/ioutil"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/logging"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/logging/elasticsearch/versions/v5"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/logging/elasticsearch/versions/v6"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/logging/elasticsearch/versions/v7"
+	"github.com/google/go-cmp/cmp"
+	"github.com/json-iterator/go"
+	"io/ioutil"
 	"net/http"
 	"net/http/httptest"
 	"testing"

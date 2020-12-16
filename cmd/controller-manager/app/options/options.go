@@ -18,10 +18,6 @@ package options
 
 import (
 	"flag"
-	"github.com/spf13/pflag"
-	"k8s.io/client-go/tools/leaderelection"
-	cliflag "k8s.io/component-base/cli/flag"
-	"k8s.io/klog"
 	authoptions "github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/options"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/devops/jenkins"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/k8s"
@@ -31,6 +27,10 @@ import (
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/openpitrix"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/s3"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/servicemesh"
+	"github.com/spf13/pflag"
+	"k8s.io/client-go/tools/leaderelection"
+	cliflag "k8s.io/component-base/cli/flag"
+	"k8s.io/klog"
 	"strings"
 	"time"
 )

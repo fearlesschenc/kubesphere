@@ -19,9 +19,9 @@ limitations under the License.
 package calicov3
 
 import (
-	rest "k8s.io/client-go/rest"
 	calicov3 "github.com/fearlesschenc/kubesphere/pkg/apis/network/calicov3"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/network/ippool/calico/client/clientset/versioned/scheme"
+	rest "k8s.io/client-go/rest"
 )
 
 type CrdCalicov3Interface interface {

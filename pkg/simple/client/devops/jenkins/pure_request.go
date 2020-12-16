@@ -17,8 +17,8 @@ limitations under the License.
 package jenkins
 
 import (
-	"k8s.io/klog"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/devops"
+	"k8s.io/klog"
 	"net/http"
 	"net/url"
 	"time"

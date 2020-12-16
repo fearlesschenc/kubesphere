@@ -16,9 +16,6 @@ limitations under the License.
 package im
 
 import (
-	"golang.org/x/crypto/bcrypt"
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/klog"
 	"github.com/fearlesschenc/kubesphere/pkg/api"
 	iamv1alpha2 "github.com/fearlesschenc/kubesphere/pkg/apis/iam/v1alpha2"
 	authoptions "github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/options"
@@ -26,6 +23,9 @@ import (
 	kubesphere "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned"
 	"github.com/fearlesschenc/kubesphere/pkg/informers"
 	resourcev1alpha3 "github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha3/resource"
+	"golang.org/x/crypto/bcrypt"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	"k8s.io/klog"
 )
 
 type IdentityManagementInterface interface {

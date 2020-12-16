@@ -19,9 +19,9 @@ package basic
 import (
 	"context"
 
+	"github.com/fearlesschenc/kubesphere/pkg/models/iam/im"
 	"k8s.io/apiserver/pkg/authentication/authenticator"
 	"k8s.io/apiserver/pkg/authentication/user"
-	"github.com/fearlesschenc/kubesphere/pkg/models/iam/im"
 )
 
 // TokenAuthenticator implements kubernetes token authenticate interface with our custom logic.

@@ -18,8 +18,8 @@ package v1alpha2
 
 import (
 	"github.com/emicklei/go-restful"
-	"k8s.io/klog"
 	"github.com/fearlesschenc/kubesphere/pkg/api"
+	"k8s.io/klog"
 )
 
 func (h PipelineSonarHandler) GetPipelineSonarStatusHandler(request *restful.Request, resp *restful.Response) {

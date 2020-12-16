@@ -22,10 +22,10 @@ import (
 	"errors"
 	"io/ioutil"
 
-	"golang.org/x/oauth2"
-	"gopkg.in/yaml.v3"
 	"github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/identityprovider"
 	"github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/oauth"
+	"golang.org/x/oauth2"
+	"gopkg.in/yaml.v3"
 )
 
 type AliyunIDaaS struct {

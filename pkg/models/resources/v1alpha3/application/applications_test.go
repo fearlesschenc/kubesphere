@@ -17,11 +17,11 @@ limitations under the License.
 package application
 
 import (
+	"github.com/fearlesschenc/kubesphere/pkg/api"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/query"
 	"github.com/google/go-cmp/cmp"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
-	"github.com/fearlesschenc/kubesphere/pkg/api"
-	"github.com/fearlesschenc/kubesphere/pkg/apiserver/query"
 	appv1beta1 "sigs.k8s.io/application/pkg/apis/app/v1beta1"
 	"sigs.k8s.io/application/pkg/client/clientset/versioned/fake"
 	"sigs.k8s.io/application/pkg/client/informers/externalversions"

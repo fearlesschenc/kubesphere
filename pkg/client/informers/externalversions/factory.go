@@ -23,10 +23,6 @@ import (
 	sync "sync"
 	time "time"
 
-	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	runtime "k8s.io/apimachinery/pkg/runtime"
-	schema "k8s.io/apimachinery/pkg/runtime/schema"
-	cache "k8s.io/client-go/tools/cache"
 	versioned "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned"
 	auditing "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions/auditing"
 	cluster "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions/cluster"
@@ -38,6 +34,10 @@ import (
 	storage "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions/storage"
 	tenant "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions/tenant"
 	types "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions/types"
+	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	runtime "k8s.io/apimachinery/pkg/runtime"
+	schema "k8s.io/apimachinery/pkg/runtime/schema"
+	cache "k8s.io/client-go/tools/cache"
 )
 
 // SharedInformerOption defines the functional option type for SharedInformerFactory.

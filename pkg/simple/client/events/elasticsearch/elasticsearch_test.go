@@ -17,9 +17,9 @@ limitations under the License.
 package elasticsearch
 
 import (
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/events"
 	"github.com/google/go-cmp/cmp"
 	"github.com/stretchr/testify/assert"
-	"github.com/fearlesschenc/kubesphere/pkg/simple/client/events"
 	"net/http"
 	"net/http/httptest"
 	"strconv"

@@ -18,6 +18,8 @@ package kubectl
 
 import (
 	"fmt"
+	iamv1alpha2informers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions/iam/v1alpha2"
+	"github.com/fearlesschenc/kubesphere/pkg/models"
 	appsv1 "k8s.io/api/apps/v1"
 	"k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/api/errors"
@@ -28,8 +30,6 @@ import (
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/kubernetes/scheme"
 	"k8s.io/klog"
-	iamv1alpha2informers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions/iam/v1alpha2"
-	"github.com/fearlesschenc/kubesphere/pkg/models"
 	"math/rand"
 	"sigs.k8s.io/controller-runtime/pkg/controller/controllerutil"
 

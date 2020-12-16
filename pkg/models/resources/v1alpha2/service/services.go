@@ -17,12 +17,12 @@ limitations under the License.
 package service
 
 import (
-	"k8s.io/client-go/informers"
 	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha2"
+	"k8s.io/client-go/informers"
 
+	"github.com/fearlesschenc/kubesphere/pkg/server/params"
 	"k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/labels"
-	"github.com/fearlesschenc/kubesphere/pkg/server/params"
 	"sort"
 )
 

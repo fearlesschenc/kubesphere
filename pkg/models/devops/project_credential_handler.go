@@ -17,8 +17,8 @@ limitations under the License.
 package devops
 
 import (
-	"k8s.io/klog"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/devops"
+	"k8s.io/klog"
 )
 
 type ProjectCredentialGetter interface {

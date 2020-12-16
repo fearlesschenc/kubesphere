@@ -18,10 +18,10 @@ package options
 
 import (
 	"fmt"
-	"github.com/spf13/pflag"
 	_ "github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/identityprovider/aliyunidaas"
 	_ "github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/identityprovider/github"
 	"github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/oauth"
+	"github.com/spf13/pflag"
 	"time"
 )
 

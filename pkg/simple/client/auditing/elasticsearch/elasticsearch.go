@@ -27,8 +27,8 @@ import (
 	es5 "github.com/elastic/go-elasticsearch/v5"
 	es6 "github.com/elastic/go-elasticsearch/v6"
 	es7 "github.com/elastic/go-elasticsearch/v7"
-	jsoniter "github.com/json-iterator/go"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/auditing"
+	jsoniter "github.com/json-iterator/go"
 )
 
 const (

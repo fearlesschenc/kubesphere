@@ -18,11 +18,6 @@ package v1alpha3
 
 import (
 	"github.com/emicklei/go-restful"
-	v1 "k8s.io/api/core/v1"
-	"k8s.io/apimachinery/pkg/api/errors"
-	"k8s.io/client-go/informers"
-	"k8s.io/client-go/kubernetes"
-	"k8s.io/klog"
 	"github.com/fearlesschenc/kubesphere/pkg/api"
 	"github.com/fearlesschenc/kubesphere/pkg/apis/devops/v1alpha3"
 	"github.com/fearlesschenc/kubesphere/pkg/apiserver/query"
@@ -32,6 +27,11 @@ import (
 	servererr "github.com/fearlesschenc/kubesphere/pkg/server/errors"
 	"github.com/fearlesschenc/kubesphere/pkg/server/params"
 	devopsClient "github.com/fearlesschenc/kubesphere/pkg/simple/client/devops"
+	v1 "k8s.io/api/core/v1"
+	"k8s.io/apimachinery/pkg/api/errors"
+	"k8s.io/client-go/informers"
+	"k8s.io/client-go/kubernetes"
+	"k8s.io/klog"
 )
 
 type devopsHandler struct {

@@ -18,13 +18,13 @@ package components
 
 import (
 	"fmt"
+	"github.com/fearlesschenc/kubesphere/pkg/api/resource/v1alpha2"
 	"github.com/google/go-cmp/cmp"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/client-go/informers"
 	"k8s.io/client-go/kubernetes/fake"
-	"github.com/fearlesschenc/kubesphere/pkg/api/resource/v1alpha2"
 	"testing"
 	"time"
 )

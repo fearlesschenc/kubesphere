@@ -33,9 +33,9 @@ limitations under the License.
 package deployment
 
 import (
-	"k8s.io/client-go/informers"
 	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha2"
 	"github.com/fearlesschenc/kubesphere/pkg/server/params"
+	"k8s.io/client-go/informers"
 	"sort"
 	"strings"
 	"time"

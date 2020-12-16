@@ -18,10 +18,10 @@ package prometheus
 
 import (
 	"fmt"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/monitoring"
 	"github.com/google/go-cmp/cmp"
 	"github.com/json-iterator/go"
 	"io/ioutil"
-	"github.com/fearlesschenc/kubesphere/pkg/simple/client/monitoring"
 	"net/http"
 	"net/http/httptest"
 	"testing"

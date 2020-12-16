@@ -17,10 +17,10 @@ limitations under the License.
 package install
 
 import (
-	k8sruntime "k8s.io/apimachinery/pkg/runtime"
-	urlruntime "k8s.io/apimachinery/pkg/util/runtime"
 	devopsv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/apis/devops/v1alpha1"
 	devopsv1alpha3 "github.com/fearlesschenc/kubesphere/pkg/apis/devops/v1alpha3"
+	k8sruntime "k8s.io/apimachinery/pkg/runtime"
+	urlruntime "k8s.io/apimachinery/pkg/util/runtime"
 )
 
 func Install(scheme *k8sruntime.Scheme) {

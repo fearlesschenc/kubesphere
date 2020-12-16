@@ -17,13 +17,13 @@ limitations under the License.
 package role
 
 import (
-	"k8s.io/client-go/informers"
 	"github.com/fearlesschenc/kubesphere/pkg/constants"
 	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha2"
+	"k8s.io/client-go/informers"
 
+	"github.com/fearlesschenc/kubesphere/pkg/server/params"
 	rbac "k8s.io/api/rbac/v1"
 	"k8s.io/apimachinery/pkg/labels"
-	"github.com/fearlesschenc/kubesphere/pkg/server/params"
 	"sort"
 )
 

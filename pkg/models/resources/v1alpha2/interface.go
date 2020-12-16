@@ -17,10 +17,10 @@ limitations under the License.
 package v1alpha2
 
 import (
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"github.com/fearlesschenc/kubesphere/pkg/constants"
 	"github.com/fearlesschenc/kubesphere/pkg/server/params"
 	"github.com/fearlesschenc/kubesphere/pkg/utils/sliceutil"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"strings"
 )
 

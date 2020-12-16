@@ -21,9 +21,9 @@ package externalversions
 import (
 	"fmt"
 
+	calicov3 "github.com/fearlesschenc/kubesphere/pkg/apis/network/calicov3"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
 	cache "k8s.io/client-go/tools/cache"
-	calicov3 "github.com/fearlesschenc/kubesphere/pkg/apis/network/calicov3"
 )
 
 // GenericInformer is type of SharedIndexInformer which will locate and delegate to other

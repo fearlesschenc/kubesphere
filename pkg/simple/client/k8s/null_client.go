@@ -17,13 +17,13 @@ limitations under the License.
 package k8s
 
 import (
+	kubesphere "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned"
 	snapshotclient "github.com/kubernetes-csi/external-snapshotter/v2/pkg/client/clientset/versioned"
 	istio "istio.io/client-go/pkg/clientset/versioned"
 	apiextensionsclient "k8s.io/apiextensions-apiserver/pkg/client/clientset/clientset"
 	"k8s.io/client-go/discovery"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/rest"
-	kubesphere "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned"
 	application "sigs.k8s.io/application/pkg/client/clientset/versioned"
 )
 

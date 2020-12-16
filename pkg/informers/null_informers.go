@@ -17,13 +17,13 @@ limitations under the License.
 package informers
 
 import (
+	ksfake "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/fake"
+	ksinformers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions"
 	snapshotinformer "github.com/kubernetes-csi/external-snapshotter/v2/pkg/client/informers/externalversions"
 	istioinformers "istio.io/client-go/pkg/informers/externalversions"
 	apiextensionsinformers "k8s.io/apiextensions-apiserver/pkg/client/informers/externalversions"
 	"k8s.io/client-go/informers"
 	"k8s.io/client-go/kubernetes/fake"
-	ksfake "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/fake"
-	ksinformers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions"
 	appinformers "sigs.k8s.io/application/pkg/client/informers/externalversions"
 	"time"
 )

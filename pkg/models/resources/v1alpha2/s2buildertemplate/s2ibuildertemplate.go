@@ -21,8 +21,8 @@ import (
 	"github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions"
 	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha2"
 
-	"k8s.io/apimachinery/pkg/labels"
 	"github.com/fearlesschenc/kubesphere/pkg/server/params"
+	"k8s.io/apimachinery/pkg/labels"
 	"sort"
 )
 

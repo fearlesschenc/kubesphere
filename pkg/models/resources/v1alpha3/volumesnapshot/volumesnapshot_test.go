@@ -18,13 +18,13 @@ package volumesnapshot
 
 import (
 	"encoding/json"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/query"
 	"github.com/kubernetes-csi/external-snapshotter/v2/pkg/apis/volumesnapshot/v1beta1"
 	"github.com/kubernetes-csi/external-snapshotter/v2/pkg/client/clientset/versioned/fake"
 	"github.com/kubernetes-csi/external-snapshotter/v2/pkg/client/informers/externalversions"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 	"k8s.io/apimachinery/pkg/apis/meta/v1"
-	"github.com/fearlesschenc/kubesphere/pkg/apiserver/query"
 	"testing"
 	"time"
 )

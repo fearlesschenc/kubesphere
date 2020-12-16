@@ -16,7 +16,6 @@ package v1
 import (
 	"github.com/emicklei/go-restful"
 	"github.com/emicklei/go-restful-openapi"
-	"k8s.io/apimachinery/pkg/runtime/schema"
 	"github.com/fearlesschenc/kubesphere/pkg/api"
 	"github.com/fearlesschenc/kubesphere/pkg/apiserver/runtime"
 	"github.com/fearlesschenc/kubesphere/pkg/constants"
@@ -26,6 +25,7 @@ import (
 	"github.com/fearlesschenc/kubesphere/pkg/server/errors"
 	"github.com/fearlesschenc/kubesphere/pkg/server/params"
 	op "github.com/fearlesschenc/kubesphere/pkg/simple/client/openpitrix"
+	"k8s.io/apimachinery/pkg/runtime/schema"
 	"net/http"
 )
 

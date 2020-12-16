@@ -19,9 +19,9 @@ limitations under the License.
 package v1alpha2
 
 import (
-	rest "k8s.io/client-go/rest"
 	v1alpha2 "github.com/fearlesschenc/kubesphere/pkg/apis/iam/v1alpha2"
 	"github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/scheme"
+	rest "k8s.io/client-go/rest"
 )
 
 type IamV1alpha2Interface interface {

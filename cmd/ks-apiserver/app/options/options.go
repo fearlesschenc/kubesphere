@@ -20,8 +20,6 @@ import (
 	"crypto/tls"
 	"flag"
 	"fmt"
-	cliflag "k8s.io/component-base/cli/flag"
-	"k8s.io/klog"
 	"github.com/fearlesschenc/kubesphere/pkg/apiserver"
 	apiserverconfig "github.com/fearlesschenc/kubesphere/pkg/apiserver/config"
 	"github.com/fearlesschenc/kubesphere/pkg/informers"
@@ -37,6 +35,8 @@ import (
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/s3"
 	fakes3 "github.com/fearlesschenc/kubesphere/pkg/simple/client/s3/fake"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/sonarqube"
+	cliflag "k8s.io/component-base/cli/flag"
+	"k8s.io/klog"
 	"net/http"
 	"strings"
 )

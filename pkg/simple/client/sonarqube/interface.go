@@ -17,9 +17,9 @@ limitations under the License.
 package sonarqube
 
 import (
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/devops"
 	sonargo "github.com/kubesphere/sonargo/sonar"
 	"k8s.io/klog"
-	"github.com/fearlesschenc/kubesphere/pkg/simple/client/devops"
 )
 
 type SonarInterface interface {

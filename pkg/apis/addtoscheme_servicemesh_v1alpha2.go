@@ -17,8 +17,8 @@ limitations under the License.
 package apis
 
 import (
-	"istio.io/client-go/pkg/apis/networking/v1alpha3"
 	"github.com/fearlesschenc/kubesphere/pkg/apis/servicemesh/v1alpha2"
+	"istio.io/client-go/pkg/apis/networking/v1alpha3"
 
 	appv1beta1 "sigs.k8s.io/application/pkg/apis/app/v1beta1"
 )

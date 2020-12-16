@@ -17,9 +17,9 @@ limitations under the License.
 package prometheus
 
 import (
-	"github.com/google/go-cmp/cmp"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/monitoring"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/monitoring/prometheus/testdata"
+	"github.com/google/go-cmp/cmp"
 	"testing"
 )
 

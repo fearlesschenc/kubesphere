@@ -17,14 +17,14 @@ limitations under the License.
 package cluster
 
 import (
-	"github.com/google/go-cmp/cmp"
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/apimachinery/pkg/runtime"
 	"github.com/fearlesschenc/kubesphere/pkg/api"
 	clusterv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/apis/cluster/v1alpha1"
 	"github.com/fearlesschenc/kubesphere/pkg/apiserver/query"
 	"github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/fake"
 	"github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions"
+	"github.com/google/go-cmp/cmp"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	"k8s.io/apimachinery/pkg/runtime"
 	"testing"
 )
 

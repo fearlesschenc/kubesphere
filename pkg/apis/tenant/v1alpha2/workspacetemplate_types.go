@@ -17,8 +17,8 @@ limitations under the License.
 package v1alpha2
 
 import (
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	typesv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/apis/types/v1beta1"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
 const (

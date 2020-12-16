@@ -17,10 +17,10 @@ limitations under the License.
 package ippool
 
 import (
-	"k8s.io/client-go/util/workqueue"
 	networkv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1"
 	kubesphereclient "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/network/ippool/ipam"
+	"k8s.io/client-go/util/workqueue"
 )
 
 type Provider interface {

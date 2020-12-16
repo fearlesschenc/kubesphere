@@ -17,11 +17,11 @@ limitations under the License.
 package s2irun
 
 import (
-	"k8s.io/apimachinery/pkg/labels"
 	"github.com/fearlesschenc/kubesphere/pkg/apis/devops/v1alpha1"
 	"github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions"
 	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha2"
 	"github.com/fearlesschenc/kubesphere/pkg/server/params"
+	"k8s.io/apimachinery/pkg/labels"
 	"sort"
 )
 

@@ -28,6 +28,11 @@ import (
 	"strings"
 	"time"
 
+	capability "github.com/fearlesschenc/kubesphere/pkg/apis/storage/v1alpha1"
+	crdscheme "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/scheme"
+	capabilityclient "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/typed/storage/v1alpha1"
+	capabilityinformers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions/storage/v1alpha1"
+	capabilitylisters "github.com/fearlesschenc/kubesphere/pkg/client/listers/storage/v1alpha1"
 	snapshotv1beta1 "github.com/kubernetes-csi/external-snapshotter/v2/pkg/apis/volumesnapshot/v1beta1"
 	snapshotclient "github.com/kubernetes-csi/external-snapshotter/v2/pkg/client/clientset/versioned/typed/volumesnapshot/v1beta1"
 	snapinformers "github.com/kubernetes-csi/external-snapshotter/v2/pkg/client/informers/externalversions/volumesnapshot/v1beta1"
@@ -47,11 +52,6 @@ import (
 	"k8s.io/client-go/tools/cache"
 	"k8s.io/client-go/util/workqueue"
 	"k8s.io/klog"
-	capability "github.com/fearlesschenc/kubesphere/pkg/apis/storage/v1alpha1"
-	crdscheme "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/scheme"
-	capabilityclient "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/typed/storage/v1alpha1"
-	capabilityinformers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions/storage/v1alpha1"
-	capabilitylisters "github.com/fearlesschenc/kubesphere/pkg/client/listers/storage/v1alpha1"
 )
 
 const (

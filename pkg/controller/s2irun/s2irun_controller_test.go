@@ -21,6 +21,9 @@ import (
 	"testing"
 	"time"
 
+	s2i "github.com/fearlesschenc/kubesphere/pkg/apis/devops/v1alpha1"
+	"github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/fake"
+	informers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
@@ -29,9 +32,6 @@ import (
 	core "k8s.io/client-go/testing"
 	"k8s.io/client-go/tools/cache"
 	"k8s.io/client-go/tools/record"
-	s2i "github.com/fearlesschenc/kubesphere/pkg/apis/devops/v1alpha1"
-	"github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/fake"
-	informers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions"
 )
 
 var (

@@ -21,8 +21,6 @@ package externalversions
 import (
 	"fmt"
 
-	schema "k8s.io/apimachinery/pkg/runtime/schema"
-	cache "k8s.io/client-go/tools/cache"
 	v1alpha1 "github.com/fearlesschenc/kubesphere/pkg/apis/auditing/v1alpha1"
 	clusterv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/apis/cluster/v1alpha1"
 	devopsv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/apis/devops/v1alpha1"
@@ -34,6 +32,8 @@ import (
 	tenantv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/apis/tenant/v1alpha1"
 	tenantv1alpha2 "github.com/fearlesschenc/kubesphere/pkg/apis/tenant/v1alpha2"
 	v1beta1 "github.com/fearlesschenc/kubesphere/pkg/apis/types/v1beta1"
+	schema "k8s.io/apimachinery/pkg/runtime/schema"
+	cache "k8s.io/client-go/tools/cache"
 )
 
 // GenericInformer is type of SharedIndexInformer which will locate and delegate to other

@@ -20,11 +20,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/emicklei/go-restful"
-	corev1 "k8s.io/api/core/v1"
-	"k8s.io/apimachinery/pkg/api/errors"
-	"k8s.io/apiserver/pkg/authentication/user"
-	"k8s.io/client-go/kubernetes"
-	"k8s.io/klog"
 	"github.com/fearlesschenc/kubesphere/pkg/api"
 	auditingv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/api/auditing/v1alpha1"
 	eventsv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/api/events/v1alpha1"
@@ -41,6 +36,11 @@ import (
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/auditing"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/events"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/logging"
+	corev1 "k8s.io/api/core/v1"
+	"k8s.io/apimachinery/pkg/api/errors"
+	"k8s.io/apiserver/pkg/authentication/user"
+	"k8s.io/client-go/kubernetes"
+	"k8s.io/klog"
 )
 
 type tenantHandler struct {

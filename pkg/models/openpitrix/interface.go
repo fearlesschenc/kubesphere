@@ -14,8 +14,8 @@ limitations under the License.
 package openpitrix
 
 import (
-	"k8s.io/client-go/informers"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/openpitrix"
+	"k8s.io/client-go/informers"
 )
 
 type Interface interface {

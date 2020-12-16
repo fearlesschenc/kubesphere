@@ -19,10 +19,6 @@ package oauth
 import (
 	"fmt"
 	"github.com/emicklei/go-restful"
-	apierrors "k8s.io/apimachinery/pkg/api/errors"
-	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/apiserver/pkg/authentication/user"
-	"k8s.io/klog"
 	"github.com/fearlesschenc/kubesphere/pkg/api"
 	"github.com/fearlesschenc/kubesphere/pkg/api/auth"
 	iamv1alpha2 "github.com/fearlesschenc/kubesphere/pkg/apis/iam/v1alpha2"
@@ -31,6 +27,10 @@ import (
 	authoptions "github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/options"
 	"github.com/fearlesschenc/kubesphere/pkg/apiserver/request"
 	"github.com/fearlesschenc/kubesphere/pkg/models/iam/im"
+	apierrors "k8s.io/apimachinery/pkg/api/errors"
+	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	"k8s.io/apiserver/pkg/authentication/user"
+	"k8s.io/klog"
 	"net/http"
 )
 

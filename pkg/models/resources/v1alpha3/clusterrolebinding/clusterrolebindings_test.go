@@ -17,14 +17,14 @@ limitations under the License.
 package clusterrolebinding
 
 import (
+	"github.com/fearlesschenc/kubesphere/pkg/api"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/query"
+	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha3"
 	"github.com/google/go-cmp/cmp"
 	rbacv1 "k8s.io/api/rbac/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/informers"
 	"k8s.io/client-go/kubernetes/fake"
-	"github.com/fearlesschenc/kubesphere/pkg/api"
-	"github.com/fearlesschenc/kubesphere/pkg/apiserver/query"
-	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha3"
 	"testing"
 )
 

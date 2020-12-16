@@ -19,11 +19,11 @@ package github
 import (
 	"context"
 	"encoding/json"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/identityprovider"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/oauth"
 	"golang.org/x/oauth2"
 	"gopkg.in/yaml.v3"
 	"io/ioutil"
-	"github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/identityprovider"
-	"github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/oauth"
 	"time"
 )
 

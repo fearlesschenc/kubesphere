@@ -21,15 +21,6 @@ import (
 	"reflect"
 	"strings"
 
-	. "github.com/onsi/ginkgo"
-	. "github.com/onsi/gomega"
-	corev1 "k8s.io/api/core/v1"
-	netv1 "k8s.io/api/networking/v1"
-	"k8s.io/apimachinery/pkg/util/yaml"
-	kubeinformers "k8s.io/client-go/informers"
-	informerv1 "k8s.io/client-go/informers/core/v1"
-	kubefake "k8s.io/client-go/kubernetes/fake"
-	"k8s.io/klog"
 	netv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1"
 	wkspv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/apis/tenant/v1alpha1"
 	ksfake "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/fake"
@@ -39,6 +30,15 @@ import (
 	"github.com/fearlesschenc/kubesphere/pkg/constants"
 	"github.com/fearlesschenc/kubesphere/pkg/controller/network/nsnetworkpolicy/provider"
 	options "github.com/fearlesschenc/kubesphere/pkg/simple/client/network"
+	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/gomega"
+	corev1 "k8s.io/api/core/v1"
+	netv1 "k8s.io/api/networking/v1"
+	"k8s.io/apimachinery/pkg/util/yaml"
+	kubeinformers "k8s.io/client-go/informers"
+	informerv1 "k8s.io/client-go/informers/core/v1"
+	kubefake "k8s.io/client-go/kubernetes/fake"
+	"k8s.io/klog"
 )
 
 var (

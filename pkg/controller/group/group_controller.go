@@ -19,6 +19,12 @@ package group
 import (
 	"fmt"
 
+	iam1alpha2 "github.com/fearlesschenc/kubesphere/pkg/apis/iam/v1alpha2"
+	kubesphere "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned"
+	iamv1alpha2informers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions/iam/v1alpha2"
+	iamv1alpha1listers "github.com/fearlesschenc/kubesphere/pkg/client/listers/iam/v1alpha2"
+	"github.com/fearlesschenc/kubesphere/pkg/controller/utils/controller"
+	"github.com/fearlesschenc/kubesphere/pkg/utils/sliceutil"
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -32,12 +38,6 @@ import (
 	"k8s.io/client-go/tools/record"
 	"k8s.io/client-go/util/workqueue"
 	"k8s.io/klog"
-	iam1alpha2 "github.com/fearlesschenc/kubesphere/pkg/apis/iam/v1alpha2"
-	kubesphere "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned"
-	iamv1alpha2informers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions/iam/v1alpha2"
-	iamv1alpha1listers "github.com/fearlesschenc/kubesphere/pkg/client/listers/iam/v1alpha2"
-	"github.com/fearlesschenc/kubesphere/pkg/controller/utils/controller"
-	"github.com/fearlesschenc/kubesphere/pkg/utils/sliceutil"
 )
 
 const (
