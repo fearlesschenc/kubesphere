@@ -19,14 +19,14 @@ package v1alpha3
 import (
 	"github.com/emicklei/go-restful"
 	"k8s.io/klog"
-	"kubesphere.io/kubesphere/pkg/api"
-	"kubesphere.io/kubesphere/pkg/apiserver/query"
-	"kubesphere.io/kubesphere/pkg/informers"
-	"kubesphere.io/kubesphere/pkg/models/components"
-	"kubesphere.io/kubesphere/pkg/models/resources/v1alpha2"
-	resourcev1alpha2 "kubesphere.io/kubesphere/pkg/models/resources/v1alpha2/resource"
-	"kubesphere.io/kubesphere/pkg/models/resources/v1alpha3/resource"
-	"kubesphere.io/kubesphere/pkg/server/params"
+	"github.com/fearlesschenc/kubesphere/pkg/api"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/query"
+	"github.com/fearlesschenc/kubesphere/pkg/informers"
+	"github.com/fearlesschenc/kubesphere/pkg/models/components"
+	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha2"
+	resourcev1alpha2 "github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha2/resource"
+	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha3/resource"
+	"github.com/fearlesschenc/kubesphere/pkg/server/params"
 	"strings"
 )
 

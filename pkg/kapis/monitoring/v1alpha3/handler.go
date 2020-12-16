@@ -22,11 +22,11 @@ import (
 	"errors"
 	"github.com/emicklei/go-restful"
 	"k8s.io/client-go/kubernetes"
-	"kubesphere.io/kubesphere/pkg/api"
-	"kubesphere.io/kubesphere/pkg/informers"
-	model "kubesphere.io/kubesphere/pkg/models/monitoring"
-	"kubesphere.io/kubesphere/pkg/simple/client/monitoring"
-	"kubesphere.io/kubesphere/pkg/simple/client/openpitrix"
+	"github.com/fearlesschenc/kubesphere/pkg/api"
+	"github.com/fearlesschenc/kubesphere/pkg/informers"
+	model "github.com/fearlesschenc/kubesphere/pkg/models/monitoring"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/monitoring"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/openpitrix"
 	"regexp"
 )
 

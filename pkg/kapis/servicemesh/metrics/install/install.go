@@ -19,8 +19,8 @@ package install
 import (
 	"github.com/emicklei/go-restful"
 	urlruntime "k8s.io/apimachinery/pkg/util/runtime"
-	"kubesphere.io/kubesphere/pkg/apiserver/runtime"
-	"kubesphere.io/kubesphere/pkg/kapis/servicemesh/metrics/v1alpha2"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/runtime"
+	"github.com/fearlesschenc/kubesphere/pkg/kapis/servicemesh/metrics/v1alpha2"
 )
 
 func init() {

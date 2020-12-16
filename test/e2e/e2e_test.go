@@ -29,8 +29,8 @@ import (
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/labels"
 	"k8s.io/client-go/kubernetes/scheme"
-	"kubesphere.io/kubesphere/pkg/apis/network/v1alpha1"
-	"kubesphere.io/kubesphere/pkg/test"
+	"github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1"
+	"github.com/fearlesschenc/kubesphere/pkg/test"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 )
 

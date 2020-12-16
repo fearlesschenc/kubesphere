@@ -17,7 +17,7 @@ limitations under the License.
 package main
 
 import (
-	"kubesphere.io/kubesphere/cmd/ks-apiserver/app"
+	"github.com/fearlesschenc/kubesphere/cmd/ks-apiserver/app"
 	"log"
 )
 

@@ -26,9 +26,9 @@ import (
 	"k8s.io/apiserver/pkg/authentication/authenticator"
 	"k8s.io/apiserver/pkg/endpoints/handlers/responsewriters"
 	"k8s.io/klog"
-	iamv1alpha2 "kubesphere.io/kubesphere/pkg/apis/iam/v1alpha2"
-	"kubesphere.io/kubesphere/pkg/apiserver/request"
-	"kubesphere.io/kubesphere/pkg/models/iam/im"
+	iamv1alpha2 "github.com/fearlesschenc/kubesphere/pkg/apis/iam/v1alpha2"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/request"
+	"github.com/fearlesschenc/kubesphere/pkg/models/iam/im"
 	"net/http"
 	"strings"
 )

@@ -123,8 +123,8 @@ function add_generated_comments() {
 
 # Phase 1: ensure go.mod files for staging modules and main module
 if [[ ! -f go.mod ]]; then
-  kube::log::status "go.mod: initialize kubesphere.io/kubesphere"
-  go mod init "kubesphere.io/kubesphere"
+  kube::log::status "go.mod: initialize github.com/fearlesschenc/kubesphere"
+  go mod init "github.com/fearlesschenc/kubesphere"
   rm -f Godeps/Godeps.json # remove after initializing
 fi
 

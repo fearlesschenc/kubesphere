@@ -25,8 +25,8 @@ import (
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
 	rest "k8s.io/client-go/rest"
-	v1beta1 "kubesphere.io/kubesphere/pkg/apis/types/v1beta1"
-	scheme "kubesphere.io/kubesphere/pkg/client/clientset/versioned/scheme"
+	v1beta1 "github.com/fearlesschenc/kubesphere/pkg/apis/types/v1beta1"
+	scheme "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/scheme"
 )
 
 // FederatedWorkspacesGetter has a method to return a FederatedWorkspaceInterface.

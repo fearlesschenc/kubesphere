@@ -18,7 +18,7 @@ package jenkins
 
 import (
 	"errors"
-	"kubesphere.io/kubesphere/pkg/simple/client/devops"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/devops"
 	"net/http"
 	"reflect"
 	"strconv"

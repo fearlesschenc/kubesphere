@@ -18,7 +18,7 @@ package k8s
 
 import (
 	"github.com/spf13/pflag"
-	"kubesphere.io/kubesphere/pkg/utils/reflectutils"
+	"github.com/fearlesschenc/kubesphere/pkg/utils/reflectutils"
 	"os"
 )
 

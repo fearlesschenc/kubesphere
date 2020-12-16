@@ -18,8 +18,8 @@ package prometheus
 
 import (
 	"github.com/google/go-cmp/cmp"
-	"kubesphere.io/kubesphere/pkg/simple/client/monitoring"
-	"kubesphere.io/kubesphere/pkg/simple/client/monitoring/prometheus/testdata"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/monitoring"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/monitoring/prometheus/testdata"
 	"testing"
 )
 

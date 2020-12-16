@@ -23,7 +23,7 @@ import (
 	"k8s.io/client-go/discovery"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/rest"
-	kubesphere "kubesphere.io/kubesphere/pkg/client/clientset/versioned"
+	kubesphere "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned"
 	application "sigs.k8s.io/application/pkg/client/clientset/versioned"
 	applicationclientset "sigs.k8s.io/application/pkg/client/clientset/versioned"
 )

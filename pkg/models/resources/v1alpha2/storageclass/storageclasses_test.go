@@ -8,8 +8,8 @@ import (
 	"k8s.io/client-go/informers"
 	"k8s.io/client-go/kubernetes/fake"
 	"k8s.io/utils/pointer"
-	"kubesphere.io/kubesphere/pkg/models/resources/v1alpha2"
-	"kubesphere.io/kubesphere/pkg/server/params"
+	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha2"
+	"github.com/fearlesschenc/kubesphere/pkg/server/params"
 	"testing"
 )
 

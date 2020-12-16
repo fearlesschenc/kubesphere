@@ -22,7 +22,7 @@ import (
 	"github.com/kiali/kiali/handlers"
 	"io/ioutil"
 	"k8s.io/klog"
-	"kubesphere.io/kubesphere/pkg/api"
+	"github.com/fearlesschenc/kubesphere/pkg/api"
 	"net/http"
 )
 

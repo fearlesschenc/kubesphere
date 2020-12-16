@@ -19,7 +19,7 @@ package elasticsearch
 import (
 	"bytes"
 	"fmt"
-	"kubesphere.io/kubesphere/pkg/utils/esutil"
+	"github.com/fearlesschenc/kubesphere/pkg/utils/esutil"
 	"strings"
 	"sync"
 	"time"
@@ -28,7 +28,7 @@ import (
 	es6 "github.com/elastic/go-elasticsearch/v6"
 	es7 "github.com/elastic/go-elasticsearch/v7"
 	jsoniter "github.com/json-iterator/go"
-	"kubesphere.io/kubesphere/pkg/simple/client/auditing"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/auditing"
 )
 
 const (

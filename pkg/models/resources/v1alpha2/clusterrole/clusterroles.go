@@ -20,10 +20,10 @@ import (
 	rbac "k8s.io/api/rbac/v1"
 	"k8s.io/apimachinery/pkg/labels"
 	"k8s.io/client-go/informers"
-	"kubesphere.io/kubesphere/pkg/constants"
-	"kubesphere.io/kubesphere/pkg/models/resources/v1alpha2"
-	"kubesphere.io/kubesphere/pkg/server/params"
-	"kubesphere.io/kubesphere/pkg/utils/k8sutil"
+	"github.com/fearlesschenc/kubesphere/pkg/constants"
+	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha2"
+	"github.com/fearlesschenc/kubesphere/pkg/server/params"
+	"github.com/fearlesschenc/kubesphere/pkg/utils/k8sutil"
 	"sort"
 )
 

@@ -20,7 +20,7 @@ import (
 	"encoding/json"
 	"github.com/PuerkitoBio/goquery"
 	"k8s.io/klog"
-	"kubesphere.io/kubesphere/pkg/simple/client/devops"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/devops"
 	"net/http"
 	"net/url"
 	"strings"

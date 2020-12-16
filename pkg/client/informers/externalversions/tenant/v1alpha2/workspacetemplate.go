@@ -25,10 +25,10 @@ import (
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	watch "k8s.io/apimachinery/pkg/watch"
 	cache "k8s.io/client-go/tools/cache"
-	tenantv1alpha2 "kubesphere.io/kubesphere/pkg/apis/tenant/v1alpha2"
-	versioned "kubesphere.io/kubesphere/pkg/client/clientset/versioned"
-	internalinterfaces "kubesphere.io/kubesphere/pkg/client/informers/externalversions/internalinterfaces"
-	v1alpha2 "kubesphere.io/kubesphere/pkg/client/listers/tenant/v1alpha2"
+	tenantv1alpha2 "github.com/fearlesschenc/kubesphere/pkg/apis/tenant/v1alpha2"
+	versioned "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned"
+	internalinterfaces "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions/internalinterfaces"
+	v1alpha2 "github.com/fearlesschenc/kubesphere/pkg/client/listers/tenant/v1alpha2"
 )
 
 // WorkspaceTemplateInformer provides access to a shared informer and lister for

@@ -17,7 +17,7 @@ limitations under the License.
 package cache
 
 import (
-	"kubesphere.io/kubesphere/pkg/server/errors"
+	"github.com/fearlesschenc/kubesphere/pkg/server/errors"
 	"regexp"
 	"strings"
 	"time"

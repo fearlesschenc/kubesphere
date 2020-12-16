@@ -35,11 +35,11 @@ import (
 	"k8s.io/client-go/tools/record"
 	"k8s.io/client-go/util/workqueue"
 	"k8s.io/klog"
-	networkv1alpha1 "kubesphere.io/kubesphere/pkg/apis/network/v1alpha1"
-	kubesphereclient "kubesphere.io/kubesphere/pkg/client/clientset/versioned"
-	networkInformer "kubesphere.io/kubesphere/pkg/client/informers/externalversions/network/v1alpha1"
-	"kubesphere.io/kubesphere/pkg/controller/network/utils"
-	"kubesphere.io/kubesphere/pkg/simple/client/network/ippool"
+	networkv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1"
+	kubesphereclient "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned"
+	networkInformer "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions/network/v1alpha1"
+	"github.com/fearlesschenc/kubesphere/pkg/controller/network/utils"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/network/ippool"
 	"sigs.k8s.io/controller-runtime/pkg/controller/controllerutil"
 )
 

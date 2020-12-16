@@ -24,8 +24,8 @@ import (
 
 	"golang.org/x/oauth2"
 	"gopkg.in/yaml.v3"
-	"kubesphere.io/kubesphere/pkg/apiserver/authentication/identityprovider"
-	"kubesphere.io/kubesphere/pkg/apiserver/authentication/oauth"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/identityprovider"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/oauth"
 )
 
 type AliyunIDaaS struct {

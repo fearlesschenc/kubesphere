@@ -22,8 +22,8 @@ import (
 	"k8s.io/apiserver/pkg/endpoints/handlers/responsewriters"
 	"k8s.io/client-go/rest"
 	"k8s.io/klog"
-	"kubesphere.io/kubesphere/pkg/apiserver/request"
-	"kubesphere.io/kubesphere/pkg/server/errors"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/request"
+	"github.com/fearlesschenc/kubesphere/pkg/server/errors"
 	"net/http"
 	"net/url"
 )

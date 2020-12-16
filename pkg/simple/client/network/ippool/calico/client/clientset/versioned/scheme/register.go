@@ -24,7 +24,7 @@ import (
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
 	serializer "k8s.io/apimachinery/pkg/runtime/serializer"
 	utilruntime "k8s.io/apimachinery/pkg/util/runtime"
-	crdcalicov3 "kubesphere.io/kubesphere/pkg/apis/network/calicov3"
+	crdcalicov3 "github.com/fearlesschenc/kubesphere/pkg/apis/network/calicov3"
 )
 
 var Scheme = runtime.NewScheme()

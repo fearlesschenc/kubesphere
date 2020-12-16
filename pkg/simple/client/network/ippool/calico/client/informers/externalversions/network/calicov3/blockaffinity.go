@@ -25,10 +25,10 @@ import (
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	watch "k8s.io/apimachinery/pkg/watch"
 	cache "k8s.io/client-go/tools/cache"
-	networkcalicov3 "kubesphere.io/kubesphere/pkg/apis/network/calicov3"
-	versioned "kubesphere.io/kubesphere/pkg/simple/client/network/ippool/calico/client/clientset/versioned"
-	internalinterfaces "kubesphere.io/kubesphere/pkg/simple/client/network/ippool/calico/client/informers/externalversions/internalinterfaces"
-	calicov3 "kubesphere.io/kubesphere/pkg/simple/client/network/ippool/calico/client/listers/network/calicov3"
+	networkcalicov3 "github.com/fearlesschenc/kubesphere/pkg/apis/network/calicov3"
+	versioned "github.com/fearlesschenc/kubesphere/pkg/simple/client/network/ippool/calico/client/clientset/versioned"
+	internalinterfaces "github.com/fearlesschenc/kubesphere/pkg/simple/client/network/ippool/calico/client/informers/externalversions/internalinterfaces"
+	calicov3 "github.com/fearlesschenc/kubesphere/pkg/simple/client/network/ippool/calico/client/listers/network/calicov3"
 )
 
 // BlockAffinityInformer provides access to a shared informer and lister for

@@ -20,7 +20,7 @@ import (
 	"fmt"
 	"github.com/json-iterator/go"
 	"k8s.io/klog"
-	"kubesphere.io/kubesphere/pkg/simple/client/logging"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/logging"
 )
 
 const (

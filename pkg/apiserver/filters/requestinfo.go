@@ -19,7 +19,7 @@ package filters
 import (
 	"fmt"
 	"k8s.io/apiserver/pkg/endpoints/handlers/responsewriters"
-	"kubesphere.io/kubesphere/pkg/apiserver/request"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/request"
 	"net/http"
 	"strings"
 )

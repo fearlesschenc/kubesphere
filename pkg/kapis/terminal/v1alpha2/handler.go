@@ -22,7 +22,7 @@ import (
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/rest"
 	"k8s.io/klog"
-	"kubesphere.io/kubesphere/pkg/models/terminal"
+	"github.com/fearlesschenc/kubesphere/pkg/models/terminal"
 	"net/http"
 )
 

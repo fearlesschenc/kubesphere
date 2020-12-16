@@ -18,11 +18,11 @@ package s2ibuilder
 
 import (
 	"k8s.io/apimachinery/pkg/labels"
-	"kubesphere.io/kubesphere/pkg/apis/devops/v1alpha1"
-	"kubesphere.io/kubesphere/pkg/client/informers/externalversions"
-	"kubesphere.io/kubesphere/pkg/models/resources/v1alpha2"
+	"github.com/fearlesschenc/kubesphere/pkg/apis/devops/v1alpha1"
+	"github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions"
+	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha2"
 
-	"kubesphere.io/kubesphere/pkg/server/params"
+	"github.com/fearlesschenc/kubesphere/pkg/server/params"
 	"sort"
 )
 

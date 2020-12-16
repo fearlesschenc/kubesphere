@@ -20,8 +20,8 @@ import (
 	"github.com/emicklei/go-restful"
 	"github.com/pkg/errors"
 	corev1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	model "kubesphere.io/kubesphere/pkg/models/monitoring"
-	"kubesphere.io/kubesphere/pkg/simple/client/monitoring"
+	model "github.com/fearlesschenc/kubesphere/pkg/models/monitoring"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/monitoring"
 	"strconv"
 	"time"
 )

@@ -20,9 +20,9 @@ import (
 	"testing"
 
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"kubesphere.io/kubesphere/pkg/apis/network/v1alpha1"
-	fakeks "kubesphere.io/kubesphere/pkg/client/clientset/versioned/fake"
-	"kubesphere.io/kubesphere/pkg/simple/client/network/ippool/ipam"
+	"github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1"
+	fakeks "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/fake"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/network/ippool/ipam"
 )
 
 func testNewProvider() provider {

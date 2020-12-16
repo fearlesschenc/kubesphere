@@ -18,9 +18,9 @@ import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 	"k8s.io/klog"
-	"kubesphere.io/kubesphere/pkg/models"
-	"kubesphere.io/kubesphere/pkg/server/params"
-	"kubesphere.io/kubesphere/pkg/simple/client/openpitrix"
+	"github.com/fearlesschenc/kubesphere/pkg/models"
+	"github.com/fearlesschenc/kubesphere/pkg/server/params"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/openpitrix"
 	"openpitrix.io/openpitrix/pkg/pb"
 )
 

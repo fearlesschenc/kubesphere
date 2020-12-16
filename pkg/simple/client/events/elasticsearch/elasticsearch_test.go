@@ -19,7 +19,7 @@ package elasticsearch
 import (
 	"github.com/google/go-cmp/cmp"
 	"github.com/stretchr/testify/assert"
-	"kubesphere.io/kubesphere/pkg/simple/client/events"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/events"
 	"net/http"
 	"net/http/httptest"
 	"strconv"

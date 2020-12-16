@@ -25,7 +25,7 @@ import (
 	"google.golang.org/grpc"
 	"k8s.io/apimachinery/pkg/util/rand"
 	"k8s.io/klog"
-	"kubesphere.io/kubesphere/pkg/apis/storage/v1alpha1"
+	"github.com/fearlesschenc/kubesphere/pkg/apis/storage/v1alpha1"
 	"net"
 	"os"
 	"path/filepath"

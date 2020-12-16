@@ -21,10 +21,10 @@ import (
 	restfulspec "github.com/emicklei/go-restful-openapi"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	k8sinformers "k8s.io/client-go/informers"
-	"kubesphere.io/kubesphere/pkg/api"
-	"kubesphere.io/kubesphere/pkg/apiserver/runtime"
-	"kubesphere.io/kubesphere/pkg/client/informers/externalversions"
-	"kubesphere.io/kubesphere/pkg/constants"
+	"github.com/fearlesschenc/kubesphere/pkg/api"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/runtime"
+	"github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions"
+	"github.com/fearlesschenc/kubesphere/pkg/constants"
 	"net/http"
 )
 

@@ -22,7 +22,7 @@ import (
 	"io"
 	"io/ioutil"
 	"k8s.io/klog"
-	"kubesphere.io/kubesphere/pkg/simple/client/devops"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/devops"
 	"log"
 	"net/http"
 	"os"

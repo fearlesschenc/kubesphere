@@ -28,8 +28,8 @@ import (
 	es7 "github.com/elastic/go-elasticsearch/v7"
 	jsoniter "github.com/json-iterator/go"
 	corev1 "k8s.io/api/core/v1"
-	"kubesphere.io/kubesphere/pkg/simple/client/events"
-	"kubesphere.io/kubesphere/pkg/utils/esutil"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/events"
+	"github.com/fearlesschenc/kubesphere/pkg/utils/esutil"
 )
 
 var json = jsoniter.ConfigCompatibleWithStandardLibrary

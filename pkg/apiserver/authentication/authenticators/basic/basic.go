@@ -21,7 +21,7 @@ import (
 
 	"k8s.io/apiserver/pkg/authentication/authenticator"
 	"k8s.io/apiserver/pkg/authentication/user"
-	"kubesphere.io/kubesphere/pkg/models/iam/im"
+	"github.com/fearlesschenc/kubesphere/pkg/models/iam/im"
 )
 
 // TokenAuthenticator implements kubernetes token authenticate interface with our custom logic.

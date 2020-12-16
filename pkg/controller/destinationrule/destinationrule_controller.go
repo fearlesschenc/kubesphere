@@ -34,8 +34,8 @@ import (
 	"k8s.io/client-go/kubernetes/scheme"
 	v1core "k8s.io/client-go/kubernetes/typed/core/v1"
 	log "k8s.io/klog"
-	servicemeshv1alpha2 "kubesphere.io/kubesphere/pkg/apis/servicemesh/v1alpha2"
-	"kubesphere.io/kubesphere/pkg/controller/virtualservice/util"
+	servicemeshv1alpha2 "github.com/fearlesschenc/kubesphere/pkg/apis/servicemesh/v1alpha2"
+	"github.com/fearlesschenc/kubesphere/pkg/controller/virtualservice/util"
 
 	"time"
 
@@ -51,9 +51,9 @@ import (
 	"k8s.io/client-go/tools/record"
 	"k8s.io/client-go/util/workqueue"
 
-	servicemeshclient "kubesphere.io/kubesphere/pkg/client/clientset/versioned"
-	servicemeshinformers "kubesphere.io/kubesphere/pkg/client/informers/externalversions/servicemesh/v1alpha2"
-	servicemeshlisters "kubesphere.io/kubesphere/pkg/client/listers/servicemesh/v1alpha2"
+	servicemeshclient "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned"
+	servicemeshinformers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions/servicemesh/v1alpha2"
+	servicemeshlisters "github.com/fearlesschenc/kubesphere/pkg/client/listers/servicemesh/v1alpha2"
 )
 
 const (

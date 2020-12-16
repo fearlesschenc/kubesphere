@@ -17,9 +17,9 @@ limitations under the License.
 package events
 
 import (
-	eventsv1alpha1 "kubesphere.io/kubesphere/pkg/api/events/v1alpha1"
-	"kubesphere.io/kubesphere/pkg/simple/client/events"
-	"kubesphere.io/kubesphere/pkg/utils/stringutils"
+	eventsv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/api/events/v1alpha1"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/events"
+	"github.com/fearlesschenc/kubesphere/pkg/utils/stringutils"
 )
 
 type Interface interface {

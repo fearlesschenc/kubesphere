@@ -17,7 +17,7 @@ limitations under the License.
 package apis
 
 import (
-	iamv1alpha2 "kubesphere.io/kubesphere/pkg/apis/iam/v1alpha2"
+	iamv1alpha2 "github.com/fearlesschenc/kubesphere/pkg/apis/iam/v1alpha2"
 )
 
 func init() {

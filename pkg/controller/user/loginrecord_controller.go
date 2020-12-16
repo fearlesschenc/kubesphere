@@ -33,9 +33,9 @@ import (
 	"k8s.io/client-go/tools/record"
 	"k8s.io/client-go/util/workqueue"
 	"k8s.io/klog"
-	kubesphere "kubesphere.io/kubesphere/pkg/client/clientset/versioned"
-	iamv1alpha2informers "kubesphere.io/kubesphere/pkg/client/informers/externalversions/iam/v1alpha2"
-	iamv1alpha2listers "kubesphere.io/kubesphere/pkg/client/listers/iam/v1alpha2"
+	kubesphere "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned"
+	iamv1alpha2informers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions/iam/v1alpha2"
+	iamv1alpha2listers "github.com/fearlesschenc/kubesphere/pkg/client/listers/iam/v1alpha2"
 	"time"
 )
 

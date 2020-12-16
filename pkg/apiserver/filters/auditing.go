@@ -18,8 +18,8 @@ package filters
 
 import (
 	"k8s.io/klog"
-	"kubesphere.io/kubesphere/pkg/apiserver/auditing"
-	"kubesphere.io/kubesphere/pkg/apiserver/request"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/auditing"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/request"
 	"net/http"
 )
 

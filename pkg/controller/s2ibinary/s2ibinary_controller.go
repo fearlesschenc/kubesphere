@@ -29,14 +29,14 @@ import (
 	"k8s.io/client-go/tools/record"
 	"k8s.io/client-go/util/workqueue"
 	"k8s.io/klog"
-	"kubesphere.io/kubesphere/pkg/simple/client/s3"
-	"kubesphere.io/kubesphere/pkg/utils/sliceutil"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/s3"
+	"github.com/fearlesschenc/kubesphere/pkg/utils/sliceutil"
 	"time"
 
-	devopsv1alpha1 "kubesphere.io/kubesphere/pkg/apis/devops/v1alpha1"
-	devopsclient "kubesphere.io/kubesphere/pkg/client/clientset/versioned"
-	devopsinformers "kubesphere.io/kubesphere/pkg/client/informers/externalversions/devops/v1alpha1"
-	devopslisters "kubesphere.io/kubesphere/pkg/client/listers/devops/v1alpha1"
+	devopsv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/apis/devops/v1alpha1"
+	devopsclient "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned"
+	devopsinformers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions/devops/v1alpha1"
+	devopslisters "github.com/fearlesschenc/kubesphere/pkg/client/listers/devops/v1alpha1"
 )
 
 /**

@@ -21,10 +21,10 @@ import (
 	"gopkg.in/yaml.v3"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/klog"
-	"kubesphere.io/kubesphere/pkg/api"
-	"kubesphere.io/kubesphere/pkg/apiserver/authentication/oauth"
-	kubesphereconfig "kubesphere.io/kubesphere/pkg/apiserver/config"
-	"kubesphere.io/kubesphere/pkg/apiserver/runtime"
+	"github.com/fearlesschenc/kubesphere/pkg/api"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/oauth"
+	kubesphereconfig "github.com/fearlesschenc/kubesphere/pkg/apiserver/config"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/runtime"
 )
 
 const (

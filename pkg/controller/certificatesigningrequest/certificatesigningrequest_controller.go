@@ -35,8 +35,8 @@ import (
 	"k8s.io/client-go/tools/record"
 	"k8s.io/client-go/util/workqueue"
 	"k8s.io/klog"
-	"kubesphere.io/kubesphere/pkg/constants"
-	"kubesphere.io/kubesphere/pkg/models/kubeconfig"
+	"github.com/fearlesschenc/kubesphere/pkg/constants"
+	"github.com/fearlesschenc/kubesphere/pkg/models/kubeconfig"
 	"time"
 )
 

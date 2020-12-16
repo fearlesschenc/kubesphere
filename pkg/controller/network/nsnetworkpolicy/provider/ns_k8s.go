@@ -19,7 +19,7 @@ package provider
 import (
 	"context"
 	"fmt"
-	"kubesphere.io/kubesphere/pkg/controller/network/types"
+	"github.com/fearlesschenc/kubesphere/pkg/controller/network/types"
 	"reflect"
 	"strings"
 	"sync"

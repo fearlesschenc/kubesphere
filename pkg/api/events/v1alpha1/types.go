@@ -18,7 +18,7 @@ package v1alpha1
 
 import (
 	"github.com/emicklei/go-restful"
-	"kubesphere.io/kubesphere/pkg/simple/client/events"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/events"
 	"strconv"
 	"time"
 )

@@ -19,9 +19,9 @@ package devops
 import (
 	"github.com/emicklei/go-restful"
 	"k8s.io/klog"
-	"kubesphere.io/kubesphere/pkg/server/errors"
-	"kubesphere.io/kubesphere/pkg/simple/client/devops"
-	"kubesphere.io/kubesphere/pkg/simple/client/sonarqube"
+	"github.com/fearlesschenc/kubesphere/pkg/server/errors"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/devops"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/sonarqube"
 	"net/http"
 )
 

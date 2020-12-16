@@ -19,12 +19,12 @@ package oauth
 import (
 	"github.com/emicklei/go-restful"
 	restfulspec "github.com/emicklei/go-restful-openapi"
-	"kubesphere.io/kubesphere/pkg/api"
-	"kubesphere.io/kubesphere/pkg/api/auth"
-	"kubesphere.io/kubesphere/pkg/apiserver/authentication/oauth"
-	authoptions "kubesphere.io/kubesphere/pkg/apiserver/authentication/options"
-	"kubesphere.io/kubesphere/pkg/constants"
-	"kubesphere.io/kubesphere/pkg/models/iam/im"
+	"github.com/fearlesschenc/kubesphere/pkg/api"
+	"github.com/fearlesschenc/kubesphere/pkg/api/auth"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/oauth"
+	authoptions "github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/options"
+	"github.com/fearlesschenc/kubesphere/pkg/constants"
+	"github.com/fearlesschenc/kubesphere/pkg/models/iam/im"
 	"net/http"
 )
 

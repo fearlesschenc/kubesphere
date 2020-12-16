@@ -21,9 +21,9 @@ import (
 	"fmt"
 	"github.com/emicklei/go-restful"
 	"k8s.io/klog"
-	"kubesphere.io/kubesphere/pkg/api"
-	"kubesphere.io/kubesphere/pkg/models/devops"
-	"kubesphere.io/kubesphere/pkg/utils/hashutil"
+	"github.com/fearlesschenc/kubesphere/pkg/api"
+	"github.com/fearlesschenc/kubesphere/pkg/models/devops"
+	"github.com/fearlesschenc/kubesphere/pkg/utils/hashutil"
 	"net/http"
 )
 

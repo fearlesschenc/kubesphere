@@ -22,9 +22,9 @@ import (
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/rest"
-	"kubesphere.io/kubesphere/pkg/apiserver/runtime"
-	"kubesphere.io/kubesphere/pkg/constants"
-	"kubesphere.io/kubesphere/pkg/models"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/runtime"
+	"github.com/fearlesschenc/kubesphere/pkg/constants"
+	"github.com/fearlesschenc/kubesphere/pkg/models"
 )
 
 const (

@@ -19,11 +19,11 @@ package persistentvolumeclaim
 import (
 	snapshotinformer "github.com/kubernetes-csi/external-snapshotter/v2/pkg/client/informers/externalversions"
 	"k8s.io/client-go/informers"
-	"kubesphere.io/kubesphere/pkg/models/resources/v1alpha2"
+	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha2"
 	"strconv"
 
-	"kubesphere.io/kubesphere/pkg/server/params"
-	"kubesphere.io/kubesphere/pkg/utils/sliceutil"
+	"github.com/fearlesschenc/kubesphere/pkg/server/params"
+	"github.com/fearlesschenc/kubesphere/pkg/utils/sliceutil"
 	"sort"
 	"strings"
 

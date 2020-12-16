@@ -20,7 +20,7 @@ import (
 	"fmt"
 	"github.com/spf13/pflag"
 	"k8s.io/klog"
-	"kubesphere.io/kubesphere/pkg/utils/sliceutil"
+	"github.com/fearlesschenc/kubesphere/pkg/utils/sliceutil"
 )
 
 type AuthorizationOptions struct {

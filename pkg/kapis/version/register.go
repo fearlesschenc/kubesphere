@@ -21,8 +21,8 @@ import (
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/client-go/discovery"
 	"k8s.io/klog"
-	"kubesphere.io/kubesphere/pkg/apiserver/runtime"
-	"kubesphere.io/kubesphere/pkg/version"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/runtime"
+	"github.com/fearlesschenc/kubesphere/pkg/version"
 )
 
 func AddToContainer(container *restful.Container, k8sDiscovery discovery.DiscoveryInterface) error {

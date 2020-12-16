@@ -18,7 +18,7 @@ package oauth
 
 import (
 	"errors"
-	"kubesphere.io/kubesphere/pkg/utils/sliceutil"
+	"github.com/fearlesschenc/kubesphere/pkg/utils/sliceutil"
 	"net/url"
 	"time"
 )

@@ -27,13 +27,13 @@ import (
 	"k8s.io/apimachinery/pkg/labels"
 	authuser "k8s.io/apiserver/pkg/authentication/user"
 	"k8s.io/klog"
-	iamv1alpha2 "kubesphere.io/kubesphere/pkg/apis/iam/v1alpha2"
-	"kubesphere.io/kubesphere/pkg/apiserver/authentication/identityprovider"
-	"kubesphere.io/kubesphere/pkg/apiserver/authentication/oauth"
-	authoptions "kubesphere.io/kubesphere/pkg/apiserver/authentication/options"
-	kubesphere "kubesphere.io/kubesphere/pkg/client/clientset/versioned"
-	iamv1alpha2listers "kubesphere.io/kubesphere/pkg/client/listers/iam/v1alpha2"
-	"kubesphere.io/kubesphere/pkg/constants"
+	iamv1alpha2 "github.com/fearlesschenc/kubesphere/pkg/apis/iam/v1alpha2"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/identityprovider"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/oauth"
+	authoptions "github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/options"
+	kubesphere "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned"
+	iamv1alpha2listers "github.com/fearlesschenc/kubesphere/pkg/client/listers/iam/v1alpha2"
+	"github.com/fearlesschenc/kubesphere/pkg/constants"
 )
 
 var (

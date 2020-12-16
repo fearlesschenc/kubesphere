@@ -23,7 +23,7 @@ import (
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/client-go/informers"
 	"k8s.io/klog"
-	"kubesphere.io/kubesphere/pkg/api"
+	"github.com/fearlesschenc/kubesphere/pkg/api"
 )
 
 const (

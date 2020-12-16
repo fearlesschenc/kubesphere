@@ -23,17 +23,17 @@ import (
 
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
 	cache "k8s.io/client-go/tools/cache"
-	v1alpha1 "kubesphere.io/kubesphere/pkg/apis/auditing/v1alpha1"
-	clusterv1alpha1 "kubesphere.io/kubesphere/pkg/apis/cluster/v1alpha1"
-	devopsv1alpha1 "kubesphere.io/kubesphere/pkg/apis/devops/v1alpha1"
-	v1alpha3 "kubesphere.io/kubesphere/pkg/apis/devops/v1alpha3"
-	v1alpha2 "kubesphere.io/kubesphere/pkg/apis/iam/v1alpha2"
-	networkv1alpha1 "kubesphere.io/kubesphere/pkg/apis/network/v1alpha1"
-	servicemeshv1alpha2 "kubesphere.io/kubesphere/pkg/apis/servicemesh/v1alpha2"
-	storagev1alpha1 "kubesphere.io/kubesphere/pkg/apis/storage/v1alpha1"
-	tenantv1alpha1 "kubesphere.io/kubesphere/pkg/apis/tenant/v1alpha1"
-	tenantv1alpha2 "kubesphere.io/kubesphere/pkg/apis/tenant/v1alpha2"
-	v1beta1 "kubesphere.io/kubesphere/pkg/apis/types/v1beta1"
+	v1alpha1 "github.com/fearlesschenc/kubesphere/pkg/apis/auditing/v1alpha1"
+	clusterv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/apis/cluster/v1alpha1"
+	devopsv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/apis/devops/v1alpha1"
+	v1alpha3 "github.com/fearlesschenc/kubesphere/pkg/apis/devops/v1alpha3"
+	v1alpha2 "github.com/fearlesschenc/kubesphere/pkg/apis/iam/v1alpha2"
+	networkv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1"
+	servicemeshv1alpha2 "github.com/fearlesschenc/kubesphere/pkg/apis/servicemesh/v1alpha2"
+	storagev1alpha1 "github.com/fearlesschenc/kubesphere/pkg/apis/storage/v1alpha1"
+	tenantv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/apis/tenant/v1alpha1"
+	tenantv1alpha2 "github.com/fearlesschenc/kubesphere/pkg/apis/tenant/v1alpha2"
+	v1beta1 "github.com/fearlesschenc/kubesphere/pkg/apis/types/v1beta1"
 )
 
 // GenericInformer is type of SharedIndexInformer which will locate and delegate to other

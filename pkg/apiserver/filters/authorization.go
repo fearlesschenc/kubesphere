@@ -23,8 +23,8 @@ import (
 	"k8s.io/apimachinery/pkg/runtime/serializer"
 	"k8s.io/apiserver/pkg/endpoints/handlers/responsewriters"
 	"k8s.io/klog"
-	"kubesphere.io/kubesphere/pkg/apiserver/authorization/authorizer"
-	"kubesphere.io/kubesphere/pkg/apiserver/request"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/authorization/authorizer"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/request"
 	"net/http"
 )
 

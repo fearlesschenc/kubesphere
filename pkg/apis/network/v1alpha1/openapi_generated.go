@@ -87,14 +87,14 @@ func GetOpenAPIDefinitions(ref common.ReferenceCallback) map[string]common.OpenA
 		"k8s.io/apimachinery/pkg/apis/meta/v1.UpdateOptions":                            schema_pkg_apis_meta_v1_UpdateOptions(ref),
 		"k8s.io/apimachinery/pkg/apis/meta/v1.WatchEvent":                               schema_pkg_apis_meta_v1_WatchEvent(ref),
 		"k8s.io/apimachinery/pkg/util/intstr.IntOrString":                               schema_apimachinery_pkg_util_intstr_IntOrString(ref),
-		"kubesphere.io/kubesphere/pkg/apis/network/v1alpha1.NamespaceNetworkPolicy":     schema_pkg_apis_network_v1alpha1_NamespaceNetworkPolicy(ref),
-		"kubesphere.io/kubesphere/pkg/apis/network/v1alpha1.NamespaceNetworkPolicyList": schema_pkg_apis_network_v1alpha1_NamespaceNetworkPolicyList(ref),
-		"kubesphere.io/kubesphere/pkg/apis/network/v1alpha1.NamespaceNetworkPolicySpec": schema_pkg_apis_network_v1alpha1_NamespaceNetworkPolicySpec(ref),
-		"kubesphere.io/kubesphere/pkg/apis/network/v1alpha1.NamespaceSelector":          schema_pkg_apis_network_v1alpha1_NamespaceSelector(ref),
-		"kubesphere.io/kubesphere/pkg/apis/network/v1alpha1.NetworkPolicyEgressRule":    schema_pkg_apis_network_v1alpha1_NetworkPolicyEgressRule(ref),
-		"kubesphere.io/kubesphere/pkg/apis/network/v1alpha1.NetworkPolicyIngressRule":   schema_pkg_apis_network_v1alpha1_NetworkPolicyIngressRule(ref),
-		"kubesphere.io/kubesphere/pkg/apis/network/v1alpha1.NetworkPolicyPeer":          schema_pkg_apis_network_v1alpha1_NetworkPolicyPeer(ref),
-		"kubesphere.io/kubesphere/pkg/apis/network/v1alpha1.ServiceSelector":            schema_pkg_apis_network_v1alpha1_ServiceSelector(ref),
+		"github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1.NamespaceNetworkPolicy":     schema_pkg_apis_network_v1alpha1_NamespaceNetworkPolicy(ref),
+		"github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1.NamespaceNetworkPolicyList": schema_pkg_apis_network_v1alpha1_NamespaceNetworkPolicyList(ref),
+		"github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1.NamespaceNetworkPolicySpec": schema_pkg_apis_network_v1alpha1_NamespaceNetworkPolicySpec(ref),
+		"github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1.NamespaceSelector":          schema_pkg_apis_network_v1alpha1_NamespaceSelector(ref),
+		"github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1.NetworkPolicyEgressRule":    schema_pkg_apis_network_v1alpha1_NetworkPolicyEgressRule(ref),
+		"github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1.NetworkPolicyIngressRule":   schema_pkg_apis_network_v1alpha1_NetworkPolicyIngressRule(ref),
+		"github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1.NetworkPolicyPeer":          schema_pkg_apis_network_v1alpha1_NetworkPolicyPeer(ref),
+		"github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1.ServiceSelector":            schema_pkg_apis_network_v1alpha1_ServiceSelector(ref),
 	}
 }
 
@@ -2543,14 +2543,14 @@ func schema_pkg_apis_network_v1alpha1_NamespaceNetworkPolicy(ref common.Referenc
 					},
 					"spec": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("kubesphere.io/kubesphere/pkg/apis/network/v1alpha1.NamespaceNetworkPolicySpec"),
+							Ref: ref("github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1.NamespaceNetworkPolicySpec"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta", "kubesphere.io/kubesphere/pkg/apis/network/v1alpha1.NamespaceNetworkPolicySpec"},
+			"k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta", "github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1.NamespaceNetworkPolicySpec"},
 	}
 }
 
@@ -2586,7 +2586,7 @@ func schema_pkg_apis_network_v1alpha1_NamespaceNetworkPolicyList(ref common.Refe
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("kubesphere.io/kubesphere/pkg/apis/network/v1alpha1.NamespaceNetworkPolicy"),
+										Ref: ref("github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1.NamespaceNetworkPolicy"),
 									},
 								},
 							},
@@ -2597,7 +2597,7 @@ func schema_pkg_apis_network_v1alpha1_NamespaceNetworkPolicyList(ref common.Refe
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta", "kubesphere.io/kubesphere/pkg/apis/network/v1alpha1.NamespaceNetworkPolicy"},
+			"k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta", "github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1.NamespaceNetworkPolicy"},
 	}
 }
 
@@ -2615,7 +2615,7 @@ func schema_pkg_apis_network_v1alpha1_NamespaceNetworkPolicySpec(ref common.Refe
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("kubesphere.io/kubesphere/pkg/apis/network/v1alpha1.NetworkPolicyIngressRule"),
+										Ref: ref("github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1.NetworkPolicyIngressRule"),
 									},
 								},
 							},
@@ -2628,7 +2628,7 @@ func schema_pkg_apis_network_v1alpha1_NamespaceNetworkPolicySpec(ref common.Refe
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("kubesphere.io/kubesphere/pkg/apis/network/v1alpha1.NetworkPolicyEgressRule"),
+										Ref: ref("github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1.NetworkPolicyEgressRule"),
 									},
 								},
 							},
@@ -2652,7 +2652,7 @@ func schema_pkg_apis_network_v1alpha1_NamespaceNetworkPolicySpec(ref common.Refe
 			},
 		},
 		Dependencies: []string{
-			"kubesphere.io/kubesphere/pkg/apis/network/v1alpha1.NetworkPolicyEgressRule", "kubesphere.io/kubesphere/pkg/apis/network/v1alpha1.NetworkPolicyIngressRule"},
+			"github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1.NetworkPolicyEgressRule", "github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1.NetworkPolicyIngressRule"},
 	}
 }
 
@@ -2702,7 +2702,7 @@ func schema_pkg_apis_network_v1alpha1_NetworkPolicyEgressRule(ref common.Referen
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("kubesphere.io/kubesphere/pkg/apis/network/v1alpha1.NetworkPolicyPeer"),
+										Ref: ref("github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1.NetworkPolicyPeer"),
 									},
 								},
 							},
@@ -2712,7 +2712,7 @@ func schema_pkg_apis_network_v1alpha1_NetworkPolicyEgressRule(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1.NetworkPolicyPort", "kubesphere.io/kubesphere/pkg/apis/network/v1alpha1.NetworkPolicyPeer"},
+			"k8s.io/api/networking/v1.NetworkPolicyPort", "github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1.NetworkPolicyPeer"},
 	}
 }
 
@@ -2743,7 +2743,7 @@ func schema_pkg_apis_network_v1alpha1_NetworkPolicyIngressRule(ref common.Refere
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("kubesphere.io/kubesphere/pkg/apis/network/v1alpha1.NetworkPolicyPeer"),
+										Ref: ref("github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1.NetworkPolicyPeer"),
 									},
 								},
 							},
@@ -2753,7 +2753,7 @@ func schema_pkg_apis_network_v1alpha1_NetworkPolicyIngressRule(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1.NetworkPolicyPort", "kubesphere.io/kubesphere/pkg/apis/network/v1alpha1.NetworkPolicyPeer"},
+			"k8s.io/api/networking/v1.NetworkPolicyPort", "github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1.NetworkPolicyPeer"},
 	}
 }
 
@@ -2766,7 +2766,7 @@ func schema_pkg_apis_network_v1alpha1_NetworkPolicyPeer(ref common.ReferenceCall
 				Properties: map[string]spec.Schema{
 					"namespace": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("kubesphere.io/kubesphere/pkg/apis/network/v1alpha1.NamespaceSelector"),
+							Ref: ref("github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1.NamespaceSelector"),
 						},
 					},
 					"ipBlock": {
@@ -2777,14 +2777,14 @@ func schema_pkg_apis_network_v1alpha1_NetworkPolicyPeer(ref common.ReferenceCall
 					},
 					"service": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("kubesphere.io/kubesphere/pkg/apis/network/v1alpha1.ServiceSelector"),
+							Ref: ref("github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1.ServiceSelector"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1.IPBlock", "kubesphere.io/kubesphere/pkg/apis/network/v1alpha1.NamespaceSelector", "kubesphere.io/kubesphere/pkg/apis/network/v1alpha1.ServiceSelector"},
+			"k8s.io/api/networking/v1.IPBlock", "github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1.NamespaceSelector", "github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1.ServiceSelector"},
 	}
 }
 

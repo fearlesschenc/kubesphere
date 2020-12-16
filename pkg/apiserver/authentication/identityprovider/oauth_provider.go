@@ -20,7 +20,7 @@ package identityprovider
 
 import (
 	"errors"
-	"kubesphere.io/kubesphere/pkg/apiserver/authentication/oauth"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/oauth"
 )
 
 var (

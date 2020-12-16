@@ -24,7 +24,7 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/connectivity"
 	"google.golang.org/grpc/keepalive"
-	"kubesphere.io/kubesphere/pkg/apis/storage/v1alpha1"
+	"github.com/fearlesschenc/kubesphere/pkg/apis/storage/v1alpha1"
 	"net"
 	"net/url"
 	"time"

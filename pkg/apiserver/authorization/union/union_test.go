@@ -20,7 +20,7 @@ import (
 	"errors"
 	"fmt"
 	"k8s.io/apiserver/pkg/authentication/user"
-	"kubesphere.io/kubesphere/pkg/apiserver/authorization/authorizer"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/authorization/authorizer"
 	"reflect"
 	"testing"
 )

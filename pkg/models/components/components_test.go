@@ -24,7 +24,7 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/client-go/informers"
 	"k8s.io/client-go/kubernetes/fake"
-	"kubesphere.io/kubesphere/pkg/api/resource/v1alpha2"
+	"github.com/fearlesschenc/kubesphere/pkg/api/resource/v1alpha2"
 	"testing"
 	"time"
 )

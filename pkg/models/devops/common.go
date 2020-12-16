@@ -19,8 +19,8 @@ package devops
 import (
 	"fmt"
 	"github.com/fatih/structs"
-	"kubesphere.io/kubesphere/pkg/simple/client/devops"
-	"kubesphere.io/kubesphere/pkg/utils/stringutils"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/devops"
+	"github.com/fearlesschenc/kubesphere/pkg/utils/stringutils"
 	"time"
 )
 

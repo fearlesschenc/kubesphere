@@ -28,12 +28,12 @@ import (
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/kubernetes/scheme"
 	"k8s.io/klog"
-	iamv1alpha2informers "kubesphere.io/kubesphere/pkg/client/informers/externalversions/iam/v1alpha2"
-	"kubesphere.io/kubesphere/pkg/models"
+	iamv1alpha2informers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions/iam/v1alpha2"
+	"github.com/fearlesschenc/kubesphere/pkg/models"
 	"math/rand"
 	"sigs.k8s.io/controller-runtime/pkg/controller/controllerutil"
 
-	"kubesphere.io/kubesphere/pkg/constants"
+	"github.com/fearlesschenc/kubesphere/pkg/constants"
 )
 
 const (

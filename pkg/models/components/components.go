@@ -23,8 +23,8 @@ import (
 	"k8s.io/client-go/informers"
 	"k8s.io/klog"
 
-	"kubesphere.io/kubesphere/pkg/api/resource/v1alpha2"
-	"kubesphere.io/kubesphere/pkg/constants"
+	"github.com/fearlesschenc/kubesphere/pkg/api/resource/v1alpha2"
+	"github.com/fearlesschenc/kubesphere/pkg/constants"
 )
 
 type ComponentsGetter interface {

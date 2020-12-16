@@ -18,7 +18,7 @@ package v1alpha1
 
 import (
 	"github.com/emicklei/go-restful"
-	"kubesphere.io/kubesphere/pkg/simple/client/auditing"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/auditing"
 	"strconv"
 	"time"
 )

@@ -24,9 +24,9 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/client-go/informers"
 	resourceheper "k8s.io/kubectl/pkg/util/resource"
-	"kubesphere.io/kubesphere/pkg/api"
-	"kubesphere.io/kubesphere/pkg/apiserver/query"
-	"kubesphere.io/kubesphere/pkg/models/resources/v1alpha3"
+	"github.com/fearlesschenc/kubesphere/pkg/api"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/query"
+	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha3"
 	"sort"
 )
 

@@ -20,11 +20,11 @@ import (
 	"github.com/emicklei/go-restful"
 	"github.com/emicklei/go-restful-openapi"
 	"k8s.io/apimachinery/pkg/runtime/schema"
-	"kubesphere.io/kubesphere/pkg/api"
-	"kubesphere.io/kubesphere/pkg/api/resource/v1alpha2"
-	"kubesphere.io/kubesphere/pkg/apiserver/query"
-	"kubesphere.io/kubesphere/pkg/apiserver/runtime"
-	"kubesphere.io/kubesphere/pkg/informers"
+	"github.com/fearlesschenc/kubesphere/pkg/api"
+	"github.com/fearlesschenc/kubesphere/pkg/api/resource/v1alpha2"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/query"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/runtime"
+	"github.com/fearlesschenc/kubesphere/pkg/informers"
 	"net/http"
 )
 

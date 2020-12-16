@@ -22,7 +22,7 @@ import (
 	"github.com/google/go-cmp/cmp"
 	"gopkg.in/yaml.v3"
 	"io/ioutil"
-	"kubesphere.io/kubesphere/pkg/apiserver/authentication/oauth"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/oauth"
 	"os"
 	"testing"
 )

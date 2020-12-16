@@ -22,9 +22,9 @@ import (
 	"fmt"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/klog"
-	iamv1alpha2 "kubesphere.io/kubesphere/pkg/apis/iam/v1alpha2"
-	kubesphere "kubesphere.io/kubesphere/pkg/client/clientset/versioned"
-	"kubesphere.io/kubesphere/pkg/utils/net"
+	iamv1alpha2 "github.com/fearlesschenc/kubesphere/pkg/apis/iam/v1alpha2"
+	kubesphere "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned"
+	"github.com/fearlesschenc/kubesphere/pkg/utils/net"
 	"net/http"
 	"strings"
 )

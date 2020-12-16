@@ -19,12 +19,12 @@ package workspacerole
 import (
 	"github.com/google/go-cmp/cmp"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"kubesphere.io/kubesphere/pkg/api"
-	iamv1alpha2 "kubesphere.io/kubesphere/pkg/apis/iam/v1alpha2"
-	"kubesphere.io/kubesphere/pkg/apiserver/query"
-	"kubesphere.io/kubesphere/pkg/client/clientset/versioned/fake"
-	informers "kubesphere.io/kubesphere/pkg/client/informers/externalversions"
-	"kubesphere.io/kubesphere/pkg/models/resources/v1alpha3"
+	"github.com/fearlesschenc/kubesphere/pkg/api"
+	iamv1alpha2 "github.com/fearlesschenc/kubesphere/pkg/apis/iam/v1alpha2"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/query"
+	"github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/fake"
+	informers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions"
+	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha3"
 	"testing"
 )
 

@@ -25,8 +25,8 @@ import (
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
 	rest "k8s.io/client-go/rest"
-	v1alpha2 "kubesphere.io/kubesphere/pkg/apis/servicemesh/v1alpha2"
-	scheme "kubesphere.io/kubesphere/pkg/client/clientset/versioned/scheme"
+	v1alpha2 "github.com/fearlesschenc/kubesphere/pkg/apis/servicemesh/v1alpha2"
+	scheme "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/scheme"
 )
 
 // ServicePoliciesGetter has a method to return a ServicePolicyInterface.

@@ -26,7 +26,7 @@ import (
 	"github.com/onsi/gomega"
 	"k8s.io/client-go/kubernetes/scheme"
 	"k8s.io/client-go/rest"
-	"kubesphere.io/kubesphere/pkg/apis"
+	"github.com/fearlesschenc/kubesphere/pkg/apis"
 	"sigs.k8s.io/controller-runtime/pkg/envtest"
 	"sigs.k8s.io/controller-runtime/pkg/manager"
 	"sigs.k8s.io/controller-runtime/pkg/reconcile"

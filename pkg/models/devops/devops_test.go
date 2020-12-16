@@ -17,8 +17,8 @@ limitations under the License.
 package devops
 
 import (
-	"kubesphere.io/kubesphere/pkg/simple/client/devops"
-	"kubesphere.io/kubesphere/pkg/simple/client/devops/fake"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/devops"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/devops/fake"
 	"net/http"
 	"testing"
 )

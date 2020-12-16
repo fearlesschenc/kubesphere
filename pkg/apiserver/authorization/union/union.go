@@ -25,7 +25,7 @@ limitations under the License.
 package union
 
 import (
-	"kubesphere.io/kubesphere/pkg/apiserver/authorization/authorizer"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/authorization/authorizer"
 	"strings"
 
 	utilerrors "k8s.io/apimachinery/pkg/util/errors"

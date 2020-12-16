@@ -18,7 +18,7 @@ package v1alpha2
 
 import (
 	"github.com/emicklei/go-restful"
-	"kubesphere.io/kubesphere/pkg/simple/client/logging"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/logging"
 	"strconv"
 	"time"
 )

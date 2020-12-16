@@ -47,11 +47,11 @@ import (
 	"k8s.io/client-go/tools/cache"
 	"k8s.io/client-go/util/workqueue"
 	"k8s.io/klog"
-	capability "kubesphere.io/kubesphere/pkg/apis/storage/v1alpha1"
-	crdscheme "kubesphere.io/kubesphere/pkg/client/clientset/versioned/scheme"
-	capabilityclient "kubesphere.io/kubesphere/pkg/client/clientset/versioned/typed/storage/v1alpha1"
-	capabilityinformers "kubesphere.io/kubesphere/pkg/client/informers/externalversions/storage/v1alpha1"
-	capabilitylisters "kubesphere.io/kubesphere/pkg/client/listers/storage/v1alpha1"
+	capability "github.com/fearlesschenc/kubesphere/pkg/apis/storage/v1alpha1"
+	crdscheme "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/scheme"
+	capabilityclient "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/typed/storage/v1alpha1"
+	capabilityinformers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions/storage/v1alpha1"
+	capabilitylisters "github.com/fearlesschenc/kubesphere/pkg/client/listers/storage/v1alpha1"
 )
 
 const (

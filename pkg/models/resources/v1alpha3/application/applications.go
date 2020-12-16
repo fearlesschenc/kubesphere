@@ -18,9 +18,9 @@ package application
 
 import (
 	"k8s.io/apimachinery/pkg/runtime"
-	"kubesphere.io/kubesphere/pkg/api"
-	"kubesphere.io/kubesphere/pkg/apiserver/query"
-	"kubesphere.io/kubesphere/pkg/models/resources/v1alpha3"
+	"github.com/fearlesschenc/kubesphere/pkg/api"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/query"
+	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha3"
 	appv1beta1 "sigs.k8s.io/application/pkg/apis/app/v1beta1"
 	"sigs.k8s.io/application/pkg/client/informers/externalversions"
 	"time"

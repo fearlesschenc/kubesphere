@@ -22,7 +22,7 @@ import (
 	"crypto/tls"
 	"encoding/json"
 	"k8s.io/klog"
-	"kubesphere.io/kubesphere/pkg/apiserver/auditing/v1alpha1"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/auditing/v1alpha1"
 	"net/http"
 	"time"
 )

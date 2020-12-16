@@ -19,8 +19,8 @@ package install
 import (
 	k8sruntime "k8s.io/apimachinery/pkg/runtime"
 	urlruntime "k8s.io/apimachinery/pkg/util/runtime"
-	devopsv1alpha1 "kubesphere.io/kubesphere/pkg/apis/devops/v1alpha1"
-	devopsv1alpha3 "kubesphere.io/kubesphere/pkg/apis/devops/v1alpha3"
+	devopsv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/apis/devops/v1alpha1"
+	devopsv1alpha3 "github.com/fearlesschenc/kubesphere/pkg/apis/devops/v1alpha3"
 )
 
 func Install(scheme *k8sruntime.Scheme) {

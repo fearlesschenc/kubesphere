@@ -16,7 +16,7 @@ limitations under the License.
 
 package monitoring
 
-import "kubesphere.io/kubesphere/pkg/simple/client/monitoring"
+import "github.com/fearlesschenc/kubesphere/pkg/simple/client/monitoring"
 
 type Metrics struct {
 	Results     []monitoring.Metric `json:"results" description:"actual array of results"`

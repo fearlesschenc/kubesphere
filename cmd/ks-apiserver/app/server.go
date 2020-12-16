@@ -28,12 +28,12 @@ import (
 	cliflag "k8s.io/component-base/cli/flag"
 	"k8s.io/klog"
 
-	"kubesphere.io/kubesphere/cmd/ks-apiserver/app/options"
-	apiserverconfig "kubesphere.io/kubesphere/pkg/apiserver/config"
-	"kubesphere.io/kubesphere/pkg/utils/signals"
-	"kubesphere.io/kubesphere/pkg/utils/term"
+	"github.com/fearlesschenc/kubesphere/cmd/ks-apiserver/app/options"
+	apiserverconfig "github.com/fearlesschenc/kubesphere/pkg/apiserver/config"
+	"github.com/fearlesschenc/kubesphere/pkg/utils/signals"
+	"github.com/fearlesschenc/kubesphere/pkg/utils/term"
 
-	tracing "kubesphere.io/kubesphere/pkg/kapis/servicemesh/metrics/v1alpha2"
+	tracing "github.com/fearlesschenc/kubesphere/pkg/kapis/servicemesh/metrics/v1alpha2"
 )
 
 func NewAPIServerCommand() *cobra.Command {

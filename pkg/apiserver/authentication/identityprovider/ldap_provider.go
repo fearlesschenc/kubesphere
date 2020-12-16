@@ -28,9 +28,9 @@ import (
 	"io/ioutil"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/klog"
-	iamv1alpha2 "kubesphere.io/kubesphere/pkg/apis/iam/v1alpha2"
-	"kubesphere.io/kubesphere/pkg/apiserver/authentication/oauth"
-	"kubesphere.io/kubesphere/pkg/constants"
+	iamv1alpha2 "github.com/fearlesschenc/kubesphere/pkg/apis/iam/v1alpha2"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/oauth"
+	"github.com/fearlesschenc/kubesphere/pkg/constants"
 	"time"
 )
 

@@ -25,8 +25,8 @@ import (
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 	"k8s.io/klog"
-	"kubesphere.io/kubesphere/pkg/apis/network/v1alpha1"
-	"kubesphere.io/kubesphere/pkg/test"
+	"github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1"
+	"github.com/fearlesschenc/kubesphere/pkg/test"
 )
 
 var ctx *test.TestCtx

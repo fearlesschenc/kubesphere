@@ -32,12 +32,12 @@ import (
 	"k8s.io/client-go/tools/record"
 	"k8s.io/client-go/util/workqueue"
 	"k8s.io/klog"
-	iam1alpha2 "kubesphere.io/kubesphere/pkg/apis/iam/v1alpha2"
-	kubesphere "kubesphere.io/kubesphere/pkg/client/clientset/versioned"
-	iamv1alpha2informers "kubesphere.io/kubesphere/pkg/client/informers/externalversions/iam/v1alpha2"
-	iamv1alpha1listers "kubesphere.io/kubesphere/pkg/client/listers/iam/v1alpha2"
-	"kubesphere.io/kubesphere/pkg/controller/utils/controller"
-	"kubesphere.io/kubesphere/pkg/utils/sliceutil"
+	iam1alpha2 "github.com/fearlesschenc/kubesphere/pkg/apis/iam/v1alpha2"
+	kubesphere "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned"
+	iamv1alpha2informers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions/iam/v1alpha2"
+	iamv1alpha1listers "github.com/fearlesschenc/kubesphere/pkg/client/listers/iam/v1alpha2"
+	"github.com/fearlesschenc/kubesphere/pkg/controller/utils/controller"
+	"github.com/fearlesschenc/kubesphere/pkg/utils/sliceutil"
 )
 
 const (

@@ -17,8 +17,8 @@ limitations under the License.
 package devops
 
 import (
-	"kubesphere.io/kubesphere/pkg/api/devops/v1alpha2"
-	"kubesphere.io/kubesphere/pkg/utils/idutils"
+	"github.com/fearlesschenc/kubesphere/pkg/api/devops/v1alpha2"
+	"github.com/fearlesschenc/kubesphere/pkg/utils/idutils"
 	"time"
 )
 

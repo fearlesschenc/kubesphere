@@ -23,7 +23,7 @@ import (
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/client-go/informers"
 	"k8s.io/client-go/kubernetes/fake"
-	"kubesphere.io/kubesphere/pkg/simple/client/openpitrix"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/openpitrix"
 	"openpitrix.io/openpitrix/pkg/pb"
 	"testing"
 )

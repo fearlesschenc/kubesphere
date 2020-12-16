@@ -19,8 +19,8 @@ import (
 	autoscalingv2beta2 "k8s.io/api/autoscaling/v2beta2"
 	"k8s.io/apimachinery/pkg/labels"
 	"k8s.io/client-go/informers"
-	"kubesphere.io/kubesphere/pkg/models/resources/v1alpha2"
-	"kubesphere.io/kubesphere/pkg/server/params"
+	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha2"
+	"github.com/fearlesschenc/kubesphere/pkg/server/params"
 	"sort"
 )
 

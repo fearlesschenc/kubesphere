@@ -19,8 +19,8 @@ package v1alpha2
 import (
 	"github.com/emicklei/go-restful"
 	log "k8s.io/klog"
-	"kubesphere.io/kubesphere/pkg/api"
-	"kubesphere.io/kubesphere/pkg/models/devops"
+	"github.com/fearlesschenc/kubesphere/pkg/api"
+	"github.com/fearlesschenc/kubesphere/pkg/models/devops"
 	"net/http"
 	"strings"
 )

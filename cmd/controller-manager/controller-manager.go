@@ -17,7 +17,7 @@ limitations under the License.
 package main
 
 import (
-	"kubesphere.io/kubesphere/cmd/controller-manager/app"
+	"github.com/fearlesschenc/kubesphere/cmd/controller-manager/app"
 	"os"
 )
 

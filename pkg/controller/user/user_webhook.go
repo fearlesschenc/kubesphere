@@ -19,7 +19,7 @@ package user
 import (
 	"context"
 	"fmt"
-	"kubesphere.io/kubesphere/pkg/apis/iam/v1alpha2"
+	"github.com/fearlesschenc/kubesphere/pkg/apis/iam/v1alpha2"
 	"net/http"
 	"net/mail"
 	"sigs.k8s.io/controller-runtime/pkg/client"

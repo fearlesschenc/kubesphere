@@ -18,8 +18,8 @@ package application
 
 import (
 	"k8s.io/apimachinery/pkg/labels"
-	"kubesphere.io/kubesphere/pkg/models/resources/v1alpha2"
-	"kubesphere.io/kubesphere/pkg/server/params"
+	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha2"
+	"github.com/fearlesschenc/kubesphere/pkg/server/params"
 	"sigs.k8s.io/application/pkg/apis/app/v1beta1"
 	"sigs.k8s.io/application/pkg/client/informers/externalversions"
 	"sort"

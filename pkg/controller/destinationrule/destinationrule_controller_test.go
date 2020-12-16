@@ -30,11 +30,11 @@ import (
 	kubefake "k8s.io/client-go/kubernetes/fake"
 	"k8s.io/client-go/tools/cache"
 	"k8s.io/client-go/tools/record"
-	"kubesphere.io/kubesphere/pkg/apis/servicemesh/v1alpha2"
-	"kubesphere.io/kubesphere/pkg/client/clientset/versioned/fake"
-	informers "kubesphere.io/kubesphere/pkg/client/informers/externalversions"
-	"kubesphere.io/kubesphere/pkg/controller/virtualservice/util"
-	"kubesphere.io/kubesphere/pkg/utils/reflectutils"
+	"github.com/fearlesschenc/kubesphere/pkg/apis/servicemesh/v1alpha2"
+	"github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/fake"
+	informers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions"
+	"github.com/fearlesschenc/kubesphere/pkg/controller/virtualservice/util"
+	"github.com/fearlesschenc/kubesphere/pkg/utils/reflectutils"
 	"testing"
 )
 

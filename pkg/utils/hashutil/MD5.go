@@ -22,7 +22,7 @@ import (
 	"io"
 	"k8s.io/klog"
 
-	"kubesphere.io/kubesphere/pkg/utils/readerutils"
+	"github.com/fearlesschenc/kubesphere/pkg/utils/readerutils"
 )
 
 func GetMD5(reader io.ReadCloser) (string, error) {

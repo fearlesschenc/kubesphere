@@ -22,12 +22,12 @@ import (
 	"github.com/emicklei/go-restful-openapi"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/client-go/kubernetes"
-	"kubesphere.io/kubesphere/pkg/apiserver/runtime"
-	"kubesphere.io/kubesphere/pkg/constants"
-	"kubesphere.io/kubesphere/pkg/informers"
-	model "kubesphere.io/kubesphere/pkg/models/monitoring"
-	"kubesphere.io/kubesphere/pkg/simple/client/monitoring"
-	"kubesphere.io/kubesphere/pkg/simple/client/openpitrix"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/runtime"
+	"github.com/fearlesschenc/kubesphere/pkg/constants"
+	"github.com/fearlesschenc/kubesphere/pkg/informers"
+	model "github.com/fearlesschenc/kubesphere/pkg/models/monitoring"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/monitoring"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/openpitrix"
 	"net/http"
 )
 

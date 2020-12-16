@@ -18,11 +18,11 @@ package federatedsecret
 
 import (
 	"k8s.io/apimachinery/pkg/runtime"
-	"kubesphere.io/kubesphere/pkg/api"
-	"kubesphere.io/kubesphere/pkg/apis/types/v1beta1"
-	"kubesphere.io/kubesphere/pkg/apiserver/query"
-	informers "kubesphere.io/kubesphere/pkg/client/informers/externalversions"
-	"kubesphere.io/kubesphere/pkg/models/resources/v1alpha3"
+	"github.com/fearlesschenc/kubesphere/pkg/api"
+	"github.com/fearlesschenc/kubesphere/pkg/apis/types/v1beta1"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/query"
+	informers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions"
+	"github.com/fearlesschenc/kubesphere/pkg/models/resources/v1alpha3"
 	"strings"
 )
 

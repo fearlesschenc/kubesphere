@@ -23,7 +23,7 @@ import (
 	"github.com/speps/go-hashids"
 	"net"
 
-	"kubesphere.io/kubesphere/pkg/utils/stringutils"
+	"github.com/fearlesschenc/kubesphere/pkg/utils/stringutils"
 )
 
 var sf *sonyflake.Sonyflake

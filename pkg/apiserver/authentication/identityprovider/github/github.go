@@ -22,8 +22,8 @@ import (
 	"golang.org/x/oauth2"
 	"gopkg.in/yaml.v3"
 	"io/ioutil"
-	"kubesphere.io/kubesphere/pkg/apiserver/authentication/identityprovider"
-	"kubesphere.io/kubesphere/pkg/apiserver/authentication/oauth"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/identityprovider"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/oauth"
 	"time"
 )
 

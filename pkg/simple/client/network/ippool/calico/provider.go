@@ -29,12 +29,12 @@ import (
 	"k8s.io/client-go/tools/clientcmd"
 	"k8s.io/client-go/util/workqueue"
 	"k8s.io/klog"
-	"kubesphere.io/kubesphere/pkg/apis/network/calicov3"
-	"kubesphere.io/kubesphere/pkg/apis/network/v1alpha1"
-	kubesphereclient "kubesphere.io/kubesphere/pkg/client/clientset/versioned"
-	"kubesphere.io/kubesphere/pkg/client/clientset/versioned/scheme"
-	"kubesphere.io/kubesphere/pkg/simple/client/k8s"
-	calicoset "kubesphere.io/kubesphere/pkg/simple/client/network/ippool/calico/client/clientset/versioned"
+	"github.com/fearlesschenc/kubesphere/pkg/apis/network/calicov3"
+	"github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1"
+	kubesphereclient "github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned"
+	"github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/scheme"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/k8s"
+	calicoset "github.com/fearlesschenc/kubesphere/pkg/simple/client/network/ippool/calico/client/clientset/versioned"
 	"sigs.k8s.io/controller-runtime/pkg/controller/controllerutil"
 )
 

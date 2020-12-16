@@ -15,7 +15,7 @@ package openpitrix
 
 import (
 	"k8s.io/client-go/informers"
-	"kubesphere.io/kubesphere/pkg/simple/client/openpitrix"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/openpitrix"
 )
 
 type Interface interface {

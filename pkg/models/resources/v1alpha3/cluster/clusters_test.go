@@ -20,11 +20,11 @@ import (
 	"github.com/google/go-cmp/cmp"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
-	"kubesphere.io/kubesphere/pkg/api"
-	clusterv1alpha1 "kubesphere.io/kubesphere/pkg/apis/cluster/v1alpha1"
-	"kubesphere.io/kubesphere/pkg/apiserver/query"
-	"kubesphere.io/kubesphere/pkg/client/clientset/versioned/fake"
-	"kubesphere.io/kubesphere/pkg/client/informers/externalversions"
+	"github.com/fearlesschenc/kubesphere/pkg/api"
+	clusterv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/apis/cluster/v1alpha1"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/query"
+	"github.com/fearlesschenc/kubesphere/pkg/client/clientset/versioned/fake"
+	"github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions"
 	"testing"
 )
 

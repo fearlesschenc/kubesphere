@@ -23,7 +23,7 @@ import (
 	"k8s.io/apimachinery/pkg/util/intstr"
 	"k8s.io/apimachinery/pkg/util/validation"
 	"k8s.io/apimachinery/pkg/util/validation/field"
-	networkv1alpha1 "kubesphere.io/kubesphere/pkg/apis/network/v1alpha1"
+	networkv1alpha1 "github.com/fearlesschenc/kubesphere/pkg/apis/network/v1alpha1"
 	"net"
 	"net/http"
 	"sigs.k8s.io/controller-runtime/pkg/client"

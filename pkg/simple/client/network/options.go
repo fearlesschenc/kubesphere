@@ -19,7 +19,7 @@ package network
 import (
 	"github.com/spf13/pflag"
 
-	"kubesphere.io/kubesphere/pkg/simple/client/network/ippool"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/network/ippool"
 )
 
 type NSNPOptions struct {

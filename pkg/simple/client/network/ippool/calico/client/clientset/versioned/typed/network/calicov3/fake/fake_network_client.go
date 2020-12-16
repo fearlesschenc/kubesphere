@@ -21,7 +21,7 @@ package fake
 import (
 	rest "k8s.io/client-go/rest"
 	testing "k8s.io/client-go/testing"
-	calicov3 "kubesphere.io/kubesphere/pkg/simple/client/network/ippool/calico/client/clientset/versioned/typed/network/calicov3"
+	calicov3 "github.com/fearlesschenc/kubesphere/pkg/simple/client/network/ippool/calico/client/clientset/versioned/typed/network/calicov3"
 )
 
 type FakeCrdCalicov3 struct {

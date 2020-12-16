@@ -17,9 +17,9 @@ limitations under the License.
 package auditing
 
 import (
-	"kubesphere.io/kubesphere/pkg/api/auditing/v1alpha1"
-	"kubesphere.io/kubesphere/pkg/simple/client/auditing"
-	"kubesphere.io/kubesphere/pkg/utils/stringutils"
+	"github.com/fearlesschenc/kubesphere/pkg/api/auditing/v1alpha1"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/auditing"
+	"github.com/fearlesschenc/kubesphere/pkg/utils/stringutils"
 	"strconv"
 )
 

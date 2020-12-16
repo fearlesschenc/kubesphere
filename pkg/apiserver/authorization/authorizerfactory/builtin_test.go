@@ -17,7 +17,7 @@ limitations under the License.
 package authorizerfactory
 
 import (
-	"kubesphere.io/kubesphere/pkg/apiserver/authorization/authorizer"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/authorization/authorizer"
 	"testing"
 )
 

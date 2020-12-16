@@ -15,7 +15,7 @@ package prometheus
 
 import (
 	"fmt"
-	"kubesphere.io/kubesphere/pkg/simple/client/monitoring"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/monitoring"
 	"strings"
 )
 

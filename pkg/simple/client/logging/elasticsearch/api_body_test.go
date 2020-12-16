@@ -19,7 +19,7 @@ package elasticsearch
 import (
 	"fmt"
 	"github.com/google/go-cmp/cmp"
-	"kubesphere.io/kubesphere/pkg/simple/client/logging"
+	"github.com/fearlesschenc/kubesphere/pkg/simple/client/logging"
 	"reflect"
 	"testing"
 	"time"

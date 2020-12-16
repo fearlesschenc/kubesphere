@@ -16,7 +16,7 @@ limitations under the License.
 
 package ippool
 
-import "kubesphere.io/kubesphere/pkg/simple/client/network/ippool/calico"
+import "github.com/fearlesschenc/kubesphere/pkg/simple/client/network/ippool/calico"
 
 type Options struct {
 	Calico *calico.Options `json:"calico,omityempty" yaml:"calico,omityempty"`

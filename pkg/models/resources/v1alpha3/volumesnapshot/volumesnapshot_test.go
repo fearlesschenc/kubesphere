@@ -24,7 +24,7 @@ import (
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 	"k8s.io/apimachinery/pkg/apis/meta/v1"
-	"kubesphere.io/kubesphere/pkg/apiserver/query"
+	"github.com/fearlesschenc/kubesphere/pkg/apiserver/query"
 	"testing"
 	"time"
 )
