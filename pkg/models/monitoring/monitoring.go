@@ -32,7 +32,7 @@ import (
 	"time"
 )
 
-type MonitoringOperator interface {
+type Interface interface {
 	GetMetric(expr, namespace string, time time.Time) (monitoring.Metric, error)
 	GetMetricOverTime(expr, namespace string, start, end time.Time, step time.Duration) (monitoring.Metric, error)
 	GetNamedMetrics(metrics []string, time time.Time, opt monitoring.QueryOption) Metrics
@@ -45,15 +45,15 @@ type MonitoringOperator interface {
 	GetWorkspaceStats(workspace string) Metrics
 }
 
-type monitoringOperator struct {
+type monitor struct {
 	c   monitoring.Interface
 	k8s kubernetes.Interface
 	ks  ksinformers.SharedInformerFactory
 	op  openpitrix.Interface
 }
 
-func NewMonitoringOperator(client monitoring.Interface, k8s kubernetes.Interface, factory informers.InformerFactory, opClient opclient.Client) MonitoringOperator {
-	return &monitoringOperator{
+func New(client monitoring.Interface, k8s kubernetes.Interface, factory informers.InformerFactory, opClient opclient.Client) Interface {
+	return &monitor{
 		c:   client,
 		k8s: k8s,
 		ks:  factory.KubeSphereSharedInformerFactory(),
@@ -61,7 +61,7 @@ func NewMonitoringOperator(client monitoring.Interface, k8s kubernetes.Interface
 	}
 }
 
-func (mo monitoringOperator) GetMetric(expr, namespace string, time time.Time) (monitoring.Metric, error) {
+func (mo monitor) GetMetric(expr, namespace string, time time.Time) (monitoring.Metric, error) {
 	// Different monitoring backend implementations have different ways to enforce namespace isolation.
 	// Each implementation should register itself to `ReplaceNamespaceFns` during init().
 	// We hard code "prometheus" here because we only support this datasource so far.
@@ -73,7 +73,7 @@ func (mo monitoringOperator) GetMetric(expr, namespace string, time time.Time) (
 	return mo.c.GetMetric(expr, time), nil
 }
 
-func (mo monitoringOperator) GetMetricOverTime(expr, namespace string, start, end time.Time, step time.Duration) (monitoring.Metric, error) {
+func (mo monitor) GetMetricOverTime(expr, namespace string, start, end time.Time, step time.Duration) (monitoring.Metric, error) {
 	// Different monitoring backend implementations have different ways to enforce namespace isolation.
 	// Each implementation should register itself to `ReplaceNamespaceFns` during init().
 	// We hard code "prometheus" here because we only support this datasource so far.
@@ -85,22 +85,22 @@ func (mo monitoringOperator) GetMetricOverTime(expr, namespace string, start, en
 	return mo.c.GetMetricOverTime(expr, start, end, step), nil
 }
 
-func (mo monitoringOperator) GetNamedMetrics(metrics []string, time time.Time, opt monitoring.QueryOption) Metrics {
+func (mo monitor) GetNamedMetrics(metrics []string, time time.Time, opt monitoring.QueryOption) Metrics {
 	ress := mo.c.GetNamedMetrics(metrics, time, opt)
 	return Metrics{Results: ress}
 }
 
-func (mo monitoringOperator) GetNamedMetricsOverTime(metrics []string, start, end time.Time, step time.Duration, opt monitoring.QueryOption) Metrics {
+func (mo monitor) GetNamedMetricsOverTime(metrics []string, start, end time.Time, step time.Duration, opt monitoring.QueryOption) Metrics {
 	ress := mo.c.GetNamedMetricsOverTime(metrics, start, end, step, opt)
 	return Metrics{Results: ress}
 }
 
-func (mo monitoringOperator) GetMetadata(namespace string) Metadata {
+func (mo monitor) GetMetadata(namespace string) Metadata {
 	data := mo.c.GetMetadata(namespace)
 	return Metadata{Data: data}
 }
 
-func (mo monitoringOperator) GetMetricLabelSet(metric, namespace string, start, end time.Time) MetricLabelSet {
+func (mo monitor) GetMetricLabelSet(metric, namespace string, start, end time.Time) MetricLabelSet {
 	// Different monitoring backend implementations have different ways to enforce namespace isolation.
 	// Each implementation should register itself to `ReplaceNamespaceFns` during init().
 	// We hard code "prometheus" here because we only support this datasource so far.
@@ -114,7 +114,7 @@ func (mo monitoringOperator) GetMetricLabelSet(metric, namespace string, start, 
 	return MetricLabelSet{Data: data}
 }
 
-func (mo monitoringOperator) GetKubeSphereStats() Metrics {
+func (mo monitor) GetKubeSphereStats() Metrics {
 	var res Metrics
 	now := float64(time.Now().Unix())
 
@@ -213,7 +213,7 @@ func (mo monitoringOperator) GetKubeSphereStats() Metrics {
 	return res
 }
 
-func (mo monitoringOperator) GetWorkspaceStats(workspace string) Metrics {
+func (mo monitor) GetWorkspaceStats(workspace string) Metrics {
 	var res Metrics
 	now := float64(time.Now().Unix())
 

@@ -19,247 +19,123 @@
 package v1alpha3
 
 import (
-	"errors"
 	"github.com/emicklei/go-restful"
-	"github.com/fearlesschenc/kubesphere/pkg/api"
+	ksinformers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions"
 	"github.com/fearlesschenc/kubesphere/pkg/informers"
-	model "github.com/fearlesschenc/kubesphere/pkg/models/monitoring"
-	"github.com/fearlesschenc/kubesphere/pkg/simple/client/monitoring"
-	"github.com/fearlesschenc/kubesphere/pkg/simple/client/openpitrix"
+	"github.com/fearlesschenc/kubesphere/pkg/models/openpitrix"
+	"github.com/fearlesschenc/kubesphere/pkg/monitoring"
+	opclient "github.com/fearlesschenc/kubesphere/pkg/simple/client/openpitrix"
 	"k8s.io/client-go/kubernetes"
-	"regexp"
 )
 
+const DefaultFilter = ".*"
+
 type handler struct {
-	k  kubernetes.Interface
-	mo model.MonitoringOperator
+	kubernetesClient kubernetes.Interface
+	monitoring       monitoring.Interface
+	ks               ksinformers.SharedInformerFactory
+	op               openpitrix.Interface
 }
 
-func newHandler(k kubernetes.Interface, m monitoring.Interface, f informers.InformerFactory, o openpitrix.Client) *handler {
-	return &handler{k, model.NewMonitoringOperator(m, k, f, o)}
-}
-
-func (h handler) handleKubeSphereMetricsQuery(req *restful.Request, resp *restful.Response) {
-	res := h.mo.GetKubeSphereStats()
-	resp.WriteAsJson(res)
-}
-
-func (h handler) handleClusterMetricsQuery(req *restful.Request, resp *restful.Response) {
-	params := parseRequestParams(req)
-	opt, err := h.makeQueryOptions(params, monitoring.LevelCluster)
-	if err != nil {
-		api.HandleBadRequest(resp, nil, err)
-		return
-	}
-	h.handleNamedMetricsQuery(resp, opt)
-}
-
-func (h handler) handleNodeMetricsQuery(req *restful.Request, resp *restful.Response) {
-	params := parseRequestParams(req)
-	opt, err := h.makeQueryOptions(params, monitoring.LevelNode)
-	if err != nil {
-		api.HandleBadRequest(resp, nil, err)
-		return
-	}
-	h.handleNamedMetricsQuery(resp, opt)
-}
-
-func (h handler) handleWorkspaceMetricsQuery(req *restful.Request, resp *restful.Response) {
-	params := parseRequestParams(req)
-	opt, err := h.makeQueryOptions(params, monitoring.LevelWorkspace)
-	if err != nil {
-		api.HandleBadRequest(resp, nil, err)
-		return
-	}
-
-	if req.QueryParameter("type") == "statistics" {
-		res := h.mo.GetWorkspaceStats(params.workspaceName)
-		resp.WriteAsJson(res)
-	} else {
-		h.handleNamedMetricsQuery(resp, opt)
+func newHandler(k kubernetes.Interface, m monitoring.Interface, f informers.InformerFactory, o opclient.Client) *handler {
+	return &handler{
+		kubernetesClient: k,
+		monitoring:       m,
+		ks:               f.KubeSphereSharedInformerFactory(),
+		op:               openpitrix.NewOpenpitrixOperator(f.KubernetesSharedInformerFactory(), o),
 	}
 }
 
-func (h handler) handleNamespaceMetricsQuery(req *restful.Request, resp *restful.Response) {
-	params := parseRequestParams(req)
-	opt, err := h.makeQueryOptions(params, monitoring.LevelNamespace)
-	if err != nil {
-		if err.Error() == ErrNoHit {
-			res := handleNoHit(opt.namedMetrics)
-			resp.WriteAsJson(res)
-			return
-		}
-
-		api.HandleBadRequest(resp, nil, err)
-		return
+func parseResourcesFilter(req *restful.Request) string {
+	filter := req.QueryParameter("resources_filter")
+	if filter == "" {
+		return DefaultFilter
 	}
-	h.handleNamedMetricsQuery(resp, opt)
+
+	return filter
 }
 
-func (h handler) handleWorkloadMetricsQuery(req *restful.Request, resp *restful.Response) {
-	params := parseRequestParams(req)
-	opt, err := h.makeQueryOptions(params, monitoring.LevelWorkload)
-	if err != nil {
-		if err.Error() == ErrNoHit {
-			res := handleNoHit(opt.namedMetrics)
-			resp.WriteAsJson(res)
-			return
-		}
-
-		api.HandleBadRequest(resp, nil, err)
-		return
-	}
-	h.handleNamedMetricsQuery(resp, opt)
+func (h handler) getClusterMetrics(req *restful.Request, resp *restful.Response) {
+	h.getMetricsForObject(req, resp, h.monitoring.Cluster())
 }
 
-func (h handler) handlePodMetricsQuery(req *restful.Request, resp *restful.Response) {
-	params := parseRequestParams(req)
-	opt, err := h.makeQueryOptions(params, monitoring.LevelPod)
-	if err != nil {
-		if err.Error() == ErrNoHit {
-			res := handleNoHit(opt.namedMetrics)
-			resp.WriteAsJson(res)
-			return
-		}
+func (h handler) getNodeMetrics(req *restful.Request, resp *restful.Response) {
+	name := req.QueryParameter("node")
+	filter := parseResourcesFilter(req)
 
-		api.HandleBadRequest(resp, nil, err)
-		return
-	}
-	h.handleNamedMetricsQuery(resp, opt)
+	h.getMetricsForObject(req, resp, h.monitoring.Node(name, filter))
 }
 
-func (h handler) handleContainerMetricsQuery(req *restful.Request, resp *restful.Response) {
-	params := parseRequestParams(req)
-	opt, err := h.makeQueryOptions(params, monitoring.LevelContainer)
-	if err != nil {
-		if err.Error() == ErrNoHit {
-			res := handleNoHit(opt.namedMetrics)
-			resp.WriteAsJson(res)
-			return
-		}
+func (h handler) getWorkspaceMetrics(req *restful.Request, resp *restful.Response) {
+	name := req.QueryParameter("workspace")
+	filter := parseResourcesFilter(req)
 
-		api.HandleBadRequest(resp, nil, err)
-		return
-	}
-	h.handleNamedMetricsQuery(resp, opt)
-}
-
-func (h handler) handlePVCMetricsQuery(req *restful.Request, resp *restful.Response) {
-	params := parseRequestParams(req)
-	opt, err := h.makeQueryOptions(params, monitoring.LevelPVC)
-	if err != nil {
-		if err.Error() == ErrNoHit {
-			res := handleNoHit(opt.namedMetrics)
-			resp.WriteAsJson(res)
-			return
-		}
-
-		api.HandleBadRequest(resp, nil, err)
-		return
-	}
-	h.handleNamedMetricsQuery(resp, opt)
-}
-
-func (h handler) handleComponentMetricsQuery(req *restful.Request, resp *restful.Response) {
-	params := parseRequestParams(req)
-	opt, err := h.makeQueryOptions(params, monitoring.LevelComponent)
-	if err != nil {
-		api.HandleBadRequest(resp, nil, err)
-		return
-	}
-	h.handleNamedMetricsQuery(resp, opt)
-}
-
-func handleNoHit(namedMetrics []string) model.Metrics {
-	var res model.Metrics
-	for _, metic := range namedMetrics {
-		res.Results = append(res.Results, monitoring.Metric{
-			MetricName: metic,
-			MetricData: monitoring.MetricData{},
-		})
-	}
-	return res
-}
-
-func (h handler) handleNamedMetricsQuery(resp *restful.Response, q queryOptions) {
-	var res model.Metrics
-
-	var metrics []string
-	for _, metric := range q.namedMetrics {
-		ok, _ := regexp.MatchString(q.metricFilter, metric)
-		if ok {
-			metrics = append(metrics, metric)
-		}
-	}
-	if len(metrics) == 0 {
-		resp.WriteAsJson(res)
+	typ := req.QueryParameter("type")
+	if typ == "statistics" {
+		h.GetWorkspaceStats(name)
 		return
 	}
 
-	if q.isRangeQuery() {
-		res = h.mo.GetNamedMetricsOverTime(metrics, q.start, q.end, q.step, q.option)
-	} else {
-		res = h.mo.GetNamedMetrics(metrics, q.time, q.option)
-		if q.shouldSort() {
-			res = *res.Sort(q.target, q.order, q.identifier).Page(q.page, q.limit)
-		}
-	}
-	resp.WriteAsJson(res)
+	h.getMetricsForObject(req, resp, h.monitoring.Workspace(name, filter))
 }
 
-func (h handler) handleMetadataQuery(req *restful.Request, resp *restful.Response) {
-	res := h.mo.GetMetadata(req.PathParameter("namespace"))
-	resp.WriteAsJson(res)
+func (h handler) getNamespaceMetrics(req *restful.Request, resp *restful.Response) {
+	name := req.QueryParameter("namespace")
+	workspace := req.QueryParameter("workspace")
+	filter := parseResourcesFilter(req)
+
+	h.getMetricsForObject(req, resp, h.monitoring.Namespace(workspace, name, filter))
 }
 
-func (h handler) handleMetricLabelSetQuery(req *restful.Request, resp *restful.Response) {
-	var res model.MetricLabelSet
+func (h handler) getWorkloadMetrics(req *restful.Request, resp *restful.Response) {
+	kind := req.QueryParameter("kind")
+	namespace := req.QueryParameter("namespace")
+	filter := parseResourcesFilter(req)
 
-	params := parseRequestParams(req)
-	if params.metric == "" || params.start == "" || params.end == "" {
-		api.HandleBadRequest(resp, nil, errors.New("required fields are missing: [metric, start, end]"))
-		return
-	}
-
-	opt, err := h.makeQueryOptions(params, 0)
-	if err != nil {
-		if err.Error() == ErrNoHit {
-			resp.WriteAsJson(res)
-			return
-		}
-
-		api.HandleBadRequest(resp, nil, err)
-		return
-	}
-
-	res = h.mo.GetMetricLabelSet(params.metric, params.namespaceName, opt.start, opt.end)
-	resp.WriteAsJson(res)
+	h.getMetricsForObject(req, resp, h.monitoring.Workload(namespace, kind, filter))
 }
 
-func (h handler) handleAdhocQuery(req *restful.Request, resp *restful.Response) {
-	var res monitoring.Metric
+func (h handler) getPodMetrics(req *restful.Request, resp *restful.Response) {
+	name := req.QueryParameter("pod")
+	workloadKind := req.QueryParameter("kind")
+	workload := req.QueryParameter("workload")
+	namespace := req.QueryParameter("namespace")
+	node := req.QueryParameter("node")
+	filter := parseResourcesFilter(req)
 
-	params := parseRequestParams(req)
-	opt, err := h.makeQueryOptions(params, 0)
-	if err != nil {
-		if err.Error() == ErrNoHit {
-			resp.WriteAsJson(res)
-			return
-		}
+	h.getMetricsForObject(req, resp, h.monitoring.Pod(node, namespace, workloadKind, workload, name, filter))
+}
 
-		api.HandleBadRequest(resp, nil, err)
-		return
+func (h handler) getContainerMetrics(req *restful.Request, resp *restful.Response) {
+	name := req.QueryParameter("container")
+	namespace := req.QueryParameter("namespace")
+	podName := req.QueryParameter("pod")
+	filter := parseResourcesFilter(req)
+
+	h.getMetricsForObject(req, resp, h.monitoring.Container(namespace, podName, name, filter))
+}
+
+func (h handler) getPVCMetrics(req *restful.Request, resp *restful.Response) {
+	name := req.QueryParameter("pvc")
+	storageClass := req.QueryParameter("storageclass")
+	namespace := req.QueryParameter("namespace")
+	filter := parseResourcesFilter(req)
+
+	h.getMetricsForObject(req, resp, h.monitoring.PVC(namespace, storageClass, name, filter))
+}
+
+func (h handler) getComponentMetrics(req *restful.Request, resp *restful.Response) {
+	name := req.QueryParameter("name")
+
+	var component monitoring.Object
+	switch name {
+	case "etcd":
+		component = h.monitoring.Component().Scheduler()
+	case "apiserver":
+		component = h.monitoring.Component().APIServer()
+	case "scheduler":
+		component = h.monitoring.Component().Scheduler()
 	}
 
-	if opt.isRangeQuery() {
-		res, err = h.mo.GetMetricOverTime(params.expression, params.namespaceName, opt.start, opt.end, opt.step)
-	} else {
-		res, err = h.mo.GetMetric(params.expression, params.namespaceName, opt.time)
-	}
-
-	if err != nil {
-		api.HandleBadRequest(resp, nil, err)
-	} else {
-		resp.WriteAsJson(res)
-	}
+	h.getMetricsForObject(req, resp, component)
 }

@@ -27,12 +27,6 @@ import (
 )
 
 const (
-	DefaultStep   = 10 * time.Minute
-	DefaultFilter = ".*"
-	DefaultOrder  = model.OrderDescending
-	DefaultPage   = 1
-	DefaultLimit  = 5
-
 	ComponentEtcd      = "etcd"
 	ComponentAPIServer = "apiserver"
 	ComponentScheduler = "scheduler"
@@ -247,17 +241,17 @@ func (h handler) makeQueryOptions(r reqParams, lvl monitoring.Level) (q queryOpt
 		return q, errors.Errorf(ErrParamConflict)
 	}
 
-	// Ensure query start time to be after the namespace creation time
+	// Ensure queryMetrics start time to be after the namespace creation time
 	if r.namespaceName != "" {
-		ns, err := h.k.CoreV1().Namespaces().Get(r.namespaceName, corev1.GetOptions{})
+		ns, err := h.kubernetesClient.CoreV1().Namespaces().Get(r.namespaceName, corev1.GetOptions{})
 		if err != nil {
 			return q, err
 		}
 		cts := ns.CreationTimestamp.Time
 
 		// Query should happen no earlier than namespace's creation time.
-		// For range query, check and mutate `start`. For instant query, check `time`.
-		// In range query, if `start` and `end` are both before namespace's creation time, it causes no hit.
+		// For range queryMetrics, check and mutate `start`. For instant queryMetrics, check `time`.
+		// In range queryMetrics, if `start` and `end` are both before namespace's creation time, it causes no hit.
 		if !q.isRangeQuery() {
 			if q.time.Before(cts) {
 				return q, errors.New(ErrNoHit)

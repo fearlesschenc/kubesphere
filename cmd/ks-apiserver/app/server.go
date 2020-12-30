@@ -52,8 +52,8 @@ func NewAPIServerCommand() *cobra.Command {
 
 	cmd := &cobra.Command{
 		Use: "ks-apiserver",
-		Long: `The KubeSphere API server validates and configures data for the API objects. 
-The API Server services REST operations and provides the frontend to the
+		Long: `The KubeSphere Client server validates and configures data for the Client objects. 
+The Client Server services REST operations and provides the frontend to the
 cluster's shared state through which all other components interact.`,
 		RunE: func(cmd *cobra.Command, args []string) error {
 			if errs := s.Validate(); len(errs) != 0 {

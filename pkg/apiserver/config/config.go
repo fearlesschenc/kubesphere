@@ -20,6 +20,7 @@ import (
 	"fmt"
 	authoptions "github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/options"
 	authorizationoptions "github.com/fearlesschenc/kubesphere/pkg/apiserver/authorization/options"
+	"github.com/fearlesschenc/kubesphere/pkg/monitoring"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/alerting"
 	auditingclient "github.com/fearlesschenc/kubesphere/pkg/simple/client/auditing/elasticsearch"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/cache"
@@ -28,7 +29,6 @@ import (
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/k8s"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/ldap"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/logging/elasticsearch"
-	"github.com/fearlesschenc/kubesphere/pkg/simple/client/monitoring/prometheus"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/multicluster"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/network"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/notification"
@@ -87,7 +87,7 @@ type Config struct {
 	RedisOptions          *cache.Options                             `json:"redis,omitempty" yaml:"redis,omitempty" mapstructure:"redis"`
 	S3Options             *s3.Options                                `json:"s3,omitempty" yaml:"s3,omitempty" mapstructure:"s3"`
 	OpenPitrixOptions     *openpitrix.Options                        `json:"openpitrix,omitempty" yaml:"openpitrix,omitempty" mapstructure:"openpitrix"`
-	MonitoringOptions     *prometheus.Options                        `json:"monitoring,omitempty" yaml:"monitoring,omitempty" mapstructure:"monitoring"`
+	MonitoringOptions     *monitoring.Options                        `json:"monitoring,omitempty" yaml:"monitoring,omitempty" mapstructure:"monitoring"`
 	LoggingOptions        *elasticsearch.Options                     `json:"logging,omitempty" yaml:"logging,omitempty" mapstructure:"logging"`
 	AuthenticationOptions *authoptions.AuthenticationOptions         `json:"authentication,omitempty" yaml:"authentication,omitempty" mapstructure:"authentication"`
 	AuthorizationOptions  *authorizationoptions.AuthorizationOptions `json:"authorization,omitempty" yaml:"authorization,omitempty" mapstructure:"authorization"`
@@ -110,7 +110,7 @@ func New() *Config {
 		RedisOptions:          cache.NewRedisOptions(),
 		S3Options:             s3.NewS3Options(),
 		OpenPitrixOptions:     openpitrix.NewOptions(),
-		MonitoringOptions:     prometheus.NewPrometheusOptions(),
+		MonitoringOptions:     monitoring.NewPrometheusOptions(),
 		AlertingOptions:       alerting.NewAlertingOptions(),
 		NotificationOptions:   notification.NewNotificationOptions(),
 		LoggingOptions:        elasticsearch.NewElasticSearchOptions(),

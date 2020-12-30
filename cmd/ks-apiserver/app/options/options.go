@@ -23,6 +23,7 @@ import (
 	"github.com/fearlesschenc/kubesphere/pkg/apiserver"
 	apiserverconfig "github.com/fearlesschenc/kubesphere/pkg/apiserver/config"
 	"github.com/fearlesschenc/kubesphere/pkg/informers"
+	"github.com/fearlesschenc/kubesphere/pkg/monitoring"
 	genericoptions "github.com/fearlesschenc/kubesphere/pkg/server/options"
 	auditingclient "github.com/fearlesschenc/kubesphere/pkg/simple/client/auditing/elasticsearch"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/cache"
@@ -30,7 +31,6 @@ import (
 	eventsclient "github.com/fearlesschenc/kubesphere/pkg/simple/client/events/elasticsearch"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/k8s"
 	esclient "github.com/fearlesschenc/kubesphere/pkg/simple/client/logging/elasticsearch"
-	"github.com/fearlesschenc/kubesphere/pkg/simple/client/monitoring/prometheus"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/openpitrix"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/s3"
 	fakes3 "github.com/fearlesschenc/kubesphere/pkg/simple/client/s3/fake"
@@ -111,7 +111,7 @@ func (s *ServerRunOptions) NewAPIServer(stopCh <-chan struct{}) (*apiserver.APIS
 	if s.MonitoringOptions == nil || len(s.MonitoringOptions.Endpoint) == 0 {
 		return nil, fmt.Errorf("moinitoring service address in configuration MUST not be empty, please check configmap/kubesphere-config in kubesphere-system namespace")
 	} else {
-		monitoringClient, err := prometheus.NewPrometheus(s.MonitoringOptions)
+		monitoringClient, err := monitoring.New(s.MonitoringOptions) // prometheus.NewPrometheus(s.MonitoringOptions)
 		if err != nil {
 			return nil, fmt.Errorf("failed to connect to prometheus, please check prometheus status, error: %v", err)
 		}
