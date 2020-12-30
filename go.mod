@@ -2,7 +2,7 @@
 // Run hack/pin-dependency.sh to change pinned dependency versions.
 // Run hack/update-vendor.sh to update go.mod files and the vendor directory.
 
-module github.com/fearlesschenc/kubesphere
+module github.com/fearlesschenc/kubesphere/v3
 
 go 1.12
 

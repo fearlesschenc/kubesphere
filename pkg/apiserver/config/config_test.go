@@ -21,6 +21,7 @@ import (
 	"github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/oauth"
 	authoptions "github.com/fearlesschenc/kubesphere/pkg/apiserver/authentication/options"
 	authorizationoptions "github.com/fearlesschenc/kubesphere/pkg/apiserver/authorization/options"
+	"github.com/fearlesschenc/kubesphere/pkg/monitoring"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/alerting"
 	auditingclient "github.com/fearlesschenc/kubesphere/pkg/simple/client/auditing/elasticsearch"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/cache"
@@ -29,7 +30,6 @@ import (
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/k8s"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/ldap"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/logging/elasticsearch"
-	"github.com/fearlesschenc/kubesphere/pkg/simple/client/monitoring/prometheus"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/multicluster"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/network"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/notification"
@@ -107,7 +107,7 @@ func newTestConfig() (*Config, error) {
 			},
 			WeaveScopeHost: "weave-scope-app.weave",
 		},
-		MonitoringOptions: &prometheus.Options{
+		MonitoringOptions: &monitoring.Options{
 			Endpoint: "http://prometheus.kubesphere-monitoring-system.svc",
 		},
 		LoggingOptions: &elasticsearch.Options{
