@@ -2,7 +2,7 @@
 // Run hack/pin-dependency.sh to change pinned dependency versions.
 // Run hack/update-vendor.sh to update go.mod files and the vendor directory.
 
-module github.com/fearlesschenc/kubesphere/v3
+module github.com/fearlesschenc/kubesphere
 
 go 1.12
 
@@ -10,7 +10,7 @@ require (
 	code.cloudfoundry.org/bytefmt v0.0.0-20190710193110-1eb035ffe2b6
 	github.com/NYTimes/gziphandler v1.1.1 // indirect
 	github.com/PuerkitoBio/goquery v1.5.0
-	github.com/asaskevich/govalidator v0.0.0-20190424111038-f61b66f89f4a
+	github.com/asaskevich/govalidator v0.0.0-20200428143746-21a406dcc535
 	github.com/aws/aws-sdk-go v1.30.12
 	github.com/beevik/etree v1.1.0
 	github.com/container-storage-interface/spec v1.2.0
@@ -67,12 +67,12 @@ require (
 	github.com/prometheus/prometheus v2.5.0+incompatible
 	github.com/sony/sonyflake v1.0.0
 	github.com/speps/go-hashids v2.0.0+incompatible
-	github.com/spf13/cobra v0.0.5
+	github.com/spf13/cobra v1.0.0
 	github.com/spf13/pflag v1.0.5
 	github.com/spf13/viper v1.4.0
-	github.com/stretchr/testify v1.4.0
+	github.com/stretchr/testify v1.6.1
 	github.com/xanzy/ssh-agent v0.2.1 // indirect
-	golang.org/x/crypto v0.0.0-20200422194213-44a606286825
+	golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9
 	golang.org/x/net v0.0.0-20200625001655-4c5254603344
 	golang.org/x/oauth2 v0.0.0-20200107190931-bf48bf16ab8d
 	google.golang.org/grpc v1.29.0
@@ -83,12 +83,12 @@ require (
 	gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c
 	istio.io/api v0.0.0-20191111210003-35e06ef8d838
 	istio.io/client-go v0.0.0-20191113122552-9bd0ba57c3d2
-	k8s.io/api v0.17.5
-	k8s.io/apiextensions-apiserver v0.17.3
-	k8s.io/apimachinery v0.17.5
+	k8s.io/api v0.18.4
+	k8s.io/apiextensions-apiserver v0.18.4
+	k8s.io/apimachinery v0.18.4
 	k8s.io/apiserver v0.17.3
 	k8s.io/cli-runtime v0.17.3
-	k8s.io/client-go v0.17.5
+	k8s.io/client-go v0.18.4
 	k8s.io/code-generator v0.17.3
 	k8s.io/component-base v0.17.3
 	k8s.io/gengo v0.0.0-20191120174120-e74f70b9b27e // indirect
@@ -96,7 +96,7 @@ require (
 	k8s.io/kube-openapi v0.0.0-20191107075043-30be4d16710a
 	k8s.io/kubectl v0.17.3
 	k8s.io/utils v0.0.0-20200414100711-2df71ebbae66
-	openpitrix.io/openpitrix v0.4.9-0.20200611125425-ae07f141e797
+	openpitrix.io/openpitrix v0.5.0
 	sigs.k8s.io/application v0.8.3
 	sigs.k8s.io/controller-runtime v0.5.0
 	sigs.k8s.io/controller-tools v0.2.4
@@ -478,7 +478,7 @@ replace (
 	openpitrix.io/libqueue => openpitrix.io/libqueue v0.4.1
 	openpitrix.io/logger => openpitrix.io/logger v0.1.0
 	openpitrix.io/notification => openpitrix.io/notification v0.2.2
-	openpitrix.io/openpitrix => openpitrix.io/openpitrix v0.4.9-0.20200611125425-ae07f141e797
+	//openpitrix.io/openpitrix => openpitrix.io/openpitrix v0.4.9-0.20200611125425-ae07f141e797
 	rsc.io/goversion => rsc.io/goversion v1.0.0
 	rsc.io/letsencrypt => rsc.io/letsencrypt v0.0.1
 	sigs.k8s.io/application => kubesphere.io/application v1.0.0
