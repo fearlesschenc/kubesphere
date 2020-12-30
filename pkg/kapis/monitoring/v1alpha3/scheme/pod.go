@@ -11,6 +11,9 @@ var PodScheme = MetricScheme{
 	"pod_memory_usage": func(obj types.Object) types.MetricQuery {
 		return obj.(types.Pod).MemoryUsage()
 	},
+	"pod_memory_usage_wo_cache": func(obj types.Object) types.MetricQuery {
+		return obj.(types.Pod).MemoryUsageWoCache()
+	},
 	"pod_net_bytes_transmitted": func(obj types.Object) types.MetricQuery {
 		return obj.(types.Pod).NetBytesTransmitted()
 	},

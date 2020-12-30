@@ -60,14 +60,14 @@ func (h handler) getClusterMetrics(req *restful.Request, resp *restful.Response)
 }
 
 func (h handler) getNodeMetrics(req *restful.Request, resp *restful.Response) {
-	name := req.QueryParameter("node")
+	name := req.PathParameter("node")
 	filter := parseResourcesFilter(req)
 
 	h.getMetricsForObject(req, resp, h.monitoring.Node(name, filter))
 }
 
 func (h handler) getWorkspaceMetrics(req *restful.Request, resp *restful.Response) {
-	name := req.QueryParameter("workspace")
+	name := req.PathParameter("workspace")
 	filter := parseResourcesFilter(req)
 
 	typ := req.QueryParameter("type")
@@ -80,52 +80,52 @@ func (h handler) getWorkspaceMetrics(req *restful.Request, resp *restful.Respons
 }
 
 func (h handler) getNamespaceMetrics(req *restful.Request, resp *restful.Response) {
-	name := req.QueryParameter("namespace")
-	workspace := req.QueryParameter("workspace")
+	name := req.PathParameter("namespace")
+	workspace := req.PathParameter("workspace")
 	filter := parseResourcesFilter(req)
 
 	h.getMetricsForObject(req, resp, h.monitoring.Namespace(workspace, name, filter))
 }
 
 func (h handler) getWorkloadMetrics(req *restful.Request, resp *restful.Response) {
-	kind := req.QueryParameter("kind")
-	namespace := req.QueryParameter("namespace")
+	kind := req.PathParameter("kind")
+	namespace := req.PathParameter("namespace")
 	filter := parseResourcesFilter(req)
 
 	h.getMetricsForObject(req, resp, h.monitoring.Workload(namespace, kind, filter))
 }
 
 func (h handler) getPodMetrics(req *restful.Request, resp *restful.Response) {
-	name := req.QueryParameter("pod")
-	workloadKind := req.QueryParameter("kind")
-	workload := req.QueryParameter("workload")
-	namespace := req.QueryParameter("namespace")
-	node := req.QueryParameter("node")
+	name := req.PathParameter("pod")
+	workloadKind := req.PathParameter("kind")
+	workload := req.PathParameter("workload")
+	namespace := req.PathParameter("namespace")
+	node := req.PathParameter("node")
 	filter := parseResourcesFilter(req)
 
 	h.getMetricsForObject(req, resp, h.monitoring.Pod(node, namespace, workloadKind, workload, name, filter))
 }
 
 func (h handler) getContainerMetrics(req *restful.Request, resp *restful.Response) {
-	name := req.QueryParameter("container")
-	namespace := req.QueryParameter("namespace")
-	podName := req.QueryParameter("pod")
+	name := req.PathParameter("container")
+	namespace := req.PathParameter("namespace")
+	podName := req.PathParameter("pod")
 	filter := parseResourcesFilter(req)
 
 	h.getMetricsForObject(req, resp, h.monitoring.Container(namespace, podName, name, filter))
 }
 
 func (h handler) getPVCMetrics(req *restful.Request, resp *restful.Response) {
-	name := req.QueryParameter("pvc")
-	storageClass := req.QueryParameter("storageclass")
-	namespace := req.QueryParameter("namespace")
+	name := req.PathParameter("pvc")
+	storageClass := req.PathParameter("storageclass")
+	namespace := req.PathParameter("namespace")
 	filter := parseResourcesFilter(req)
 
 	h.getMetricsForObject(req, resp, h.monitoring.PVC(namespace, storageClass, name, filter))
 }
 
 func (h handler) getComponentMetrics(req *restful.Request, resp *restful.Response) {
-	name := req.QueryParameter("name")
+	name := req.PathParameter("component")
 
 	var component monitoring.Object
 	switch name {

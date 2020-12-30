@@ -18,7 +18,7 @@ var NodeScheme = MetricScheme{
 		return obj.(types.Node).MemoryUtilization()
 	},
 	"node_memory_usage_wo_cache": func(obj types.Object) types.MetricQuery {
-		return obj.(types.Node).MemoryUsage()
+		return obj.(types.Node).MemoryUsageWoCache()
 	},
 	"node_memory_available": func(obj types.Object) types.MetricQuery {
 		return obj.(types.Node).MemoryAvailable()
@@ -97,5 +97,8 @@ var NodeScheme = MetricScheme{
 	},
 	"node_load15": func(obj types.Object) types.MetricQuery {
 		return obj.(types.Node).Load15()
+	},
+	"node_pleg_quantile": func(obj types.Object) types.MetricQuery {
+		return obj.(types.Node).PlegQuantile()
 	},
 }

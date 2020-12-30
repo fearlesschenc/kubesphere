@@ -31,11 +31,12 @@ func (w *workspace) MemoryUsage() types.MetricQuery {
 	return w.newQuery(fmt.Sprintf(`sum by (workspace) (namespace:container_memory_usage_bytes:sum{namespace!="", %s})`, w.selector))
 }
 
-// TODO:
-//  "workspace_memory_usage_wo_cache":      `sum by (workspace) (namespace:container_memory_usage_bytes_wo_cache:sum{namespace!="", $1})`,
+func (w *workspace) MemoryUsageWoCache() types.MetricQuery {
+	return w.newQuery(fmt.Sprintf(`sum by (workspace) (namespace:container_memory_usage_bytes_wo_cache:sum{namespace!="", %s})`, w.selector))
+}
 
 func (w *workspace) NetBytesTransmitted() types.MetricQuery {
-	return w.newQuery(fmt.Sprintf(`sum by (workspace) (sum by (namespace) (irate(container_network_transmit_bytes_total{namespace!="", pod!="", interface!~"^(cali.+|tunl.+|dummy.+|kube.+|flannel.+|cni.+|docker.+|veth.+|lo.*)", job="kubelet"}[5m])) * on (namespace) group_left(workspace) kube_namespace_labels{%[1]%}) or on(workspace) max by(workspace) (kube_namespace_labels{%[1]s} * 0)`, w.selector))
+	return w.newQuery(fmt.Sprintf(`sum by (workspace) (sum by (namespace) (irate(container_network_transmit_bytes_total{namespace!="", pod!="", interface!~"^(cali.+|tunl.+|dummy.+|kube.+|flannel.+|cni.+|docker.+|veth.+|lo.*)", job="kubelet"}[5m])) * on (namespace) group_left(workspace) kube_namespace_labels{%[1]s}) or on(workspace) max by(workspace) (kube_namespace_labels{%[1]s} * 0)`, w.selector))
 }
 
 func (w *workspace) NetBytesReceived() types.MetricQuery {

@@ -39,6 +39,10 @@ func (ns *namespace) MemoryUsage() types.MetricQuery {
 	return ns.newQuery(fmt.Sprintf(`namespace:container_memory_usage_bytes:sum{namespace!="", %s}`, ns.selector))
 }
 
+func (ns *namespace) MemoryUsageWoCache() types.MetricQuery {
+	return ns.newQuery(fmt.Sprintf(`namespace:container_memory_usage_bytes_wo_cache:sum{namespace!="", %s}`, ns.selector))
+}
+
 func (ns *namespace) MemoryLimitHard() types.MetricQuery {
 	return ns.newQuery(fmt.Sprintf(`min by (namespace) (kube_resourcequota{resourcequota!="quota", type="hard", namespace!="", resource="limits.memory"} * on (namespace) group_left(workspace) kube_namespace_labels{%s})`, ns.selector))
 }

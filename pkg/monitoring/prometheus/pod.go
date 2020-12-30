@@ -55,6 +55,10 @@ func (p *pod) MemoryUsage() types.MetricQuery {
 	return p.newQuery(fmt.Sprintf(`sum by (namespace, pod) (container_memory_usage_bytes{job="kubelet", pod!="", image!=""}) * on (namespace, pod) group_left(owner_kind, owner_name) kube_pod_owner{%s} * on (namespace, pod) group_left(node) kube_pod_info{%s}`, p.workloadSelector, p.selector))
 }
 
+func (p *pod) MemoryUsageWoCache() types.MetricQuery {
+	return p.newQuery(fmt.Sprintf(`sum by (namespace, pod) (container_memory_working_set_bytes{job="kubelet", pod!="", image!=""}) * on (namespace, pod) group_left(owner_kind, owner_name) kube_pod_owner{%s} * on (namespace, pod) group_left(node) kube_pod_info{%s}`, p.workloadSelector, p.selector))
+}
+
 func (p *pod) NetBytesTransmitted() types.MetricQuery {
 	return p.newQuery(fmt.Sprintf(`sum by (namespace, pod) (irate(container_network_transmit_bytes_total{pod!="", interface!~"^(cali.+|tunl.+|dummy.+|kube.+|flannel.+|cni.+|docker.+|veth.+|lo.*)", job="kubelet"}[5m])) * on (namespace, pod) group_left(owner_kind, owner_name) kube_pod_owner{%s} * on (namespace, pod) group_left(node) kube_pod_info{%s}`, p.workloadSelector, p.selector))
 }

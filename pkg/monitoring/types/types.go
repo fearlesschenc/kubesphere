@@ -108,7 +108,20 @@ type MetricQuery interface {
 	QueryRange(r Range) *Metric
 }
 
-type NamedMetricQuery struct {
+type NamedMetricQuery interface {
+	MetricQuery
+	GetName() string
+}
+
+func NewNamedMetricQuery(name string, q MetricQuery) NamedMetricQuery {
+	return namedMetricQuery{Name: name, MetricQuery: q}
+}
+
+type namedMetricQuery struct {
 	MetricQuery
 	Name string
+}
+
+func (q namedMetricQuery) GetName() string {
+	return q.Name
 }

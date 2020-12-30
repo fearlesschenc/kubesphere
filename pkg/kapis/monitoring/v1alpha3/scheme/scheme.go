@@ -34,7 +34,7 @@ func GetScheme(obj types.Object) MetricScheme {
 	case types.Node:
 		return NodeScheme
 	case types.Workspace:
-		return WorkloadScheme
+		return WorkspaceScheme
 	case types.Namespace:
 		return NamespaceScheme
 	case types.Workload:

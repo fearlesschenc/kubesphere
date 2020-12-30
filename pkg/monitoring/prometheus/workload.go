@@ -38,6 +38,10 @@ func (w *workload) MemoryUsage() types.MetricQuery {
 	return w.newQuery(fmt.Sprintf(`namespace:workload_memory_usage:sum{%s}`, w.selector))
 }
 
+func (w *workload) MemoryUsageWoCache() types.MetricQuery {
+	return w.newQuery(fmt.Sprintf(`namespace:workload_memory_usage_wo_cache:sum{%s}`, w.selector))
+}
+
 func (w *workload) NetBytesTransmitted() types.MetricQuery {
 	return w.newQuery(fmt.Sprintf(`namespace:workload_net_bytes_transmitted:sum_irate{%s}`, w.selector))
 }

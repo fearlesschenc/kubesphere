@@ -41,7 +41,7 @@ func (c *cluster) MemoryTotal() types.MetricQuery {
 	return c.newQuery("sum(node:node_memory_bytes_total:sum)")
 }
 
-func (c *cluster) MemoryUsage() types.MetricQuery {
+func (c *cluster) MemoryUsageWoCache() types.MetricQuery {
 	return c.newQuery("sum(node:node_memory_bytes_total:sum) - sum(node:node_memory_bytes_available:sum)")
 }
 

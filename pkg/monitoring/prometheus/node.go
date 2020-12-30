@@ -53,8 +53,7 @@ func (n *node) MemoryTotal() types.MetricQuery {
 		fmt.Sprintf("node:node_memory_bytes_total:sum{%s}", n.selector))
 }
 
-// TODO: origin metric name "node_memory_usage_wo_cache"
-func (n *node) MemoryUsage() types.MetricQuery {
+func (n *node) MemoryUsageWoCache() types.MetricQuery {
 	return n.newQuery(
 		fmt.Sprintf("node:node_memory_bytes_total:sum{%[1]s} - node:node_memory_bytes_available:sum{%[1]s}", n.selector))
 }
@@ -177,4 +176,9 @@ func (n *node) Load5() types.MetricQuery {
 func (n *node) Load15() types.MetricQuery {
 	return n.newQuery(
 		fmt.Sprintf("node:load15:ratio{%s}", n.selector))
+}
+
+func (n *node) PlegQuantile() types.MetricQuery {
+	return n.newQuery(
+		fmt.Sprintf(`node_quantile:kubelet_pleg_relist_duration_seconds:histogram_quantile{%s}`, n.selector))
 }

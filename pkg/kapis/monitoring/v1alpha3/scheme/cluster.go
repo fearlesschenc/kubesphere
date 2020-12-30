@@ -24,7 +24,7 @@ var ClusterScheme = MetricScheme{
 		return obj.(types.Cluster).MemoryTotal()
 	},
 	"cluster_memory_usage_wo_cache": func(obj types.Object) types.MetricQuery {
-		return obj.(types.Cluster).MemoryUsage()
+		return obj.(types.Cluster).MemoryUsageWoCache()
 	},
 	"cluster_net_utilisation": func(obj types.Object) types.MetricQuery {
 		return obj.(types.Cluster).NetUtilization()

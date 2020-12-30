@@ -11,6 +11,9 @@ var WorkloadScheme = MetricScheme{
 	"workload_memory_usage": func(obj types.Object) types.MetricQuery {
 		return obj.(types.Workload).MemoryUsage()
 	},
+	"workload_memory_usage_wo_cache": func(obj types.Object) types.MetricQuery {
+		return obj.(types.Workload).MemoryUsageWoCache()
+	},
 	"workload_net_bytes_transmitted": func(obj types.Object) types.MetricQuery {
 		return obj.(types.Workload).NetBytesTransmitted()
 	},

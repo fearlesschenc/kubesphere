@@ -32,3 +32,4 @@ apiserver.local.config
 tmp/
 kubesphere.yaml
 telepresence.log
+kubesphere_env.json

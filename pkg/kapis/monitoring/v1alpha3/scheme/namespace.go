@@ -11,6 +11,9 @@ var NamespaceScheme = MetricScheme{
 	"namespace_memory_usage": func(obj types.Object) types.MetricQuery {
 		return obj.(types.Namespace).MemoryUsage()
 	},
+	"namespace_memory_usage_wo_cache": func(obj types.Object) types.MetricQuery {
+		return obj.(types.Namespace).MemoryUsageWoCache()
+	},
 	"namespace_net_bytes_transmitted": func(obj types.Object) types.MetricQuery {
 		return obj.(types.Namespace).NetBytesTransmitted()
 	},

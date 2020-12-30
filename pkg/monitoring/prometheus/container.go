@@ -34,3 +34,7 @@ func (c *container) CPUUsage() types.MetricQuery {
 func (c *container) MemoryUsage() types.MetricQuery {
 	return c.newQuery(fmt.Sprintf(`sum by (namespace, pod, container) (container_memory_usage_bytes{job="kubelet", container!="POD", container!="", image!="", %s})`, c.selector))
 }
+
+func (c *container) MemoryUsageWoCache() types.MetricQuery {
+	return c.newQuery(fmt.Sprintf(`sum by (namespace, pod, container) (container_memory_working_set_bytes{job="kubelet", container!="POD", container!="", image!="", %s})`, c.selector))
+}

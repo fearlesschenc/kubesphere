@@ -4,12 +4,15 @@ import (
 	"github.com/fearlesschenc/kubesphere/pkg/monitoring/types"
 )
 
-var Workspace = MetricScheme{
+var WorkspaceScheme = MetricScheme{
 	"workspace_cpu_usage": func(obj types.Object) types.MetricQuery {
 		return obj.(types.Workspace).CPUUsage()
 	},
 	"workspace_memory_usage": func(obj types.Object) types.MetricQuery {
 		return obj.(types.Workspace).MemoryUsage()
+	},
+	"workspace_memory_usage_wo_cache": func(obj types.Object) types.MetricQuery {
+		return obj.(types.Workspace).MemoryUsageWoCache()
 	},
 	"workspace_net_bytes_transmitted": func(obj types.Object) types.MetricQuery {
 		return obj.(types.Workspace).NetBytesTransmitted()

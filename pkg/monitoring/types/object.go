@@ -14,7 +14,7 @@ type Cluster interface {
 	MemoryUtilization() MetricQuery
 	MemoryAvailable() MetricQuery
 	MemoryTotal() MetricQuery
-	MemoryUsage() MetricQuery
+	MemoryUsageWoCache() MetricQuery
 
 	// net
 	NetUtilization() MetricQuery
@@ -82,7 +82,7 @@ type Node interface {
 	MemoryUtilization() MetricQuery
 	MemoryAvailable() MetricQuery
 	MemoryTotal() MetricQuery
-	MemoryUsage() MetricQuery
+	MemoryUsageWoCache() MetricQuery
 
 	// net
 	NetUtilization() MetricQuery
@@ -115,6 +115,8 @@ type Node interface {
 	Load1() MetricQuery
 	Load5() MetricQuery
 	Load15() MetricQuery
+
+	PlegQuantile() MetricQuery
 }
 
 type Workspace interface {
@@ -124,6 +126,7 @@ type Workspace interface {
 
 	// memory
 	MemoryUsage() MetricQuery
+	MemoryUsageWoCache() MetricQuery
 
 	// net
 	NetBytesTransmitted() MetricQuery
@@ -160,6 +163,7 @@ type Namespace interface {
 
 	// memory
 	MemoryUsage() MetricQuery
+	MemoryUsageWoCache() MetricQuery
 	MemoryLimitHard() MetricQuery
 
 	// net
@@ -196,6 +200,7 @@ type Workload interface {
 
 	CPUUsage() MetricQuery
 	MemoryUsage() MetricQuery
+	MemoryUsageWoCache() MetricQuery
 	NetBytesTransmitted() MetricQuery
 	NetBytesReceived() MetricQuery
 
@@ -217,6 +222,7 @@ type Pod interface {
 
 	CPUUsage() MetricQuery
 	MemoryUsage() MetricQuery
+	MemoryUsageWoCache() MetricQuery
 	NetBytesTransmitted() MetricQuery
 	NetBytesReceived() MetricQuery
 }
@@ -226,6 +232,7 @@ type Container interface {
 
 	CPUUsage() MetricQuery
 	MemoryUsage() MetricQuery
+	MemoryUsageWoCache() MetricQuery
 }
 
 type PVC interface {

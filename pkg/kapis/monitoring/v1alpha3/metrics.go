@@ -1,17 +1,19 @@
 package v1alpha3
 
 import (
-	"fmt"
 	"github.com/emicklei/go-restful"
 	"github.com/fearlesschenc/kubesphere/pkg/api"
 	"github.com/fearlesschenc/kubesphere/pkg/kapis/monitoring/v1alpha3/scheme"
 	"github.com/fearlesschenc/kubesphere/pkg/monitoring"
+	"k8s.io/klog"
 	"strings"
-	"sync"
 	"time"
 )
 
-const MetricsSep = "|"
+const (
+	MetricsSep = "|"
+	MetricsEnd = "$"
+)
 
 const (
 	OrderAscending  = "asc"
@@ -47,50 +49,69 @@ func getMetrics(request *restful.Request, queries []monitoring.MetricQuery, time
 		return
 	}
 
-	var wg sync.WaitGroup
-	var mutex sync.Mutex
-	for _, query := range queries {
-		wg.Add(1)
+	// one by one
+	for index, query := range queries {
+		var metric *monitoring.Metric
+		if tr.isRange {
+			metric = query.QueryRange(tr.Range)
+		} else {
+			metric = query.Query(tr.Time)
+		}
+		if metric.Error != "" {
+			klog.Errorf("query [%d] failed: %s", index, metric.Error)
+		}
 
-		go func(query monitoring.MetricQuery) {
-			defer wg.Done()
+		if q, ok := query.(monitoring.NamedMetricQuery); ok {
+			metric.Name = q.GetName()
+		}
 
-			var metric *monitoring.Metric
-			if tr.isRange {
-				metric = query.QueryRange(tr.Range)
-			} else {
-				metric = query.Query(tr.Time)
-			}
-
-			mutex.Lock()
-			defer mutex.Unlock()
-			results = append(results, *metric)
-		}(query)
+		results = append(results, *metric)
 	}
 
-	stop := make(chan struct{})
-	go func() {
-		defer close(stop)
-		wg.Wait()
-	}()
-
-	select {
-	case <-stop:
-		return
-	case <-time.After(timeout):
-		return nil, fmt.Errorf("query timeout error")
-	}
+	//var wg sync.WaitGroup
+	//var mutex sync.Mutex
+	//for _, query := range queries {
+	//	wg.Add(1)
+	//
+	//	go func(query monitoring.MetricQuery) {
+	//		defer wg.Done()
+	//
+	//		var metric *monitoring.Metric
+	//		if tr.isRange {
+	//			metric = query.QueryRange(tr.Range)
+	//		} else {
+	//			metric = query.Query(tr.Time)
+	//		}
+	//
+	//		mutex.Lock()
+	//		defer mutex.Unlock()
+	//		results = append(results, *metric)
+	//	}(query)
+	//}
+	//
+	//stop := make(chan struct{})
+	//go func() {
+	//	defer close(stop)
+	//	wg.Wait()
+	//}()
+	//
+	//select {
+	//case <-stop:
+	//	return
+	//case <-time.After(timeout):
+	//	return nil, fmt.Errorf("query timeout error")
+	//}
 
 	return
 }
 
 func parseMetricsFilter(request *restful.Request) string {
-	pattern := request.QueryParameter("metrics_filter")
-	if pattern == "" {
-		pattern = DefaultFilter
+	pat := request.QueryParameter("metrics_filter")
+	if pat == "" {
+		pat = DefaultFilter
 	}
 
-	return pattern
+	return pat
 }
 
 func (h handler) getMetricsForObject(request *restful.Request, response *restful.Response, obj monitoring.Object) {
@@ -101,7 +122,7 @@ func (h handler) getMetricsForObject(request *restful.Request, response *restful
 	if pattern == DefaultFilter {
 		metrics = scheme.GetScheme(obj).ListMetrics()
 	} else {
-		metrics = strings.Split(pattern, MetricsSep)
+		metrics = strings.Split(strings.TrimSuffix(pattern, MetricsEnd), MetricsSep)
 	}
 
 	var queries []monitoring.MetricQuery
@@ -112,10 +133,7 @@ func (h handler) getMetricsForObject(request *restful.Request, response *restful
 			continue
 		}
 
-		queries = append(queries, monitoring.NamedMetricQuery{
-			Name:        metric,
-			MetricQuery: query,
-		})
+		queries = append(queries, monitoring.NewNamedMetricQuery(metric, query))
 	}
 
 	results, err := getMetrics(request, queries, QueryTimeout)
@@ -127,10 +145,5 @@ func (h handler) getMetricsForObject(request *restful.Request, response *restful
 	ret := &Metrics{Results: results}
 	response.WriteAsJson(ret)
 	// TODO: sort
-	//options := parseSortOptions(request)
-	//if options.ShouldSort() {
-	//	ret.Sort(options.target, options.order, "")
-	//}
-
 	return
 }

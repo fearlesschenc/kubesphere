@@ -12,6 +12,8 @@ type MetricQuery = types.MetricQuery
 type NamedMetricQuery = types.NamedMetricQuery
 type Object = types.Object
 
+var NewNamedMetricQuery = types.NewNamedMetricQuery
+
 const (
 	MetricTypeMatrix = types.MetricTypeMatrix
 	MetricTypeVector = types.MetricTypeVector
