@@ -7,6 +7,7 @@ import (
 	"github.com/fearlesschenc/kubesphere/pkg/monitoring"
 	"k8s.io/klog"
 	"strings"
+	"sync"
 	"time"
 )
 
@@ -49,58 +50,58 @@ func getMetrics(request *restful.Request, queries []monitoring.MetricQuery, time
 		return
 	}
 
-	// one by one
-	for index, query := range queries {
-		var metric *monitoring.Metric
-		if tr.isRange {
-			metric = query.QueryRange(tr.Range)
-		} else {
-			metric = query.Query(tr.Time)
-		}
-		if metric.Error != "" {
-			klog.Errorf("query [%d] failed: %s", index, metric.Error)
-		}
+	var wg sync.WaitGroup
+	var mutex sync.Mutex
+	for _, query := range queries {
+		wg.Add(1)
 
-		if q, ok := query.(monitoring.NamedMetricQuery); ok {
-			metric.Name = q.GetName()
-		}
+		go func(query monitoring.MetricQuery) {
+			defer wg.Done()
 
-		results = append(results, *metric)
+			retry := 0
+			var metric *monitoring.Metric
+			for {
+				if tr.isRange {
+					metric = query.QueryRange(tr.Range)
+				} else {
+					metric = query.Query(tr.Time)
+				}
+
+				// succeed
+				if metric.Error == "" {
+					break
+				}
+
+				retry++
+				if retry > 3 {
+					klog.Errorf("query failed: %s", metric.Error)
+					break
+				}
+			}
+
+			if q, ok := query.(monitoring.NamedMetricQuery); ok {
+				metric.Name = q.GetName()
+			}
+
+			mutex.Lock()
+			defer mutex.Unlock()
+			results = append(results, *metric)
+		}(query)
 	}
 
-	//var wg sync.WaitGroup
-	//var mutex sync.Mutex
-	//for _, query := range queries {
-	//	wg.Add(1)
-	//
-	//	go func(query monitoring.MetricQuery) {
-	//		defer wg.Done()
-	//
-	//		var metric *monitoring.Metric
-	//		if tr.isRange {
-	//			metric = query.QueryRange(tr.Range)
-	//		} else {
-	//			metric = query.Query(tr.Time)
-	//		}
-	//
-	//		mutex.Lock()
-	//		defer mutex.Unlock()
-	//		results = append(results, *metric)
-	//	}(query)
-	//}
-	//
-	//stop := make(chan struct{})
-	//go func() {
-	//	defer close(stop)
-	//	wg.Wait()
-	//}()
-	//
-	//select {
-	//case <-stop:
-	//	return
-	//case <-time.After(timeout):
-	//	return nil, fmt.Errorf("query timeout error")
-	//}
+	stop := make(chan struct{})
+	go func() {
+		defer close(stop)
+		wg.Wait()
+	}()
+
+	select {
+	case <-stop:
+		return
+	case <-time.After(timeout):
+		klog.Error("query monitor timeout")
+		break
+	}
 
 	return
 }
