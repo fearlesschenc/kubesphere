@@ -12,11 +12,15 @@ type node struct {
 }
 
 func (cli *Client) Node(name, filter string) types.Node {
+	n := &node{api: cli.API}
+
 	if name != "" {
-		return &node{selector: fmt.Sprintf(`node="%s"`, name), api: cli.API}
+		n.selector = fmt.Sprintf(`node="%s"`, name)
+	} else {
+		n.selector = fmt.Sprintf(`node=~"%s"`, filter)
 	}
 
-	return &node{selector: fmt.Sprintf(`node=~"%s"`, filter), api: cli.API}
+	return n
 }
 
 func (n *node) newQuery(query string) types.MetricQuery {

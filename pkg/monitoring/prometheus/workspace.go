@@ -12,11 +12,15 @@ type workspace struct {
 }
 
 func (cli *Client) Workspace(name, filter string) types.Workspace {
+	w := &workspace{api: cli.API}
+
 	if name != "" {
-		return &workspace{selector: fmt.Sprintf(`workspace="%s"`, name), api: cli.API}
+		w.selector = fmt.Sprintf(`workspace="%s"`, name)
+	} else {
+		w.selector = fmt.Sprintf(`workspace=~"%s", workspace!=""`, filter)
 	}
 
-	return &workspace{selector: fmt.Sprintf(`workspace=~"%s", workspace!=""`, filter), api: cli.API}
+	return w
 }
 
 func (w *workspace) newQuery(query string) types.MetricQuery {

@@ -12,15 +12,17 @@ type namespace struct {
 }
 
 func (cli *Client) Namespace(workspace, name, filter string) types.Namespace {
+	ns := &namespace{api: cli.API}
+
 	if workspace != "" {
-		return &namespace{selector: fmt.Sprintf(`workspace="%s", namespace=~"%s"`, workspace, filter)}
+		ns.selector = fmt.Sprintf(`workspace="%s", namespace=~"%s"`, workspace, filter)
+	} else if name != "" {
+		ns.selector = fmt.Sprintf(`namespace="%s"`, name)
+	} else {
+		ns.selector = fmt.Sprintf(`namespace=~"%s"`, filter)
 	}
 
-	if name != "" {
-		return &namespace{selector: fmt.Sprintf(`namespace="%s"`, name), api: cli.API}
-	}
-
-	return &namespace{selector: fmt.Sprintf(`namespace=~"%s"`, filter), api: cli.API}
+	return ns
 }
 
 func (ns *namespace) newQuery(query string) types.MetricQuery {
