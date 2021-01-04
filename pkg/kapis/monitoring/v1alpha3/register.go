@@ -22,11 +22,8 @@ import (
 	"github.com/emicklei/go-restful-openapi"
 	"github.com/fearlesschenc/kubesphere/pkg/apiserver/runtime"
 	"github.com/fearlesschenc/kubesphere/pkg/constants"
-	"github.com/fearlesschenc/kubesphere/pkg/informers"
 	"github.com/fearlesschenc/kubesphere/pkg/monitoring"
-	"github.com/fearlesschenc/kubesphere/pkg/simple/client/openpitrix"
 	"k8s.io/apimachinery/pkg/runtime/schema"
-	"k8s.io/client-go/kubernetes"
 	"net/http"
 )
 
@@ -37,10 +34,10 @@ const (
 
 var GroupVersion = schema.GroupVersion{Group: groupName, Version: "v1alpha3"}
 
-func AddToContainer(c *restful.Container, k8sClient kubernetes.Interface, monitoringClient monitoring.Interface, factory informers.InformerFactory, opClient openpitrix.Client) error {
+func AddToContainer(c *restful.Container, monitoringClient monitoring.Interface) error {
 	ws := runtime.NewWebService(GroupVersion)
 
-	h := newHandler(k8sClient, monitoringClient, factory, opClient)
+	h := newHandler(monitoringClient)
 
 	ws.Route(ws.GET("/kubesphere").
 		To(h.getKubeSphereMetrics).

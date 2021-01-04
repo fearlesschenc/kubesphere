@@ -20,30 +20,19 @@ package v1alpha3
 
 import (
 	"github.com/emicklei/go-restful"
-	ksinformers "github.com/fearlesschenc/kubesphere/pkg/client/informers/externalversions"
-	"github.com/fearlesschenc/kubesphere/pkg/informers"
-	"github.com/fearlesschenc/kubesphere/pkg/models/openpitrix"
 	"github.com/fearlesschenc/kubesphere/pkg/monitoring"
-	opclient "github.com/fearlesschenc/kubesphere/pkg/simple/client/openpitrix"
-	"k8s.io/client-go/kubernetes"
 	"strings"
 )
 
 const DefaultFilter = ".*"
 
 type handler struct {
-	kubernetesClient kubernetes.Interface
-	monitoring       monitoring.Interface
-	ks               ksinformers.SharedInformerFactory
-	op               openpitrix.Interface
+	monitoring monitoring.Interface
 }
 
-func newHandler(k kubernetes.Interface, m monitoring.Interface, f informers.InformerFactory, o opclient.Client) *handler {
+func newHandler(m monitoring.Interface) *handler {
 	return &handler{
-		kubernetesClient: k,
-		monitoring:       m,
-		ks:               f.KubeSphereSharedInformerFactory(),
-		op:               openpitrix.NewOpenpitrixOperator(f.KubernetesSharedInformerFactory(), o),
+		monitoring: m,
 	}
 }
 
