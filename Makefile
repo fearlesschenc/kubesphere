@@ -80,7 +80,7 @@ openapi:
 docker-build: all
 	hack/docker_build.sh
 docker-build-no-test: ks-apiserver controller-manager
-	GOOS=linux GOARCH=amd64 hack/docker_build.sh
+	hack/docker_build.sh
 
 # Run tests
 test: fmt vet
