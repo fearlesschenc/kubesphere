@@ -212,3 +212,15 @@ func (c *cluster) Load5() types.MetricQuery {
 func (c *cluster) Load15() types.MetricQuery {
 	return c.newQuery(`sum(node_load15{job="node-exporter"}) / sum(node:node_num_cpu:sum)`)
 }
+
+func (c *cluster) WorkspaceCount() types.MetricQuery {
+	return c.newQuery(`kubesphere_workspace_count`)
+}
+
+func (c *cluster) UserCount() types.MetricQuery {
+	return c.newQuery(`kubesphere_user_count`)
+}
+
+func (c *cluster) ClusterCount() types.MetricQuery {
+	return c.newQuery(`kubesphere_cluster_count`)
+}

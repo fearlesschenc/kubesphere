@@ -71,4 +71,16 @@ var WorkspaceScheme = MetricScheme{
 	"workspace_secret_count": func(obj types.Object) types.MetricQuery {
 		return obj.(types.Workspace).SecretCount()
 	},
+	"workspace_namespace_count": func(obj types.Object) types.MetricQuery {
+		return obj.(types.Workspace).NamespaceCount()
+	},
+	"workspace_devops_count": func(obj types.Object) types.MetricQuery {
+		return obj.(types.Workspace).DevopsCount()
+	},
+	"workspace_member_count": func(obj types.Object) types.MetricQuery {
+		return obj.(types.Workspace).MemberCount()
+	},
+	"workspace_role_count": func(obj types.Object) types.MetricQuery {
+		return obj.(types.Workspace).RoleCount()
+	},
 }

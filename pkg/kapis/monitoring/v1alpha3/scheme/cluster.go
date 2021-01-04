@@ -152,4 +152,13 @@ var ClusterScheme = MetricScheme{
 	"cluster_load15": func(obj types.Object) types.MetricQuery {
 		return obj.(types.Cluster).Load15()
 	},
+	"kubesphere_workspace_count": func(obj types.Object) types.MetricQuery {
+		return obj.(types.Cluster).WorkspaceCount()
+	},
+	"kubesphere_user_count": func(obj types.Object) types.MetricQuery {
+		return obj.(types.Cluster).UserCount()
+	},
+	"kubesphere_cluser_count": func(obj types.Object) types.MetricQuery {
+		return obj.(types.Cluster).ClusterCount()
+	},
 }

@@ -12,8 +12,9 @@ import (
 )
 
 const (
-	MetricsSep = "|"
-	MetricsEnd = "$"
+	MetricsSep            = "|"
+	MetricsEnd            = "$"
+	MetricsFilterQueryKey = "metrics_filter"
 )
 
 const (
@@ -107,7 +108,7 @@ func getMetrics(request *restful.Request, queries []monitoring.MetricQuery, time
 }
 
 func parseMetricsFilter(request *restful.Request) string {
-	pat := request.QueryParameter("metrics_filter")
+	pat := request.QueryParameter(MetricsFilterQueryKey)
 	if pat == "" {
 		pat = DefaultFilter
 	}

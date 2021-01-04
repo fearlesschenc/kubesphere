@@ -69,6 +69,10 @@ type Cluster interface {
 	Load1() MetricQuery
 	Load5() MetricQuery
 	Load15() MetricQuery
+
+	WorkspaceCount() MetricQuery
+	UserCount() MetricQuery
+	ClusterCount() MetricQuery
 }
 
 type Node interface {
@@ -140,7 +144,10 @@ type Workspace interface {
 	PodAbnormalRatio() MetricQuery
 
 	// kubernetes object count
-	ApplicationCount() MetricQuery
+	NamespaceCount() MetricQuery
+	DevopsCount() MetricQuery
+	MemberCount() MetricQuery
+	RoleCount() MetricQuery
 	CronJobCount() MetricQuery
 	PVCCount() MetricQuery
 	DaemonSetCount() MetricQuery

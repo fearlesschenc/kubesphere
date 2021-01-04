@@ -63,11 +63,6 @@ func (w *workspace) PodAbnormalRatio() types.MetricQuery {
 	return w.newQuery(fmt.Sprintf(`count by (workspace) ((kube_pod_info{node!=""} unless on (pod, namespace) (kube_pod_status_phase{job="kube-state-metrics", phase="Succeeded"}>0) unless on (pod, namespace) ((kube_pod_status_ready{job="kube-state-metrics", condition="true"}>0) and on (pod, namespace) (kube_pod_status_phase{job="kube-state-metrics", phase="Running"}>0)) unless on (pod, namespace) (kube_pod_container_status_waiting_reason{job="kube-state-metrics", reason="ContainerCreating"}>0)) * on (namespace) group_left(workspace) kube_namespace_labels{%[1]s}) / sum by (workspace) (kube_pod_status_phase{phase!="Succeeded", namespace!=""} * on (namespace) group_left(workspace)(kube_namespace_labels{%[1]s}))`, w.selector))
 }
 
-// TODO: add namespace count
-func (w *workspace) ApplicationCount() types.MetricQuery {
-	return w.newQuery("")
-}
-
 func (w *workspace) CronJobCount() types.MetricQuery {
 	return w.newQuery(fmt.Sprintf(`sum by (workspace) (kube_cronjob_labels{namespace!=""} * on (namespace) group_left(workspace)(kube_namespace_labels{%s}))`, w.selector))
 }
@@ -114,4 +109,20 @@ func (w *workspace) ReplicaSetCount() types.MetricQuery {
 
 func (w *workspace) IngressCount() types.MetricQuery {
 	return w.newQuery(fmt.Sprintf(`sum by (workspace) (kube_ingress_labels{namespace!=""} * on (namespace) group_left(workspace)(kube_namespace_labels{%s}))`, w.selector))
+}
+
+func (w *workspace) NamespaceCount() types.MetricQuery {
+	return w.newQuery(fmt.Sprintf(`workspace_namespace_count{%s}`, w.selector))
+}
+
+func (w *workspace) DevopsCount() types.MetricQuery {
+	return w.newQuery(fmt.Sprintf(`workspace_devops_project_count{%s}`, w.selector))
+}
+
+func (w *workspace) MemberCount() types.MetricQuery {
+	return w.newQuery(fmt.Sprintf(`workspace_member_count{%s}`, w.selector))
+}
+
+func (w *workspace) RoleCount() types.MetricQuery {
+	return w.newQuery(fmt.Sprintf(`workspace_role_count{%s}`, w.selector))
 }

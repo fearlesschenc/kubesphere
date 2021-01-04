@@ -8,6 +8,13 @@ import (
 	"time"
 )
 
+const (
+	RangeTimeQueryKey  = "time"
+	RangeStartQueryKey = "start"
+	RangeEndQueryKey   = "end"
+	RangeStepQueryKey  = "step"
+)
+
 type timeRange struct {
 	Time  time.Time
 	Range monitoring.Range
@@ -68,10 +75,10 @@ func newTimeRange(ts, start, end, step string) (*timeRange, error) {
 }
 
 func parseTimeRange(request *restful.Request) (*timeRange, error) {
-	ts := request.QueryParameter("time")
-	start := request.QueryParameter("start")
-	end := request.QueryParameter("end")
-	step := request.QueryParameter("step")
+	ts := request.QueryParameter(RangeTimeQueryKey)
+	start := request.QueryParameter(RangeStartQueryKey)
+	end := request.QueryParameter(RangeEndQueryKey)
+	step := request.QueryParameter(RangeStepQueryKey)
 
 	return newTimeRange(ts, start, end, step)
 }
