@@ -3,21 +3,8 @@
 set -ex
 set -o pipefail
 
-tag_for_branch() {
-    local tag=$1
-    if [[ "${tag}" == "" ]]; then
-        tag=$(git branch --show-current)
-        tag=${tag/\//-}
-    fi
-
-    if [[ "${tag}" == "master" ]]; then
-        tag="latest"
-    fi
-    echo ${tag}
-}
-
 # push to kubespheredev with default latest tag
-TAG=$(tag_for_branch $1)
+TAG=${TAG:-latest}
 # REPO=${REPO:-kubespheredev}
 REPO=${REPO:-registry.cn-hangzhou.aliyuncs.com/fearlesschenc/containers/phoenix}
 

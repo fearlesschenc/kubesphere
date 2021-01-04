@@ -37,11 +37,11 @@ endef
 all: test ks-apiserver controller-manager
 
 # Build ks-apiserver binary
-ks-apiserver: fmt vet
+ks-apiserver: fmt
 	hack/gobuild.sh cmd/ks-apiserver
 
 # Build controller-manager binary
-controller-manager: fmt vet
+controller-manager: fmt
 	hack/gobuild.sh cmd/controller-manager
 
 # Run go fmt against code 
@@ -80,7 +80,7 @@ openapi:
 docker-build: all
 	hack/docker_build.sh
 docker-build-no-test: ks-apiserver controller-manager
-	hack/docker_build.sh
+	GOOS=linux GOARCH=amd64 hack/docker_build.sh
 
 # Run tests
 test: fmt vet
