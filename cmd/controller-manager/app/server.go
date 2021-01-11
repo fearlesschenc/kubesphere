@@ -23,10 +23,8 @@ import (
 	"github.com/fearlesschenc/kubesphere/cmd/controller-manager/app/options"
 	"github.com/fearlesschenc/kubesphere/pkg/apis"
 	controllerconfig "github.com/fearlesschenc/kubesphere/pkg/apiserver/config"
-	"github.com/fearlesschenc/kubesphere/pkg/controller/namespace"
 	"github.com/fearlesschenc/kubesphere/pkg/controller/network/nsnetworkpolicy"
 	"github.com/fearlesschenc/kubesphere/pkg/controller/user"
-	"github.com/fearlesschenc/kubesphere/pkg/controller/workspace"
 	"github.com/fearlesschenc/kubesphere/pkg/informers"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/devops"
 	"github.com/fearlesschenc/kubesphere/pkg/simple/client/devops/jenkins"
@@ -186,15 +184,15 @@ func run(s *options.KubeSphereControllerManagerOptions, stopCh <-chan struct{}) 
 		klog.Fatalf("unable add APIs to scheme: %v", err)
 	}
 
-	err = workspace.Add(mgr)
-	if err != nil {
-		klog.Fatal("Unable to create workspace controller")
-	}
-
-	err = namespace.Add(mgr)
-	if err != nil {
-		klog.Fatal("Unable to create namespace controller")
-	}
+	//err = workspace.Add(mgr)
+	//if err != nil {
+	//	klog.Fatal("Unable to create workspace controller")
+	//}
+	//
+	//err = namespace.Add(mgr)
+	//if err != nil {
+	//	klog.Fatal("Unable to create namespace controller")
+	//}
 
 	err = (&application.ApplicationReconciler{
 		Scheme: mgr.GetScheme(),
